@@ -7,16 +7,17 @@
         "pyproject-nix": "pyproject-nix"
       },
       "locked": {
-        "dirtyRev": "a7aef00f6f4da06ff7cb3fdeee262a5179b8e997-dirty",
-        "dirtyShortRev": "a7aef00f-dirty",
-        "lastModified": 1713181572,
-        "narHash": "sha256-2NxhztbjIruCVaSa2PyYK5SIaEhWzT43ktdbxmbDe+Y=",
-        "type": "git",
-        "url": "file:///home/phaer/src/dream2nix"
+        "lastModified": 1713184205,
+        "narHash": "sha256-yRh44FfLIrwAoZH5fw50sUNqah03x3EqYask2z3c6Tk=",
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "rev": "c5cfd416abe6ced55f9d57810cadff2556df708f",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/phaer/src/dream2nix"
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "type": "github"
       }
     },
     "nixpkgs": {
