@@ -2,4 +2,5 @@
 
 curl https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json \
     | jq -r '.rows[:500][] | .project' \
+    | sort \
     > 500-most-popular-pypi-packages.txt
