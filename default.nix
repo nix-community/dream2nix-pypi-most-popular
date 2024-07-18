@@ -5,7 +5,15 @@
   ...
 }: let
   mostPopular = lib.splitString "\n" (lib.readFile ./500-most-popular-pypi-packages.txt);
-  requirements = lib.filter (v: v != "psycopg2") mostPopular;
+
+  toSkip = [
+    #"psycopg2"
+    "pypular"
+    "rpds-py"
+    "pydantic" "pydantic-core"
+  ];
+
+  requirements = lib.filter (v: !(builtins.elem v toSkip)) mostPopular;
 
 in  {
   imports = [
@@ -13,11 +21,23 @@ in  {
   ];
 
   deps = {nixpkgs, ...}: {
-    python = nixpkgs.python3;
+    python = nixpkgs.python311;
     inherit
       (nixpkgs)
       pkg-config
       postgresql
+      gcc
+      stdenv
+      coreutils
+      cmake
+      ninja
+      libffi
+      gfortran
+      openblas
+      libxml2
+      libxslt
+      rustc
+      cargo
       ;
   };
 
@@ -36,19 +56,32 @@ in  {
   };
 
   pip = {
-    pypiSnapshotDate = null;
     flattenDependencies = true;
     requirementsList = requirements;
+    #pipFlags = [
+    #  "--no-binary"
+    #  (lib.concatStringsSep "," requirements)
+    #];
 
-    #overrides = {
-    #  psycopg2 = {
-    #    imports = [dream2nix.modules.dream2nix.nixpkgs-overrides];
-    #    nixpkgs-overrides.enable = true;
-    #    mkDerivation.nativeBuildInputs = [
-    #      config.deps.pkg-config
-    #      config.deps.postgresql
-    #    ];
-    #  };
-    #};
+    nativeBuildInputs = with config.deps; [
+      pkg-config
+      stdenv.cc
+      #python.pkgs.cython_0 # build-time dependency of PyYaml
+      postgresql # psycopg2
+      coreutils  # Cython
+      cmake  # numpy
+      ninja  # numy
+      libffi.dev # cryptography
+      gfortran # scipy
+      openblas.dev # scipy
+      libxml2.dev # lxml
+      libxslt.dev # lxml
+      #rustc # pydantic / maturin
+      #cargo # pydantic / maturin
+    ] ++ lib.optionals stdenv.isDarwin [
+      xcbuild # numpy
+      darwin.cctools # pandas
+      #libiconv-darwin # pydantic
+    ];
   };
 }
