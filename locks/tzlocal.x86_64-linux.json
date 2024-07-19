@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "tzlocal": {
+        "is_direct": false,
+        "sha256": "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz",
+        "version": "5.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "tzlocal": []
+      }
+    }
+  },
+  "invalidationHash": "bcacda8fdc49e9a0532da2b1907aabd4132cac1936f94d5fa54a3bef8bb052f5"
+}

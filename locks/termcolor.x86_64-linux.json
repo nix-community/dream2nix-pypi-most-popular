@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "termcolor": {
+        "is_direct": false,
+        "sha256": "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/10/56/d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764/termcolor-2.4.0.tar.gz",
+        "version": "2.4.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "termcolor": []
+      }
+    }
+  },
+  "invalidationHash": "90a8d6e89d89905f434d1add941e9db8a86f527ab3c9ca40a28caa54b939022e"
+}

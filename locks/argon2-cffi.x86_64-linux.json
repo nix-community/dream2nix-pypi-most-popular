@@ -1,0 +1,49 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "argon2-cffi": {
+        "is_direct": false,
+        "sha256": "879c3e79a2729ce768ebb7d36d4609e3a78a4ca2ec3a9f12286ca057e3d0db08",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/31/fa/57ec2c6d16ecd2ba0cf15f3c7d1c3c2e7b5fcb83555ff56d7ab10888ec8f/argon2_cffi-23.1.0.tar.gz",
+        "version": "23.1.0"
+      },
+      "argon2-cffi-bindings": {
+        "is_direct": false,
+        "sha256": "b746dba803a79238e925d9046a63aa26bf86ab2a2fe74ce6b009a1c3f5c8f2ae",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ec/f7/378254e6dd7ae6f31fe40c8649eea7d4832a42243acaf0f1fff9083b2bed/argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "21.2.0"
+      },
+      "cffi": {
+        "is_direct": false,
+        "sha256": "7b78010e7b97fef4bee1e896df8a4bbb6712b7f05b7ef630f9d1da00f6444d2e",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/9b/89/a31c81e36bbb793581d8bba4406a8aac4ba84b2559301c44eef81f4cf5df/cffi-1.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.16.0"
+      },
+      "pycparser": {
+        "is_direct": false,
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "version": "2.22"
+      }
+    },
+    "targets": {
+      "default": {
+        "argon2-cffi": [
+          "argon2-cffi-bindings"
+        ],
+        "argon2-cffi-bindings": [
+          "cffi"
+        ],
+        "cffi": [
+          "pycparser"
+        ],
+        "pycparser": []
+      }
+    }
+  },
+  "invalidationHash": "3583a9d91de00988caf69a7eb2c52fd12a5842ea9a1be436668ffac4f596da2e"
+}

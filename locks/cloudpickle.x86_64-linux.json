@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "cloudpickle": {
+        "is_direct": false,
+        "sha256": "996d9a482c6fb4f33c1a35335cf8afd065d2a56e973270364840712d9131a882",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c8/72/42a6570fc61b1f8913529728ad314c7cf5961540728dcad22c33fb2db6b6/cloudpickle-3.0.0.tar.gz",
+        "version": "3.0.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "cloudpickle": []
+      }
+    }
+  },
+  "invalidationHash": "c6925993065d4fcb07bc1e4efbeae0c62e7b6e7ad1ce11f39d83063fa5061101"
+}

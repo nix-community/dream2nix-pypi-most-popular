@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "defusedxml": {
+        "is_direct": false,
+        "sha256": "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz",
+        "version": "0.7.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "defusedxml": []
+      }
+    }
+  },
+  "invalidationHash": "6f64c365f1e7adf30375601b5a8a8b0b2b6c6c2dd0d361102d772dcdfbe96a90"
+}

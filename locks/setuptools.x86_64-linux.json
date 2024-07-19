@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "setuptools": {
+        "is_direct": false,
+        "sha256": "c51d7fd29843aa18dad362d4b4ecd917022131425438251f4e3d766c964dd1ad",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/55/a2/640f943c98800be626d5e4d48070e35bb891733218cf6ce562a8df53b9af/setuptools-71.0.1.tar.gz",
+        "version": "71.0.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "setuptools": []
+      }
+    }
+  },
+  "invalidationHash": "35747f07414323116aae27d95e28b16005f566870b81f1dec034ed548f3f7274"
+}

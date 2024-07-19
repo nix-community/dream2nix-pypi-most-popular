@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "greenlet": {
+        "is_direct": false,
+        "sha256": "43374442353259554ce33599da8b692d5aa96f8976d567d4badf263371fbe491",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/17/14/3bddb1298b9a6786539ac609ba4b7c9c0842e12aa73aaa4d8d73ec8f8185/greenlet-3.0.3.tar.gz",
+        "version": "3.0.3"
+      }
+    },
+    "targets": {
+      "default": {
+        "greenlet": []
+      }
+    }
+  },
+  "invalidationHash": "f77ffd00b44bba95b95d9ecad7fbea2c1ffe08771658478a4d730b68c35ce64b"
+}

@@ -1,0 +1,57 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "cinemagoer": {
+        "is_direct": false,
+        "sha256": "5ce1d77ae6546701618f11e5b1556a19d18edecad1b6d7d96973ec34941b18f2",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/06/de/3aa6eb738b5c5e39f1909bc080a392842841f9af866edb960de2f22af53c/cinemagoer-2023.5.1.tar.gz",
+        "version": "2023.5.1"
+      },
+      "greenlet": {
+        "is_direct": false,
+        "sha256": "b7f009caad047246ed379e1c4dbcb8b020f0a390667ea74d2387be2998f58a22",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c6/1f/12d5a6cc26e8b483c2e7975f9c22e088ac735c0d8dcb8a8f72d31a4e5f04/greenlet-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.0.3"
+      },
+      "lxml": {
+        "is_direct": false,
+        "sha256": "eb00b549b13bd6d884c863554566095bf6fa9c3cecb2e7b399c4bc7904cb33b5",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ad/b7/0dc82afed00c4c189cfd0b83464f9a431c66de8e73d911063956a147276a/lxml-5.2.2-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "version": "5.2.2"
+      },
+      "sqlalchemy": {
+        "is_direct": false,
+        "sha256": "2196208432deebdfe3b22185d46b08f00ac9d7b01284e168c212919891289396",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/bb/be/4045425132a2fde3422e0d2062e6a3b874e385b98b0442c1d7d29ac152bc/SQLAlchemy-2.0.31-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.31"
+      },
+      "typing-extensions": {
+        "is_direct": false,
+        "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
+        "version": "4.12.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "cinemagoer": [
+          "lxml",
+          "sqlalchemy"
+        ],
+        "greenlet": [],
+        "lxml": [],
+        "sqlalchemy": [
+          "greenlet",
+          "typing-extensions"
+        ],
+        "typing-extensions": []
+      }
+    }
+  },
+  "invalidationHash": "1af728c400d9682cb95307dd4f6dd55111f1718f55bb3a9478398128f2100bee"
+}

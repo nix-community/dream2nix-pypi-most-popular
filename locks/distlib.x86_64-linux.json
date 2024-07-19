@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "distlib": {
+        "is_direct": false,
+        "sha256": "1530ea13e350031b6312d8580ddb6b27a104275a31106523b8f123787f494f64",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c4/91/e2df406fb4efacdf46871c25cde65d3c6ee5e173b7e5a4547a47bae91920/distlib-0.3.8.tar.gz",
+        "version": "0.3.8"
+      }
+    },
+    "targets": {
+      "default": {
+        "distlib": []
+      }
+    }
+  },
+  "invalidationHash": "54308526e6792cc870da67059d29e080c99b6653623bc80e976c9a1b5e686ade"
+}

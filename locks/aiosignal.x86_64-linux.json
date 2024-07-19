@@ -1,0 +1,29 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "aiosignal": {
+        "is_direct": false,
+        "sha256": "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ae/67/0952ed97a9793b4958e5736f6d2b346b414a2cd63e82d05940032f45b32f/aiosignal-1.3.1.tar.gz",
+        "version": "1.3.1"
+      },
+      "frozenlist": {
+        "is_direct": false,
+        "sha256": "4f9c515e7914626b2a2e1e311794b4c35720a0be87af52b79ff8e1429fc25f19",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b3/c9/0bc5ee7e1f5cc7358ab67da0b7dfe60fbd05c254cea5c6108e7d1ae28c63/frozenlist-1.4.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.4.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "aiosignal": [
+          "frozenlist"
+        ],
+        "frozenlist": []
+      }
+    }
+  },
+  "invalidationHash": "e8017529a8388a45dbb6046c49cfdabd47823a0f0f9a1c7897fa2a1246846297"
+}

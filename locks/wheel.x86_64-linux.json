@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "wheel": {
+        "is_direct": false,
+        "sha256": "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b8/d6/ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69/wheel-0.43.0.tar.gz",
+        "version": "0.43.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "wheel": []
+      }
+    }
+  },
+  "invalidationHash": "874c7804d4d5c30f616e01d9b2d3f44f0cd2c848aa669471575e86abe1d4f599"
+}

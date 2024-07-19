@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "py4j": {
+        "is_direct": false,
+        "sha256": "0b6e5315bb3ada5cf62ac651d107bb2ebc02def3dee9d9548e3baac644ea8dbb",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/1e/f2/b34255180c72c36ff7097f7c2cdca02abcbd89f5eebf7c7c41262a9a0637/py4j-0.10.9.7.tar.gz",
+        "version": "0.10.9.7"
+      }
+    },
+    "targets": {
+      "default": {
+        "py4j": []
+      }
+    }
+  },
+  "invalidationHash": "4217c42d16c9941e1d6e4c6a400a46d32acfe8891b4c25ced89f2accbc2c64b4"
+}

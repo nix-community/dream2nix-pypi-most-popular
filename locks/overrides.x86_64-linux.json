@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "overrides": {
+        "is_direct": false,
+        "sha256": "55158fa3d93b98cc75299b1e67078ad9003ca27945c76162c1c0766d6f91820a",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/36/86/b585f53236dec60aba864e050778b25045f857e17f6e5ea0ae95fe80edd2/overrides-7.7.0.tar.gz",
+        "version": "7.7.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "overrides": []
+      }
+    }
+  },
+  "invalidationHash": "48594128251b5b6e9c48bde4012d6578faba60b8793ec90ea6b81f7134f55bbc"
+}

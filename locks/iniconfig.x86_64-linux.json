@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "iniconfig": {
+        "is_direct": false,
+        "sha256": "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz",
+        "version": "2.0.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "iniconfig": []
+      }
+    }
+  },
+  "invalidationHash": "bf3243d900ed04410903c971ca58b6fd7a502171057adaf30dd138ceb9c53de7"
+}

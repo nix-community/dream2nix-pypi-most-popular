@@ -1,0 +1,38 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "attrs": {
+        "is_direct": false,
+        "sha256": "99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e0/44/827b2a91a5816512fcaf3cc4ebc465ccd5d598c45cefa6703fcf4a79018f/attrs-23.2.0-py3-none-any.whl",
+        "version": "23.2.0"
+      },
+      "referencing": {
+        "is_direct": false,
+        "sha256": "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/99/5b/73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6d/referencing-0.35.1.tar.gz",
+        "version": "0.35.1"
+      },
+      "rpds-py": {
+        "is_direct": false,
+        "sha256": "071d4adc734de562bd11d43bd134330fb6249769b2f66b9310dab7460f4bf714",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/51/21/6fe3ff45570611d5475e9938d28785def6e4661cbd9aca48980aebe95031/rpds_py-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.19.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "attrs": [],
+        "referencing": [
+          "attrs",
+          "rpds-py"
+        ],
+        "rpds-py": []
+      }
+    }
+  },
+  "invalidationHash": "37fb3a72853775741de8849e2c95ce80ffcf8b8e8ae7be9c863895619879464c"
+}

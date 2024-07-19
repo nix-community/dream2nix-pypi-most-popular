@@ -1,0 +1,29 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "mako": {
+        "is_direct": false,
+        "sha256": "48dbc20568c1d276a2698b36d968fa76161bf127194907ea6fc594fa81f943bc",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/67/03/fb5ba97ff65ce64f6d35b582aacffc26b693a98053fa831ab43a437cbddb/Mako-1.3.5.tar.gz",
+        "version": "1.3.5"
+      },
+      "markupsafe": {
+        "is_direct": false,
+        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.1.5"
+      }
+    },
+    "targets": {
+      "default": {
+        "mako": [
+          "markupsafe"
+        ],
+        "markupsafe": []
+      }
+    }
+  },
+  "invalidationHash": "f25cd40f0800f2d4b776106805bf06a89b5d5072d355a863e5e385a358fe437b"
+}

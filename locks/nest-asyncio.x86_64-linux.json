@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "nest-asyncio": {
+        "is_direct": false,
+        "sha256": "6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/83/f8/51569ac65d696c8ecbee95938f89d4abf00f47d58d48f6fbabfe8f0baefe/nest_asyncio-1.6.0.tar.gz",
+        "version": "1.6.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "nest-asyncio": []
+      }
+    }
+  },
+  "invalidationHash": "6a78b4dc3856c9e32e66998ed1b502e71f7f1ce4be515d3b84d75486aa584b54"
+}

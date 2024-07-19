@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "pycryptodome": {
+        "is_direct": false,
+        "sha256": "09609209ed7de61c2b560cc5c8c4fbf892f8b15b1faf7e4cbffac97db1fffda7",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b9/ed/19223a0a0186b8a91ebbdd2852865839237a21c74f1fbc4b8d5b62965239/pycryptodome-3.20.0.tar.gz",
+        "version": "3.20.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "pycryptodome": []
+      }
+    }
+  },
+  "invalidationHash": "93a30d8cc199e1f4e39ed06d9c288048f3ce2e36a1b95a4a6a9333aa1483f853"
+}

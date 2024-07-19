@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "crashtest": {
+        "is_direct": false,
+        "sha256": "80d7b1f316ebfbd429f648076d6275c877ba30ba48979de4191714a75266f0ce",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/6e/5d/d79f51058e75948d6c9e7a3d679080a47be61c84d3cc8f71ee31255eb22b/crashtest-0.4.1.tar.gz",
+        "version": "0.4.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "crashtest": []
+      }
+    }
+  },
+  "invalidationHash": "bf5706077d31ea7c29f68fb84095738272255321c915844227edd31867bc02e0"
+}

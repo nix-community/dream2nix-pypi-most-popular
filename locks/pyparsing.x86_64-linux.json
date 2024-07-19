@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "pyparsing": {
+        "is_direct": false,
+        "sha256": "a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/46/3a/31fd28064d016a2182584d579e033ec95b809d8e220e74c4af6f0f2e8842/pyparsing-3.1.2.tar.gz",
+        "version": "3.1.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "pyparsing": []
+      }
+    }
+  },
+  "invalidationHash": "76e6e57601717a20007faefbdbf53b4147ddd2b94a5ee9c8c99b7da79391d852"
+}

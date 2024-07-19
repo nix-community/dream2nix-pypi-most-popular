@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "uvloop": {
+        "is_direct": false,
+        "sha256": "0246f4fd1bf2bf702e06b0d45ee91677ee5c31242f39aab4ea6fe0c51aedd0fd",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/9c/16/728cc5dde368e6eddb299c5aec4d10eaf25335a5af04e8c0abd68e2e9d32/uvloop-0.19.0.tar.gz",
+        "version": "0.19.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "uvloop": []
+      }
+    }
+  },
+  "invalidationHash": "bb0e6c72674affa4a7ddb17d9e34b3b8f493bed8ba73f35fcba86966127c93c9"
+}

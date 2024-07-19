@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "tblib": {
+        "is_direct": false,
+        "sha256": "93622790a0a29e04f0346458face1e144dc4d32f493714c6c3dff82a4adb77e6",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/1a/df/4f2cd7eaa6d41a7994d46527349569d46e34d9cdd07590b5c5b0dcf53de3/tblib-3.0.0.tar.gz",
+        "version": "3.0.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "tblib": []
+      }
+    }
+  },
+  "invalidationHash": "9223e64b1f16cb5914afe5c44fd2a3792158e6a0bf23ef85df2d6091f0051855"
+}

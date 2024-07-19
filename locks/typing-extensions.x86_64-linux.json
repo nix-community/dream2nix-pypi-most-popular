@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "typing-extensions": {
+        "is_direct": false,
+        "sha256": "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz",
+        "version": "4.12.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "typing-extensions": []
+      }
+    }
+  },
+  "invalidationHash": "8ca338eb91d84a91e549dc30766161a1937b8e3fd540573306b4ec3cae28b4b9"
+}

@@ -1,0 +1,29 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "jinja2": {
+        "is_direct": false,
+        "sha256": "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz",
+        "version": "3.1.4"
+      },
+      "markupsafe": {
+        "is_direct": false,
+        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.1.5"
+      }
+    },
+    "targets": {
+      "default": {
+        "jinja2": [
+          "markupsafe"
+        ],
+        "markupsafe": []
+      }
+    }
+  },
+  "invalidationHash": "ca5e5611a93dbf5bb579b44c923be341351c342565f52f5ee9631f755158b8b8"
+}

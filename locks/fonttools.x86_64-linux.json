@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "fonttools": {
+        "is_direct": false,
+        "sha256": "e128778a8e9bc11159ce5447f76766cefbd876f44bd79aff030287254e4752c4",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c6/cb/cd80a0da995adde8ade6044a8744aee0da5efea01301cadf770f7fbe7dcc/fonttools-4.53.1.tar.gz",
+        "version": "4.53.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "fonttools": []
+      }
+    }
+  },
+  "invalidationHash": "c29db910c69fde9d2c18ce16328a473c3614e1a49891c0f3d7b5ad52ae4c44da"
+}

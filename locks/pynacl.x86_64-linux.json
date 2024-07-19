@@ -1,0 +1,39 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "cffi": {
+        "is_direct": false,
+        "sha256": "7b78010e7b97fef4bee1e896df8a4bbb6712b7f05b7ef630f9d1da00f6444d2e",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/9b/89/a31c81e36bbb793581d8bba4406a8aac4ba84b2559301c44eef81f4cf5df/cffi-1.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.16.0"
+      },
+      "pycparser": {
+        "is_direct": false,
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "version": "2.22"
+      },
+      "pynacl": {
+        "is_direct": false,
+        "sha256": "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz",
+        "version": "1.5.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "cffi": [
+          "pycparser"
+        ],
+        "pycparser": [],
+        "pynacl": [
+          "cffi"
+        ]
+      }
+    }
+  },
+  "invalidationHash": "472652180b9e3cf7d2d9263cc69e1dc99c1d1fcde1a3c1cdb556f7f07cc55298"
+}

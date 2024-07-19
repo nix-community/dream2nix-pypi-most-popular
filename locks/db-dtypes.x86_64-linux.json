@@ -1,0 +1,97 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "db-dtypes": {
+        "is_direct": false,
+        "sha256": "3531bb1fb8b5fbab33121fe243ccc2ade16ab2524f4c113b05cc702a1908e6ea",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/31/c3/9dc7790d181a6b1bafa03deabf3ebd58bd5cb280f718dca14833f830d43e/db-dtypes-1.2.0.tar.gz",
+        "version": "1.2.0"
+      },
+      "numpy": {
+        "is_direct": false,
+        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.0"
+      },
+      "packaging": {
+        "is_direct": false,
+        "sha256": "5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl",
+        "version": "24.1"
+      },
+      "pandas": {
+        "is_direct": false,
+        "sha256": "6d2123dc9ad6a814bcdea0f099885276b31b24f7edf40f6cdbc0912672e22eee",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/fc/a5/4d82be566f069d7a9a702dcdf6f9106df0e0b042e738043c0cc7ddd7e3f6/pandas-2.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.2"
+      },
+      "pyarrow": {
+        "is_direct": false,
+        "sha256": "e3343cb1e88bc2ea605986d4b94948716edc7a8d14afd4e2c097232f729758b4",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/4c/21/9ca93b84b92ef927814cb7ba37f0774a484c849d58f0b692b16af8eebcfb/pyarrow-17.0.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "version": "17.0.0"
+      },
+      "python-dateutil": {
+        "is_direct": false,
+        "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+        "version": "2.9.0.post0"
+      },
+      "pytz": {
+        "is_direct": false,
+        "sha256": "328171f4e3623139da4983451950b28e95ac706e13f3f2630a879749e7a8b319",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/9c/3d/a121f284241f08268b21359bd425f7d4825cffc5ac5cd0e1b3d82ffd2b10/pytz-2024.1-py2.py3-none-any.whl",
+        "version": "2024.1"
+      },
+      "six": {
+        "is_direct": false,
+        "sha256": "8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl",
+        "version": "1.16.0"
+      },
+      "tzdata": {
+        "is_direct": false,
+        "sha256": "9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/65/58/f9c9e6be752e9fcb8b6a0ee9fb87e6e7a1f6bcab2cdc73f02bb7ba91ada0/tzdata-2024.1-py2.py3-none-any.whl",
+        "version": "2024.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "db-dtypes": [
+          "numpy",
+          "packaging",
+          "pandas",
+          "pyarrow"
+        ],
+        "numpy": [],
+        "packaging": [],
+        "pandas": [
+          "numpy",
+          "python-dateutil",
+          "pytz",
+          "tzdata"
+        ],
+        "pyarrow": [
+          "numpy"
+        ],
+        "python-dateutil": [
+          "six"
+        ],
+        "pytz": [],
+        "six": [],
+        "tzdata": []
+      }
+    }
+  },
+  "invalidationHash": "9d125206ed79f3a99ef67da8f68d77249f6c637be21c9856803042900bc9d036"
+}

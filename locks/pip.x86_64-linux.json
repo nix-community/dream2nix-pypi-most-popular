@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "pip": {
+        "is_direct": false,
+        "sha256": "e5458a0b89f2755e0ee8c0c77613fe5273e05f337907874d64f13171a898a7ff",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/12/3d/d899257cace386bebb7bdf8a872d5fe3b935cc6381c3ddb76d3e5d99890d/pip-24.1.2.tar.gz",
+        "version": "24.1.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "pip": []
+      }
+    }
+  },
+  "invalidationHash": "b5d79978fe83ca66b4f6fea2b509b8b650306cd70560f128d64dcd67fc7636a4"
+}

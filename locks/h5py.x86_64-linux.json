@@ -1,0 +1,29 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "h5py": {
+        "is_direct": false,
+        "sha256": "7b7e8f78072a2edec87c9836f25f34203fd492a4475709a18b417a33cfb21fa9",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/52/8f/e557819155a282da36fb21f8de4730cfd10a964b52b3ae8d20157ac1c668/h5py-3.11.0.tar.gz",
+        "version": "3.11.0"
+      },
+      "numpy": {
+        "is_direct": false,
+        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "h5py": [
+          "numpy"
+        ],
+        "numpy": []
+      }
+    }
+  },
+  "invalidationHash": "83479d594ea41b034c2b693d577257c3a91b68f857e92a28f2b9ab7e660b033c"
+}

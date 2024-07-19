@@ -1,0 +1,40 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "ml-dtypes": {
+        "is_direct": false,
+        "sha256": "e1e2f4237b459a63c97c2c9f449baa637d7e4c20addff6a9bac486f22432f3b6",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/84/17/a936d3dfad84d028ba8539a93167274b7dcd7985e0d9df487e94a62f9428/ml_dtypes-0.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.4.0"
+      },
+      "numpy": {
+        "is_direct": false,
+        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.0"
+      },
+      "tensorstore": {
+        "is_direct": false,
+        "sha256": "6abde084d6932b4e733df109c1e819a9f7f5ed8e68372a78821c0f3e76a20469",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/47/8b/e38852acdc76853f35ca455b41eb059ee4a417120bd9dc7785e160296b13/tensorstore-0.1.63.tar.gz",
+        "version": "0.1.63"
+      }
+    },
+    "targets": {
+      "default": {
+        "ml-dtypes": [
+          "numpy"
+        ],
+        "numpy": [],
+        "tensorstore": [
+          "ml-dtypes",
+          "numpy"
+        ]
+      }
+    }
+  },
+  "invalidationHash": "d429d56d3216409afcce73cc1475995b098d7369fabae0e6665f16af17dd5fab"
+}

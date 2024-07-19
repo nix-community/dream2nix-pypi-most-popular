@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "importlib-resources": {
+        "is_direct": false,
+        "sha256": "cdb2b453b8046ca4e3798eb1d84f3cce1446a0e8e7b5ef4efb600f19fc398145",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c8/9d/6ee73859d6be81c6ea7ebac89655e92740296419bd37e5c8abdb5b62fd55/importlib_resources-6.4.0.tar.gz",
+        "version": "6.4.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "importlib-resources": []
+      }
+    }
+  },
+  "invalidationHash": "ea22f0dd05af3bd5442c57ade7d10525b5b9ef6ceaa1c0ff9e651e7eb6cc83c1"
+}

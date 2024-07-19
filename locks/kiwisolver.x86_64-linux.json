@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "kiwisolver": {
+        "is_direct": false,
+        "sha256": "e57e563a57fb22a142da34f38acc2fc1a5c864bc29ca1517a88abc963e60d6ec",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b9/2d/226779e405724344fc678fcc025b812587617ea1a48b9442628b688e85ea/kiwisolver-1.4.5.tar.gz",
+        "version": "1.4.5"
+      }
+    },
+    "targets": {
+      "default": {
+        "kiwisolver": []
+      }
+    }
+  },
+  "invalidationHash": "b671cf4f9a9e8900f32c7b2cbaa011d6f729c6f23a524c41d48472883c44221b"
+}

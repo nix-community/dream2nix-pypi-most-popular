@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "websocket-client": {
+        "is_direct": false,
+        "sha256": "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e6/30/fba0d96b4b5fbf5948ed3f4681f7da2f9f64512e1d303f94b4cc174c24a5/websocket_client-1.8.0.tar.gz",
+        "version": "1.8.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "websocket-client": []
+      }
+    }
+  },
+  "invalidationHash": "ede315b1c2fd170f5af5b7aded345e33f076270034f4b59987efeeed9d598cf3"
+}

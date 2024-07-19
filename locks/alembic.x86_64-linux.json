@@ -1,0 +1,68 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "alembic": {
+        "is_direct": false,
+        "sha256": "1ff0ae32975f4fd96028c39ed9bb3c867fe3af956bd7bb37343b54c9fe7445ef",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/66/e2/efa88e86029cada2da5941ec664d50d9a3b2a91f5066405c6f90e5016c16/alembic-1.13.2.tar.gz",
+        "version": "1.13.2"
+      },
+      "greenlet": {
+        "is_direct": false,
+        "sha256": "b7f009caad047246ed379e1c4dbcb8b020f0a390667ea74d2387be2998f58a22",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/c6/1f/12d5a6cc26e8b483c2e7975f9c22e088ac735c0d8dcb8a8f72d31a4e5f04/greenlet-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.0.3"
+      },
+      "mako": {
+        "is_direct": false,
+        "sha256": "260f1dbc3a519453a9c856dedfe4beb4e50bd5a26d96386cb6c80856556bb91a",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/03/62/70f5a0c2dd208f9f3f2f9afd103aec42ee4d9ad2401d78342f75e9b8da36/Mako-1.3.5-py3-none-any.whl",
+        "version": "1.3.5"
+      },
+      "markupsafe": {
+        "is_direct": false,
+        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.1.5"
+      },
+      "sqlalchemy": {
+        "is_direct": false,
+        "sha256": "2196208432deebdfe3b22185d46b08f00ac9d7b01284e168c212919891289396",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/bb/be/4045425132a2fde3422e0d2062e6a3b874e385b98b0442c1d7d29ac152bc/SQLAlchemy-2.0.31-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.31"
+      },
+      "typing-extensions": {
+        "is_direct": false,
+        "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
+        "version": "4.12.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "alembic": [
+          "mako",
+          "sqlalchemy",
+          "typing-extensions"
+        ],
+        "greenlet": [],
+        "mako": [
+          "markupsafe"
+        ],
+        "markupsafe": [],
+        "sqlalchemy": [
+          "greenlet",
+          "typing-extensions"
+        ],
+        "typing-extensions": []
+      }
+    }
+  },
+  "invalidationHash": "b4c5046acef99ff8b6d26ce9813bd25f2cc8c9e2fe5c31a72f2b6864f89cb408"
+}

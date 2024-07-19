@@ -1,0 +1,29 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "smart-open": {
+        "is_direct": false,
+        "sha256": "62b65852bdd1d1d516839fcb1f6bc50cd0f16e05b4ec44b52f43d38bcb838524",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/06/84/c6e6276a72a78996f11118b8bc1d9e9b619aa78201f408210f4a584bd377/smart_open-7.0.4.tar.gz",
+        "version": "7.0.4"
+      },
+      "wrapt": {
+        "is_direct": false,
+        "sha256": "72554a23c78a8e7aa02abbd699d129eead8b147a23c56e08d08dfc29cfdddca1",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/6e/52/2da48b35193e39ac53cfb141467d9f259851522d0e8c87153f0ba4205fb1/wrapt-1.16.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.16.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "smart-open": [
+          "wrapt"
+        ],
+        "wrapt": []
+      }
+    }
+  },
+  "invalidationHash": "b58f700d23a01a5cc00013f56c42c2aa9259cb695bf5710668f7d76078cb09d9"
+}

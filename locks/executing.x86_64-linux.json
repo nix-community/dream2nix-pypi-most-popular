@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "executing": {
+        "is_direct": false,
+        "sha256": "35afe2ce3affba8ee97f2d69927fa823b08b472b7b994e36a52a964b93d16147",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/08/41/85d2d28466fca93737592b7f3cc456d1cfd6bcd401beceeba17e8e792b50/executing-2.0.1.tar.gz",
+        "version": "2.0.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "executing": []
+      }
+    }
+  },
+  "invalidationHash": "dc5e4cf7562cfcc7596b770210a1f82ec001bf314975c19f3c7a58c4104f8ac4"
+}
