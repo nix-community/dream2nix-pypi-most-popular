@@ -10,10 +10,10 @@
       },
       "azure-storage-blob": {
         "is_direct": false,
-        "sha256": "de6b3bf3a90e9341a6bcb96a2ebe981dffff993e9045818f6549afea827a52a9",
+        "sha256": "f9ede187dd5a0ef296b583a7c1861c6938ddd6708d6e70f4203a163c2ab42d43",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/15/19/2be26569e708cb618feecd7316ee0c5475273f7cdb4f9030a862870c74c8/azure_storage_blob-12.20.0-py3-none-any.whl",
-        "version": "12.20.0"
+        "url": "https://files.pythonhosted.org/packages/f4/da/4033cee3855395e84ff73da4b50d3528f9338205299cde89676639387fcc/azure_storage_blob-12.21.0-py3-none-any.whl",
+        "version": "12.21.0"
       },
       "azure-storage-file-datalake": {
         "is_direct": false,
@@ -144,5 +144,5 @@
       }
     }
   },
-  "invalidationHash": "087ba06d88cdfe00c6916dff2037a7180e391dc7109c1f48956fddee38cd4608"
+  "invalidationHash": "7c97a5b633a07b5d7cf542ef13ac403d2974a192cad2d4b64dcfafcc0cc0393d"
 }

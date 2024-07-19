@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "tensorflow-io-gcs-filesystem": {
+        "is_direct": false,
+        "sha256": "ee7c8ee5fe2fd8cb6392669ef16e71841133041fee8a330eff519ad9b36e4556",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/66/7f/e36ae148c2f03d61ca1bff24bc13a0fef6d6825c966abef73fc6f880a23b/tensorflow_io_gcs_filesystem-0.37.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.37.1"
+      }
+    },
+    "targets": {
+      "default": {
+        "tensorflow-io-gcs-filesystem": []
+      }
+    }
+  },
+  "invalidationHash": "d3c377350a9bbe340bcf153ee8938c1969978f4d787dc4753a61809324298cee"
+}

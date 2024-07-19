@@ -28,21 +28,179 @@
             (lib.removeSuffix "\n"
               (lib.readFile ./500-most-popular-pypi-packages.txt)))));
 
-    toSkip = [];
-    packages = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
+    toSkip = [
+      "dataclasses"  # in stdlib from 3.8
+      "pypular"  # TODO investigate how this got into the dataset, not even on pypi
+      # locking failed
+      "shapely"  # libstdc++.6.so
+      "ipykernel" # libstdc++.6.so
+      "delta-spark"
+      "jupyterlab-pygments"
+      "matplotlib"
+      "mysql-connector-python"
+      "numpy" # did withLibCPP work before with stdenv.cc.cc.lib.lib ?
+      "pandas"
+      "redshift-connector"
+      "scikit-image"
+      "scikit-learn"
+      "scipy"
+      "tb-nightly"
+      "xgboost"
+    ];
+    requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
 
-    overrides = {
-      psycopg2 = { config, ...}: {
+    overrides = let
+      withCC = { config, ...}: {
         deps = { nixpkgs, ... }: {
-          inherit (nixpkgs) pkg-config postgresql;
+          inherit (nixpkgs) stdenv;
         };
         pip = {
-          nativeBuildInputs = with config.deps; [
-            pkg-config
-            postgresql
-          ];
+          nativeBuildInputs = [config.deps.stdenv.cc];
         };
       };
+
+      useWheel.pip.pipFlags = lib.mkForce [];
+
+      withLibCPP = { config, ...}: {
+        # TODO FIXME
+      };
+
+      withPkgConfig = { config, ...}: {
+        imports = [ withCC ];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) pkg-config;
+          };
+          pip = {
+            nativeBuildInputs = [config.deps.pkg-config];
+          };
+        };
+      };
+
+      withCMake = { config, ...}: {
+        imports = [ withCC ];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) cmake;
+          };
+          pip = {
+            nativeBuildInputs = [config.deps.cmake];
+          };
+        };
+      };
+
+
+      withNinja = { config, ...}: {
+        imports = [ withCC ];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) ninja;
+          };
+          pip = {
+            nativeBuildInputs = with config.deps; [
+              ninja
+            ];
+          };
+        };
+      };
+
+      withMaturin = { config, ...}: {
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) cargo rustc;
+          };
+          pip = {
+            nativeBuildInputs = [config.deps.cargo config.deps.rustc];
+          };
+        };
+      };
+
+      withHatchling = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.hatchling];
+          };
+        };
+      };
+
+    in {
+      aiofiles = withHatchling;
+
+      contourpy = withNinja;
+      grpcio-tools = withCC;
+      grpcio = withCC;
+
+      ipykernel = withLibCPP;
+      lxml = { config, ...}: {
+        imports = [ withPkgConfig ];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) libxml2 libxslt;
+          };
+          pip = {
+            nativeBuildInputs = [
+              config.deps.libxml2.dev
+              config.deps.libxslt.dev
+            ];
+          };
+        };
+      };
+
+      matplotlib = withNinja;
+      numpy = withNinja;
+
+      orjson = withMaturin;
+      pandas = withNinja;
+      pendulum = withMaturin;
+      pydantic-core = withMaturin;
+      pymssql = withCC;
+      pyzmq = withCMake;
+      psycopg2 = { config, ...}: {
+        imports = [ withPkgConfig ];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) postgresql;
+          };
+          pip = {
+            nativeBuildInputs = [
+              config.deps.postgresql
+            ];
+          };
+        };
+      };
+      psycopg2-binary = useWheel;
+      rpds-py = withMaturin;
+      safetensors = withMaturin;
+      scikit-image = withNinja;
+      scikit-learn = withNinja;
+      scipy = { config, ...}: {
+        imports = [withNinja];
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) gfortran openblas;
+          };
+          pip = {
+            nativeBuildInputs = [
+              config.deps.gfortran
+              config.deps.openblas
+            ];
+          };
+        };
+      };
+      setuptools.pip.ignoredDependencies = lib.mkForce [ "wheel" ];
+      wheel.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
+      shapely = withLibCPP;
+      tensorboard = useWheel;
+      tensorboard-data-server = useWheel;
+      tensorflow-estimator = useWheel;
+      tensorflow-io-gcs-filesystem = useWheel;
+      tensorflow = useWheel;
+      tokenizers = withMaturin;
+      torch = useWheel;
+      torchvision = useWheel;
+      wandb = useWheel;
+      watchfiles = withMaturin;
+      xgboost = withCMake;
     };
 
     makePackage = {name, version, system}:
@@ -62,7 +220,11 @@
             paths.lockFile = "locks/${name}.${system}.json";
             paths.projectRoot = ./.;
             paths.package = ./.;
+
+            buildPythonPackage.pyproject = lib.mkDefault true;
+            mkDerivation.nativeBuildInputs = with config.deps.python.pkgs; [ setuptools wheel ];
             pip = {
+              ignoredDependencies = [ "wheel" "setuptools" ];
               requirementsList = [ "${name}==${version}" ];
               pipFlags = ["--no-binary" name];
             };
@@ -71,10 +233,7 @@
         ];
       };
   in {
-    packages = eachSystem(system:
-      lib.mapAttrs (name: version: makePackage {inherit name version system; }) packages
-      );
-
+    packages = eachSystem (system: lib.mapAttrs (name: version: makePackage {inherit name version system; }) requirements);
     apps = eachSystem(system: let
       pkgs = nixpkgs.legacyPackages.${system};
       lockAll = pkgs.writeShellApplication {

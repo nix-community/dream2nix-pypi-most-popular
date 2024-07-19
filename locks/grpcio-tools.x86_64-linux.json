@@ -1,0 +1,47 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "grpcio": {
+        "is_direct": false,
+        "sha256": "27adee2338d697e71143ed147fe286c05810965d5d30ec14dd09c22479bfe48a",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/f5/b1/30d9103229c9a6c8f869fd5148e774be16a5bafc7ef8623540e1b7554155/grpcio-1.65.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.65.1"
+      },
+      "grpcio-tools": {
+        "is_direct": false,
+        "sha256": "24cffe8bc90fb8237f0bcf240bd6c70304255fe27b69db32601499a043f871be",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/57/d6/5135ee86be0501178a3f18c691cf25c1c9c33c6dd6395d286dfc0af9d54e/grpcio_tools-1.65.1.tar.gz",
+        "version": "1.65.1"
+      },
+      "protobuf": {
+        "is_direct": false,
+        "sha256": "b848dbe1d57ed7c191dfc4ea64b8b004a3f9ece4bf4d0d80a367b76df20bf36e",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/27/e4/8dc4546be46873f8950cb44cdfe19b79d66d26e53c4ee5e3440406257fcd/protobuf-5.27.2-cp38-abi3-manylinux2014_x86_64.whl",
+        "version": "5.27.2"
+      },
+      "setuptools": {
+        "is_direct": false,
+        "sha256": "f501b6e6db709818dc76882582d9c516bf3b67b948864c5fa1d1624c09a49207",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/32/10/e72bb221cdd2f11e649cf38bd7ba8ea6d527c77f330366e10ae9bb798730/setuptools-71.0.3-py3-none-any.whl",
+        "version": "71.0.3"
+      }
+    },
+    "targets": {
+      "default": {
+        "grpcio": [],
+        "grpcio-tools": [
+          "grpcio",
+          "protobuf",
+          "setuptools"
+        ],
+        "protobuf": [],
+        "setuptools": []
+      }
+    }
+  },
+  "invalidationHash": "1647e4a6b34b93b9de3dbd26f55c955b406bba7caf5d74c613a8fd0cd584fd9a"
+}

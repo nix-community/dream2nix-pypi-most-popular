@@ -3,10 +3,10 @@
     "sources": {
       "setuptools": {
         "is_direct": false,
-        "sha256": "f06fbe978a91819d250a30e0dc4ca79df713d909e24438a42d0ec300fc52247f",
+        "sha256": "f501b6e6db709818dc76882582d9c516bf3b67b948864c5fa1d1624c09a49207",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/01/82/a2c6c0a1612c89bdb21dc4d9196ba9e7dcbc2e285afda93ebdf663ba2ada/setuptools-71.0.0-py3-none-any.whl",
-        "version": "71.0.0"
+        "url": "https://files.pythonhosted.org/packages/32/10/e72bb221cdd2f11e649cf38bd7ba8ea6d527c77f330366e10ae9bb798730/setuptools-71.0.3-py3-none-any.whl",
+        "version": "71.0.3"
       },
       "zope-interface": {
         "is_direct": false,
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "903d2dbc9a5c633d3556ee6084e6b4258a107f4f8a3ffd04e242ff4902f7a9fa"
+  "invalidationHash": "fe4a7df1df146bd9f027983f8245a80f6cfc8903a209d35eb3948b4f09f03fea"
 }

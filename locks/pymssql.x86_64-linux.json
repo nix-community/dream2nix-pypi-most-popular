@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "pymssql": {
+        "is_direct": false,
+        "sha256": "f034e46b568061d17148f1dedea648f9d5f6b7340e8cffe0edbaa1713cb4abab",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/13/ee/cbcea68250177a4ceb8637f029b6c6ac2afa21e9b8c22314201e34f75f28/pymssql-2.3.0.tar.gz",
+        "version": "2.3.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "pymssql": []
+      }
+    }
+  },
+  "invalidationHash": "3e2f52225b050e9f5e837c5eab0e9148d4191ab97ab25486d5b6a16ec0139f3a"
+}

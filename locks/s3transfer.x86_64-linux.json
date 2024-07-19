@@ -3,10 +3,10 @@
     "sources": {
       "botocore": {
         "is_direct": false,
-        "sha256": "a2cf26e1bf10d5917a2285e50257bc44e94a1d16574f282f3274f7a5d8d1f08b",
+        "sha256": "2e72e262de02adcb0264ac2bac159a28f55dbba8d9e52aa0308773a42950dff5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/24/4b/956a80d406dfffba1f8f7fbaba7dd73d418ed8a7b95faa1ade7cf17663a5/botocore-1.34.144-py3-none-any.whl",
-        "version": "1.34.144"
+        "url": "https://files.pythonhosted.org/packages/35/48/86b595223cd3159aa3e211a3552ece7bfbcf0d75689465f3c95754f43d26/botocore-1.34.145-py3-none-any.whl",
+        "version": "1.34.145"
       },
       "jmespath": {
         "is_direct": false,
@@ -63,5 +63,5 @@
       }
     }
   },
-  "invalidationHash": "f01cfcf84b44f71a63f865d2ad4f3ef91cbc54fe7f5bb9265b0ae7acea150835"
+  "invalidationHash": "ed245a937856a1bb55f9906e5ac184908c2b3de7f7841136a3b143ebdd8fe786"
 }

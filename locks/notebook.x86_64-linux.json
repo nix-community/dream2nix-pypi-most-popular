@@ -276,10 +276,10 @@
       },
       "jupyterlab": {
         "is_direct": false,
-        "sha256": "0b59d11808e84bb84105c73364edfa867dd475492429ab34ea388a52f2e2e596",
+        "sha256": "807a7ec73637744f879e112060d4b9d9ebe028033b7a429b2d1f4fc523d00245",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/2d/d1/69edb0a70473089057afc1e10936a743d985f5f80774da982f47b84c4d55/jupyterlab-4.2.3-py3-none-any.whl",
-        "version": "4.2.3"
+        "url": "https://files.pythonhosted.org/packages/f6/b2/ba6fba3f52f785ba9740a7954e0d4477828f7395ee9f2f4707db5835a833/jupyterlab-4.2.4-py3-none-any.whl",
+        "version": "4.2.4"
       },
       "jupyterlab-pygments": {
         "is_direct": false,
@@ -521,10 +521,10 @@
       },
       "setuptools": {
         "is_direct": false,
-        "sha256": "1eb8ef012efae7f6acbc53ec0abde4bc6746c43087fd215ee09e1df48998711f",
+        "sha256": "f501b6e6db709818dc76882582d9c516bf3b67b948864c5fa1d1624c09a49207",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/39/11/6159cc30f99dbdccac3c74d67277505d0e0bfc059e6cc57ef2eefc9b8751/setuptools-71.0.1-py3-none-any.whl",
-        "version": "71.0.1"
+        "url": "https://files.pythonhosted.org/packages/32/10/e72bb221cdd2f11e649cf38bd7ba8ea6d527c77f330366e10ae9bb798730/setuptools-71.0.3-py3-none-any.whl",
+        "version": "71.0.3"
       },
       "six": {
         "is_direct": false,
@@ -932,5 +932,5 @@
       }
     }
   },
-  "invalidationHash": "683ac9e9a9a5e794cd4be0b0d3c9f5faef55ed7e3e40ed48a6aeba4b9df3e773"
+  "invalidationHash": "d049d24659bd7df9aef36f6d00e1197bb379ca30d0d22006b2e6568db76b8952"
 }

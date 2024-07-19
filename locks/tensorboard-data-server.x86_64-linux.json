@@ -1,0 +1,19 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "tensorboard-data-server": {
+        "is_direct": false,
+        "sha256": "ef687163c24185ae9754ed5650eb5bc4d84ff257aabdc33f0cc6f74d8ba54530",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/73/c6/825dab04195756cf8ff2e12698f22513b3db2f64925bdd41671bfb33aaa5/tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl",
+        "version": "0.7.2"
+      }
+    },
+    "targets": {
+      "default": {
+        "tensorboard-data-server": []
+      }
+    }
+  },
+  "invalidationHash": "58f38359a4938757024b6a84f16b30d5f51172c6b79478195df214b779c5da50"
+}

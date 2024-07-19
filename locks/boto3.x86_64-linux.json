@@ -10,10 +10,10 @@
       },
       "botocore": {
         "is_direct": false,
-        "sha256": "a2cf26e1bf10d5917a2285e50257bc44e94a1d16574f282f3274f7a5d8d1f08b",
+        "sha256": "2e72e262de02adcb0264ac2bac159a28f55dbba8d9e52aa0308773a42950dff5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/24/4b/956a80d406dfffba1f8f7fbaba7dd73d418ed8a7b95faa1ade7cf17663a5/botocore-1.34.144-py3-none-any.whl",
-        "version": "1.34.144"
+        "url": "https://files.pythonhosted.org/packages/35/48/86b595223cd3159aa3e211a3552ece7bfbcf0d75689465f3c95754f43d26/botocore-1.34.145-py3-none-any.whl",
+        "version": "1.34.145"
       },
       "jmespath": {
         "is_direct": false,
@@ -75,5 +75,5 @@
       }
     }
   },
-  "invalidationHash": "2aadfd406326f2a7457a8c8cf010b4a3bbf0bd703a9bf7d3dab4b57721d3849b"
+  "invalidationHash": "6d5be925bdf8499d275cc85b74fb5cf4dfc1e8671600f5b969b2ab9cc5c1baa8"
 }

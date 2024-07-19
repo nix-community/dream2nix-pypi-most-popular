@@ -52,10 +52,10 @@
       },
       "langsmith": {
         "is_direct": false,
-        "sha256": "40b43d908ae0ff061a7ef6f4e7eabf2624db54359210b6bc784ddfa32484e524",
+        "sha256": "8acb27844ff5263bde14b23425f83ee63996f4d5a8e9998cdeef07fd913137ff",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/7a/57/eaaa4b21ec93692866bd73b9c90f73eb057b004850f1e298fd7a0ca29eb5/langsmith-0.1.90-py3-none-any.whl",
-        "version": "0.1.90"
+        "url": "https://files.pythonhosted.org/packages/02/01/9715e44fea7466718a36b5746889f64b10af7a237c7cd8772f8da5ee1521/langsmith-0.1.92-py3-none-any.whl",
+        "version": "0.1.92"
       },
       "orjson": {
         "is_direct": false,
@@ -167,5 +167,5 @@
       }
     }
   },
-  "invalidationHash": "47660a678780138c609a410940902d8035d5b50777cdff5a918a82654ca0bb77"
+  "invalidationHash": "10666777173cb77e7fa6fad4475aaacf167a6f39933a65877e3371be8f6f4fea"
 }
