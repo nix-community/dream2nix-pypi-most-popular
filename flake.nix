@@ -11,23 +11,107 @@
     dream2nix,
     systems
   }: let
-    eachSystem = nixpkgs.lib.genAttrs (import systems);
-    setup = {
-      paths.projectRoot = ./.;
-      # can be changed to ".git" or "flake.nix" to get rid of .project-root
-      paths.projectRootFile = "flake.nix";
-      paths.package = ./.;
+    lib = nixpkgs.lib;
+    eachSystem = lib.genAttrs (import systems);
+
+    limit = 500;
+    mostPopular = lib.listToAttrs
+      (lib.take limit
+        (map
+          (line: let
+            parts = lib.splitString "==" line;
+          in {
+            name = lib.elemAt parts 0;
+            value = lib.elemAt parts 1;
+          })
+          (lib.splitString "\n"
+            (lib.removeSuffix "\n"
+              (lib.readFile ./500-most-popular-pypi-packages.txt)))));
+
+    toSkip = [];
+    packages = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
+
+    overrides = {
+      psycopg2 = { config, ...}: {
+        deps = { nixpkgs, ... }: {
+          inherit (nixpkgs) pkg-config postgresql;
+        };
+        pip = {
+          nativeBuildInputs = with config.deps; [
+            pkg-config
+            postgresql
+          ];
+        };
+      };
     };
-    makePackage = system: module: dream2nix.lib.evalModules {
-      packageSets.nixpkgs = nixpkgs.legacyPackages.${system};
-      modules = [
-        setup
-        module
-      ];
-    };
+
+    makePackage = {name, version, system}:
+      dream2nix.lib.evalModules {
+        packageSets.nixpkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ({
+            config,
+              lib,
+              dream2nix,
+              ...
+          }: {
+            inherit name version;
+            imports = [
+              dream2nix.modules.dream2nix.pip
+            ];
+            paths.lockFile = "locks/${name}.${system}.json";
+            paths.projectRoot = ./.;
+            paths.package = ./.;
+            pip = {
+              requirementsList = [ "${name}==${version}" ];
+              pipFlags = ["--no-binary" name];
+            };
+          })
+          (overrides.${name} or {})
+        ];
+      };
   in {
-    packages = eachSystem(system: {
-      default = makePackage system ./default.nix;
+    packages = eachSystem(system:
+      lib.mapAttrs (name: version: makePackage {inherit name version system; }) packages
+      );
+
+    apps = eachSystem(system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      lockAll = pkgs.writeShellApplication {
+        name = "lock-all";
+        text = lib.concatStringsSep "\n"
+          (lib.mapAttrsToList
+            (name: pkg: ''
+              if [ -f ${pkg.config.paths.lockFile} ]
+              then
+                echo "${name}: lock exists, skipping"
+              else
+                echo -n '${name}: locking (${lib.getExe pkg.lock}) ... ';
+                if ${lib.getExe pkg.lock} &>lock_out
+                then
+                  echo "success!";
+                else
+                  echo "error:"
+                  cat lock_out
+                fi
+                rm lock_out || true
+              fi
+             '')
+            self.packages.${system});
+      };
+    in {
+      lock-all = {
+        type = "app";
+        program = lib.getExe lockAll;
+      };
     });
+
+    devShells = eachSystem(system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      default = pkgs.mkShell {
+      };
+    });
+
   };
 }
