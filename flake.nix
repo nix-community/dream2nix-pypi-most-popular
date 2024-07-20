@@ -270,8 +270,17 @@
 
     devShells = eachSystem(system: let
       pkgs = nixpkgs.legacyPackages.${system};
+      python = pkgs.python3.withPackages (ps: [
+        ps.jinja2
+        ps.python-lsp-server
+        ps.python-lsp-ruff
+        ps.pylsp-mypy
+        ps.ipython
+      ]);
+
     in {
       default = pkgs.mkShell {
+        packages = [ python pkgs.ruff pkgs.mypy pkgs.black ];
       };
     });
 
