@@ -7,9 +7,9 @@
 
   outputs = {
     self,
-    nixpkgs,
-    dream2nix,
-    systems
+      nixpkgs,
+      dream2nix,
+      systems
   }: let
     lib = nixpkgs.lib;
     eachSystem = lib.genAttrs (import systems);
@@ -72,8 +72,9 @@
             inherit (nixpkgs) pkg-config;
           };
           pip = {
-            nativeBuildInputs = [config.deps.pkg-config];
+            nativeBuildInputs = [config.deps.pkg-config config.deps.python.pkgs.pkgconfig];
           };
+          mkDerivation = { inherit (config.pip) nativeBuildInputs; };
         };
       };
 
@@ -86,31 +87,72 @@
           pip = {
             nativeBuildInputs = [config.deps.cmake];
           };
+          mkDerivation = { inherit (config.pip) nativeBuildInputs; };
         };
       };
 
 
-      withNinja = { config, ...}: {
+      withMesonPy = { config, ...}: {
         imports = [ withCC ];
         config = {
           deps = { nixpkgs, ... }: {
             inherit (nixpkgs) ninja;
           };
           pip = {
-            nativeBuildInputs = with config.deps; [
-              ninja
+            nativeBuildInputs = [
+              config.deps.ninja
             ];
+          };
+          mkDerivation.nativeBuildInputs = [
+            config.deps.ninja
+            config.deps.python.pkgs.meson
+          ];
+        };
+      };
+
+      withCython = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.cython];
+          };
+        };
+      };
+
+      withExpandVars = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.expandvars];
           };
         };
       };
 
       withMaturin = { config, ...}: {
-        config = {
+        config = let
+          nativeBuildInputs = [
+            config.deps.maturin
+            config.deps.cargo config.deps.rustc
+          ];
+        in {
           deps = { nixpkgs, ... }: {
-            inherit (nixpkgs) cargo rustc;
+            inherit (nixpkgs) cargo rustc maturin;
           };
-          pip = {
-            nativeBuildInputs = [config.deps.cargo config.deps.rustc];
+          pip = {inherit nativeBuildInputs;};
+          mkDerivation = {inherit nativeBuildInputs;};
+        };
+      };
+
+      withFlitCore = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.flit-core];
+          };
+        };
+      };
+
+      withFlitScm = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.flit-scm];
           };
         };
       };
@@ -123,14 +165,196 @@
         };
       };
 
+      withHatchVcs = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [
+              config.deps.python.pkgs.hatchling
+              config.deps.python.pkgs.hatch-vcs
+              config.deps.python.pkgs.hatch-fancy-pypi-readme
+            ];
+          };
+        };
+      };
+
+      withPbr = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.pbr];
+          };
+        };
+      };
+
+      withPdmBackend = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.pdm-backend];
+          };
+        };
+      };
+
+      withPoetryCore = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.poetry-core];
+          };
+        };
+      };
+
+      withSetuptoolsRust = { config, ...}: {
+        config = {
+          deps = { nixpkgs, ... }: {
+            inherit (nixpkgs) cargo rustc;
+          };
+          mkDerivation = {
+            nativeBuildInputs = [
+              config.deps.python.pkgs.setuptools-rust
+              config.deps.cargo config.deps.rustc
+            ];
+          };
+        };
+      };
+
+      withSetuptoolsScm = { config, ...}: {
+        config = {
+          mkDerivation = {
+            nativeBuildInputs = [config.deps.python.pkgs.setuptools-scm];
+          };
+        };
+      };
     in {
       aiofiles = withHatchling;
+      aioitertools = withFlitCore;
+      alembic = {config, ...}:
+        let
+          version = "69.2.0";
+          setuptools_69_2 = config.deps.python.pkgs.setuptools.overridePythonAttrs {
+            inherit version;
+            patches = [];
+            src = config.deps.fetchPypi {
+              pname = "setuptools";
+              inherit version;
+              hash = "sha256-D/QYP49CzY+jrOoWxFIFUhpO8o9zxjkdiiXpKJMTTy4=";
+            };
+          };
+        in {
+          deps = {nixpkgs, ...}: {
+            inherit (nixpkgs) fetchPypi;
+          };
+          mkDerivation.nativeBuildInputs = [setuptools_69_2];
+        };
+      altair = withHatchling;
+      annotated-types = withHatchling;
+      anyio = withSetuptoolsScm;
+      apache-airflow = withHatchling;
+      apache-airflow-providers-common-sql = withFlitCore;
+      argcomplete = withSetuptoolsScm;
+      argon2-cffi = withHatchVcs;
+      argon2-cffi-bindings = withSetuptoolsScm;
+      arrow = withFlitCore;
+      asttokens = withSetuptoolsScm;
+      attrs = withHatchVcs;
+      awswrangler = withPoetryCore;
+      backcall = withFlitCore;
+      backoff = withPoetryCore;
+      # backports-zoneinfo  # compile error?
+      bcrypt = withSetuptoolsRust;
+      beautifulsoup4 = withHatchling;
+      black = withHatchVcs;
+      blinker = withFlitCore;
+      bs4 = withHatchling;
+      build = withFlitCore;
+      cachecontrol = withFlitCore;
+      cattrs = withHatchVcs;
+      cffi = {config, ...}: {
+        deps = {nixpkgs, ...}: {
+          inherit (nixpkgs) libffi;
+        };
+        mkDerivation.buildInputs = [
+          config.deps.libffi
+        ];
+      };
+      cleo = withPoetryCore;
+      cloudpickle = withFlitCore;
+      colorama = withHatchling;
+      comm = withHatchling;
+      confluent-kafka = {config,...}: {
+        deps = {nixpkgs, ...}: {
+          inherit (nixpkgs) rdkafka;
+        };
+        mkDerivation.buildInputs = [
+          config.deps.rdkafka
+        ];
+      };
 
-      contourpy = withNinja;
+      contourpy = withMesonPy;
+      crashtest = withPoetryCore;
+      cryptography = withSetuptoolsRust;
+      databricks-sql-connector = withPoetryCore;
+      dataclasses-json = {config, ...}: {
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.poetry-dynamic-versioning ];
+      };
+      datadog = withHatchling;
+      db-contrib-tool = withPoetryCore;
+      dnspython = withHatchling;
+      docker = withHatchVcs;
+      docstring-parser = withPoetryCore;
+      docutils = withFlitCore;
+      dulwich = withSetuptoolsRust;
+      entrypoints = withFlitCore;
+      evergreen-py = withPoetryCore;
+      exceptiongroup = withFlitScm;
+      execnet = withHatchVcs;
+      executing = withSetuptoolsScm;
+      fastapi = withPdmBackend;
+      filelock = withHatchVcs;
+      flask = withFlitCore;
+      frozenlist = withExpandVars;
+      fsspec = withHatchVcs;
+      graphql-core = withPoetryCore;
       grpcio-tools = withCC;
       grpcio = withCC;
-
+      h5py.imports = [ withPkgConfig withCython ];
+      httpcore = withHatchVcs;
+      httpx = withHatchVcs;
+      hvac = withPoetryCore;
+      idna = withFlitCore;
+      importlib-metadata = withSetuptoolsScm;
+      importlib-resources = withSetuptoolsScm;
+      iniconfig = withHatchVcs;
+      installer = withFlitCore;
       ipykernel = withLibCPP;
+      isort = withPoetryCore;
+      itsdangerous = withFlitCore;
+      jaraco-classes = withSetuptoolsScm;
+      jaraco-functools = withSetuptoolsScm;
+      jeepney = withFlitCore;
+      jinja2 = withFlitCore;
+      jsonschema = withHatchVcs;
+      jsonschema-specifications = withHatchVcs;
+      jupyter-client = withHatchling;
+      jupyter-core = withHatchling;
+      jupyter-events = withHatchling;
+      jupyter-server = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+      };
+      jupyter-server-terminals = withHatchling;
+      jupyterlab = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+      };
+      jupyterlab-server = withHatchling;
+      #jupyterlab-widgets = ('jupyter_packaging',)
+      keyring = withSetuptoolsScm;
+      #kiwisolver = ('cppy',)
+      langchain-core = withPoetryCore;
+      lazy-object-proxy = withSetuptoolsScm;
+      libcst = {
+        imports = [withSetuptoolsRust withSetuptoolsScm];
+      };
+      lockfile = withPbr;
+
       lxml = { config, ...}: {
         imports = [ withPkgConfig ];
         config = {
@@ -146,15 +370,62 @@
         };
       };
 
-      matplotlib = withNinja;
-      numpy = withNinja;
+      lz4 = { config, ...}: {
+        imports = [withPkgConfig withSetuptoolsScm];
+      };
 
+      markdown-it-py = withFlitCore;
+      marshmallow = withFlitCore;
+      matplotlib = withMesonPy;
+      mdurl = withFlitCore;
+      more-itertools = withFlitCore;
+      msgpack = withCython;
+      mypy = {config, ...}: {
+        mkDerivation.propagatedBuildInputs = with config.deps.python.pkgs; [types-setuptools types-psutil];
+      };
+      nbclient = withHatchling;
+      nbconvert = withHatchling;
+      nbformat = {config, ...}: {
+        imports = [withHatchling];
+        mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-nodejs-version ];
+      };
+      nest-asyncio = withSetuptoolsScm;
+      nodeenv = withSetuptoolsScm;
+      notebook = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+      };
+      notebook-shim = withHatchling;
+      numpy = withMesonPy;
+      openai = withHatchVcs;
+      #opencv-python = ('skbuild',)
+      opentelemetry-api = withHatchling;
+      opentelemetry-exporter-otlp-proto-common = withHatchling;
+      opentelemetry-exporter-otlp-proto-grpc = withHatchling;
+      opentelemetry-exporter-otlp-proto-http = withHatchling;
+      opentelemetry-proto = withHatchling;
+      opentelemetry-sdk = withHatchling;
+      opentelemetry-semantic-conventions = withHatchling;
+      orbax-checkpoint = withFlitCore;
+      ordered-set = withFlitCore;
       orjson = withMaturin;
-      pandas = withNinja;
+      packaging = withFlitCore;
+      pandas = withMesonPy;
+      pathspec = withFlitCore;
       pendulum = withMaturin;
-      pydantic-core = withMaturin;
-      pymssql = withCC;
-      pyzmq = withCMake;
+      pg8000 = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
+      };
+      pkgutil-resolve-name = withFlitCore;
+      platformdirs = withHatchVcs;
+      plotly = {config, ...}: {
+        mkDerivation.propagatedBuildInputs = [ config.deps.python.pkgs.jupyterlab ];
+      };
+      pluggy = withSetuptoolsScm;
+      portalocker = withSetuptoolsScm;
+      prettytable = withHatchVcs;
+      progressbar2 = withSetuptoolsScm;
       psycopg2 = { config, ...}: {
         imports = [ withPkgConfig ];
         config = {
@@ -166,15 +437,50 @@
               config.deps.postgresql
             ];
           };
+          mkDerivation = { inherit (config.pip) nativeBuildInputs; };
         };
       };
       psycopg2-binary = useWheel;
+      ptyprocess = withFlitCore;
+      pure-eval = withSetuptoolsScm;
+      py = withSetuptoolsScm;
+      pyarrow = withCython;
+      pydantic = withHatchVcs;
+      pydantic-core = withMaturin;
+      pydeequ = withPoetryCore;
+      pygithub = withSetuptoolsScm;
+      pygments = withHatchling;
+      pymongo = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-requirements-txt ];
+      };
+      pymssql.imports = [ withCC withCython ];
+      pyparsing = withFlitCore;
+      pyproject-hooks = withFlitCore;
+      pytest = withSetuptoolsScm;
+      pytest-mock = withSetuptoolsScm;
+      pytest-runner = withSetuptoolsScm;
+      pytest-xdist = withSetuptoolsScm;
+      python-dateutil = withSetuptoolsScm;
+      python-multipart = withHatchling;
+      pytzdata = withPoetryCore;
+      pyyaml = withCython;
+      pyzmq = withCMake; #('scikit_build_core',)
+      #rapidfuzz = ('skbuild',)
+      referencing = withHatchVcs;
+      requests-file = withSetuptoolsScm;
+      retry = withPbr;
+      rfc3986-validator = {config, ...}: {
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.pytest-runner ];
+      };
+      rich = withPoetryCore;
       rpds-py = withMaturin;
+      rsa = withPoetryCore;
       safetensors = withMaturin;
-      scikit-image = withNinja;
-      scikit-learn = withNinja;
+      scikit-image = withMesonPy;
+      scikit-learn = withMesonPy;
       scipy = { config, ...}: {
-        imports = [withNinja];
+        imports = [withMesonPy];
         config = {
           deps = { nixpkgs, ... }: {
             inherit (nixpkgs) gfortran openblas;
@@ -187,20 +493,70 @@
           };
         };
       };
+      scramp = {config, ...}: {
+        imports = [withHatchling];
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
+      };
+      seaborn = withFlitCore;
+      semver = withSetuptoolsScm;
       setuptools.pip.ignoredDependencies = lib.mkForce [ "wheel" ];
-      wheel.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
       shapely = withLibCPP;
+      slack-sdk = {config, ...}: {
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.pytest-runner ];
+      };
+      sniffio = withSetuptoolsScm;
+      snowflake-connector-python = withCython;
+      snowflake-sqlalchemy = withHatchling;
+      soupsieve = withHatchling;
+      sphinx = withFlitCore;
+      sqlalchemy = withCython;
+      sqlparse = withHatchling;
+      stack-data = withSetuptoolsScm;
+      starlette = withHatchling;
+      statsmodels.imports = [withSetuptoolsScm withCython];
+      structlog = withHatchVcs;
+      tabulate = withSetuptoolsScm;
+      tenacity = withSetuptoolsScm;
+      termcolor = withHatchVcs;
+      terminado = withHatchling;
       tensorboard = useWheel;
       tensorboard-data-server = useWheel;
       tensorflow-estimator = useWheel;
       tensorflow-io-gcs-filesystem = useWheel;
       tensorflow = useWheel;
+      threadpoolctl = withFlitCore;
+      tinycss2 = withFlitCore;
       tokenizers = withMaturin;
       torch = useWheel;
       torchvision = useWheel;
+      tomli = withFlitCore;
+      tomlkit = withPoetryCore;
+      tox = withHatchVcs;
+      tqdm = withSetuptoolsScm;
+      traitlets = withHatchling;
+      trove-classifiers = {config, ...}: {
+        config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.calver ];
+      };
+      typeguard = withSetuptoolsScm;
+      typer = withPdmBackend;
+      typing-extensions = withFlitCore;
+      ujson = withSetuptoolsScm;
+      uri-template = withSetuptoolsScm;
+      urllib3 = withHatchling;
+      uvicorn = withHatchling;
+      uvloop = withCython;
+      virtualenv = withHatchVcs;
       wandb = useWheel;
       watchfiles = withMaturin;
+      werkzeug = withFlitCore;
+      wheel = {
+        imports = [ withFlitCore ];
+        config.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
+      };
+      #widgetsnbextension = ('jupyter_packaging',)
       xgboost = withCMake;
+      yarl = withExpandVars;
+      zipp = withSetuptoolsScm;
     };
 
     makePackage = {name, version, system}:
