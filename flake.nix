@@ -34,18 +34,10 @@
       # locking failed
       "shapely"  # libstdc++.6.so
       "ipykernel" # libstdc++.6.so
-      "delta-spark"
-      "jupyterlab-pygments"
-      "matplotlib"
-      "mysql-connector-python"
-      "numpy" # did withLibCPP work before with stdenv.cc.cc.lib.lib ?
-      "pandas"
-      "redshift-connector"
-      "scikit-image"
-      "scikit-learn"
-      "scipy"
-      "tb-nightly"
-      "xgboost"
+      "matplotlib" # fails at np.get_include() from numpy
+      "pandas" # fails at np.get_include() from numpy
+      "scikit-learn"  # fails at np.get_include() from numpy
+      "scipy" # fails at np.get_include() from numpy
     ];
     requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
 
@@ -66,7 +58,6 @@
       };
 
       withPkgConfig = { config, ...}: {
-        imports = [ withCC ];
         config = {
           deps = { nixpkgs, ... }: {
             inherit (nixpkgs) pkg-config;
@@ -295,6 +286,7 @@
         config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.poetry-dynamic-versioning ];
       };
       datadog = withHatchling;
+      delta-spark = useWheel;
       db-contrib-tool = withPoetryCore;
       dnspython = withHatchling;
       docker = withHatchVcs;
@@ -345,6 +337,7 @@
         config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
       };
       jupyterlab-server = withHatchling;
+      jupyterlab-pygments = useWheel;
       #jupyterlab-widgets = ('jupyter_packaging',)
       keyring = withSetuptoolsScm;
       #kiwisolver = ('cppy',)
@@ -383,6 +376,7 @@
       mypy = {config, ...}: {
         mkDerivation.propagatedBuildInputs = with config.deps.python.pkgs; [types-setuptools types-psutil];
       };
+      mysql-connector-python = useWheel;
       nbclient = withHatchling;
       nbconvert = withHatchling;
       nbformat = {config, ...}: {
@@ -396,7 +390,15 @@
         config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
       };
       notebook-shim = withHatchling;
-      numpy = withMesonPy;
+      numpy = {config, ...}: {
+        imports = [withMesonPy];
+        config = {
+          deps = {nixpkgs, ...}: {
+            inherit (nixpkgs) coreutils;
+          };
+          pip.nativeBuildInputs = [ config.deps.coreutils ];
+        };
+      };
       openai = withHatchVcs;
       #opencv-python = ('skbuild',)
       opentelemetry-api = withHatchling;
@@ -467,6 +469,7 @@
       pyyaml = withCython;
       pyzmq = withCMake; #('scikit_build_core',)
       #rapidfuzz = ('skbuild',)
+      redshift-connector = useWheel;
       referencing = withHatchVcs;
       requests-file = withSetuptoolsScm;
       retry = withPbr;
@@ -477,7 +480,7 @@
       rpds-py = withMaturin;
       rsa = withPoetryCore;
       safetensors = withMaturin;
-      scikit-image = withMesonPy;
+      scikit-image.imports = [withMesonPy withPkgConfig];
       scikit-learn = withMesonPy;
       scipy = { config, ...}: {
         imports = [withMesonPy];
@@ -516,6 +519,7 @@
       statsmodels.imports = [withSetuptoolsScm withCython];
       structlog = withHatchVcs;
       tabulate = withSetuptoolsScm;
+      tb-nightly = useWheel;
       tenacity = withSetuptoolsScm;
       termcolor = withHatchVcs;
       terminado = withHatchling;
@@ -554,7 +558,16 @@
         config.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
       };
       #widgetsnbextension = ('jupyter_packaging',)
-      xgboost = withCMake;
+      xgboost = {config,...}: {
+        imports = [withCMake];
+        config = {
+          deps = { nixpkgs, ...}: {
+            inherit (nixpkgs) gnumake;
+          };
+          pip.nativeBuildInputs = [ config.deps.gnumake ];
+          mkDerivation.nativeBuildInputs = [ config.deps.gnumake ];
+        };
+      };
       yarl = withExpandVars;
       zipp = withSetuptoolsScm;
     };
