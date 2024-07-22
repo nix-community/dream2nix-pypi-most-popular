@@ -10,9 +10,9 @@
       },
       "multiprocess": {
         "is_direct": false,
-        "sha256": "af4cabb0dac72abfb1e794fa7855c325fd2b55a10a44628a3c1ad3311c04127a",
+        "sha256": "fc0544c531920dde3b00c29863377f87e1632601092ea2daca74e4beb40faa2e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/50/15/b56e50e8debaf439f44befec5b2af11db85f6e0f344c3113ae0be0593a91/multiprocess-0.70.16-py311-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/0a/7d/a988f258104dcd2ccf1ed40fdc97e26c4ac351eeaf81d76e266c52d84e2f/multiprocess-0.70.16-py312-none-any.whl",
         "version": "0.70.16"
       },
       "pathos": {
@@ -54,5 +54,5 @@
       }
     }
   },
-  "invalidationHash": "448091177460bc9aa5d2db9083d8d08eee4cfa647680d99bd708f2cecc30185e"
+  "invalidationHash": "74f61c7aa1fafe088f92a7ce7f3e58a9b8f65c95110ece0f324a92e1f85ae092"
 }

@@ -3,10 +3,10 @@
     "sources": {
       "astroid": {
         "is_direct": false,
-        "sha256": "3eae9ea67c11c858cdd2c91337d2e816bd019ac897ca07d7b346ac10105fceb3",
+        "sha256": "413658a61eeca6202a59231abb473f932038fbcbf1666587f66d482083413a25",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/27/98/318351f17c4c2f59b7d7fc8280fc95c0159357732a26cc6b33de0aeca44d/astroid-3.2.3-py3-none-any.whl",
-        "version": "3.2.3"
+        "url": "https://files.pythonhosted.org/packages/80/96/b32bbbb46170a1c8b8b1f28c794202e25cfe743565e9d3469b8eb1e0cc05/astroid-3.2.4-py3-none-any.whl",
+        "version": "3.2.4"
       },
       "dill": {
         "is_direct": false,
@@ -70,5 +70,5 @@
       }
     }
   },
-  "invalidationHash": "5ef18885154391b03be2adbbe1a09a53641cac0627d2e3603c52b3e549d82e57"
+  "invalidationHash": "d57861220886c5dc3f1f4e79058ff6f9eade4b38ca12c0d7f6c77619919cd3c3"
 }

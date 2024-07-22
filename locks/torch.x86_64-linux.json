@@ -24,9 +24,9 @@
       },
       "markupsafe": {
         "is_direct": false,
-        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "sha256": "f5dfb42c4604dddc8e4305050aa6deb084540643ed5804d7455b5df8fe16f5e5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0a/0d/2454f072fae3b5a137c119abf15465d1771319dfe9e4acbb31722a0fff91/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.1.5"
       },
       "mpmath": {
@@ -136,16 +136,9 @@
       },
       "torch": {
         "is_direct": false,
-        "sha256": "b2ec81b61bb094ea4a9dee1cd3f7b76a44555375719ad29f05c0ca8ef596ad39",
+        "sha256": "a486c0b1976a118805fc7c9641d02df7afbb0c21e6b555d3bb985c9f9601b61a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/07/9a/4c5e74264439837814656201da13a898056a5201c976ef042544bceb840f/torch-2.3.1-cp311-cp311-manylinux1_x86_64.whl",
-        "version": "2.3.1"
-      },
-      "triton": {
-        "is_direct": false,
-        "sha256": "c9d64ae33bcb3a7a18081e3a746e8cf87ca8623ca13d2c362413ce7a486f893e",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/64/16/956b7b9d2ed3a437a1a06792b2ae2e3c49147296ba2f4d59fcee376ded8f/triton-2.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f3/82/68ccd49add4d21937f087871350905ffc709f32c92bf95334e7abf442147/torch-2.3.1-cp312-cp312-manylinux1_x86_64.whl",
         "version": "2.3.1"
       },
       "typing-extensions": {
@@ -206,15 +199,11 @@
           "nvidia-nccl-cu12",
           "nvidia-nvtx-cu12",
           "sympy",
-          "triton",
           "typing-extensions"
-        ],
-        "triton": [
-          "filelock"
         ],
         "typing-extensions": []
       }
     }
   },
-  "invalidationHash": "2cfff75c63a7ced0f678bc2ab1ae4140760ba4756d624b286b2a997881fa8d40"
+  "invalidationHash": "fcf3dcff1474bd89b97655cd2d52a8614347b5fefd42e12e26a269a5b346235f"
 }

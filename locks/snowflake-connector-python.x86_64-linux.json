@@ -17,16 +17,16 @@
       },
       "cffi": {
         "is_direct": false,
-        "sha256": "7b78010e7b97fef4bee1e896df8a4bbb6712b7f05b7ef630f9d1da00f6444d2e",
+        "sha256": "e715596e683d2ce000574bae5d07bd522c781a822866c20495e52520564f0969",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9b/89/a31c81e36bbb793581d8bba4406a8aac4ba84b2559301c44eef81f4cf5df/cffi-1.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/d4/8759cc3b2222c159add8ce3af0089912203a31610f4be4c36f98e320b4c6/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.16.0"
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "cryptography": {
@@ -80,10 +80,10 @@
       },
       "pyopenssl": {
         "is_direct": false,
-        "sha256": "17ed5be5936449c5418d1cd269a1a9e9081bc54c17aed272b45856a3d3dc86ad",
+        "sha256": "967d5719b12b243588573f39b0c677637145c7a1ffedcd495a487e58177fbb8d",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/54/a7/2104f674a5a6845b04c8ff01659becc6b8978ca410b82b94287e0b1e018b/pyOpenSSL-24.1.0-py3-none-any.whl",
-        "version": "24.1.0"
+        "url": "https://files.pythonhosted.org/packages/d9/dd/e0aa7ebef5168c75b772eda64978c597a9129b46be17779054652a7999e4/pyOpenSSL-24.2.1-py3-none-any.whl",
+        "version": "24.2.1"
       },
       "pytz": {
         "is_direct": false,
@@ -187,5 +187,5 @@
       }
     }
   },
-  "invalidationHash": "746597ac3a6da6fa1a23dccc3eef5cd2a1f968b4889a6194146922e305819897"
+  "invalidationHash": "3632687ca158632543b536762815e070a96d9c7fca15b394bf6147e86d37c783"
 }

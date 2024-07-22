@@ -3,9 +3,9 @@
     "sources": {
       "coverage": {
         "is_direct": false,
-        "sha256": "03cafe82c1b32b770a29fd6de923625ccac3185a54a5e66606da26d105f37dac",
+        "sha256": "0086cd4fc71b7d485ac93ca4239c8f75732c2ae3ba83f6be1c9be59d9e2c6382",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/39/33/da23d8bfdfdc5c221d2c9a2f169f63a4e04b9a0327c1c67777157155e4d6/coverage-7.6.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f2/aa/0419103c357bfd95a65d7b2e2249f9f1d79194241c5e87819cd81d36b96c/coverage-7.6.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "7.6.0"
       },
       "iniconfig": {
@@ -31,10 +31,10 @@
       },
       "pytest": {
         "is_direct": false,
-        "sha256": "c434598117762e2bd304e526244f67bf66bbd7b5d6cf22138be51ff661980343",
+        "sha256": "e9600ccf4f563976e2c99fa02c7624ab938296551f280835ee6516df8bc4ae8c",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4e/e7/81ebdd666d3bff6670d27349b5053605d83d55548e6bd5711f3b0ae7dd23/pytest-8.2.2-py3-none-any.whl",
-        "version": "8.2.2"
+        "url": "https://files.pythonhosted.org/packages/b9/77/ccea391104f576a6e54a54334fc26d29c28aa0ec85714c781fbd2c34ac86/pytest-8.3.1-py3-none-any.whl",
+        "version": "8.3.1"
       },
       "pytest-cov": {
         "is_direct": false,
@@ -62,5 +62,5 @@
       }
     }
   },
-  "invalidationHash": "6424d5246c23937236c98f9fb0db2e448cf4323c3f521e4b06cafcaa97f25205"
+  "invalidationHash": "0c800dd403afb692f2d336c46dade9311c0aeffdca8ef5db1672a92aec88b794"
 }

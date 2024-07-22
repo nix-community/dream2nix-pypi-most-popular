@@ -17,9 +17,9 @@
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "google-api-core": {
@@ -80,9 +80,9 @@
       },
       "grpcio": {
         "is_direct": false,
-        "sha256": "27adee2338d697e71143ed147fe286c05810965d5d30ec14dd09c22479bfe48a",
+        "sha256": "9e6a8f3d6c41e6b642870afe6cafbaf7b61c57317f9ec66d0efdaf19db992b90",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f5/b1/30d9103229c9a6c8f869fd5148e774be16a5bafc7ef8623540e1b7554155/grpcio-1.65.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/d3/2d/b8fcbe1d504a2b86ffd7f20591a62553b96d38f879aa9045961ae47b8eb6/grpcio-1.65.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.65.1"
       },
       "grpcio-status": {
@@ -229,5 +229,5 @@
       }
     }
   },
-  "invalidationHash": "efd3bb431134bd655e8c4618bd9e940abb373266ad2a2325e71488c0b1775687"
+  "invalidationHash": "76d83b8e52a460f63596b7861bb599840100fc1f52006963b3286352f1159b48"
 }

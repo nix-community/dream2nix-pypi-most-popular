@@ -10,10 +10,10 @@
       },
       "numpy": {
         "is_direct": false,
-        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "sha256": "6790654cb13eab303d8402354fabd47472b24635700f631f041bd0b65e37298a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "2.0.0"
+        "url": "https://files.pythonhosted.org/packages/2c/f3/61eeef119beb37decb58e7cb29940f19a1464b8608f2cab8a8616aba75fd/numpy-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.1"
       },
       "packaging": {
         "is_direct": false,
@@ -24,16 +24,16 @@
       },
       "pandas": {
         "is_direct": false,
-        "sha256": "6d2123dc9ad6a814bcdea0f099885276b31b24f7edf40f6cdbc0912672e22eee",
+        "sha256": "eee3a87076c0756de40b05c5e9a6069c035ba43e8dd71c379e68cab2c20f16ad",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fc/a5/4d82be566f069d7a9a702dcdf6f9106df0e0b042e738043c0cc7ddd7e3f6/pandas-2.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/40/10/79e52ef01dfeb1c1ca47a109a01a248754ebe990e159a844ece12914de83/pandas-2.2.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.2.2"
       },
       "pyarrow": {
         "is_direct": false,
-        "sha256": "e3343cb1e88bc2ea605986d4b94948716edc7a8d14afd4e2c097232f729758b4",
+        "sha256": "b0c6ac301093b42d34410b187bba560b17c0330f64907bfa4f7f7f2444b0cf9b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4c/21/9ca93b84b92ef927814cb7ba37f0774a484c849d58f0b692b16af8eebcfb/pyarrow-17.0.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/c4/9625418a1413005e486c006e56675334929fad864347c5ae7c1b2e7fe639/pyarrow-17.0.0-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "17.0.0"
       },
       "python-dateutil": {
@@ -93,5 +93,5 @@
       }
     }
   },
-  "invalidationHash": "62c2073454df25d1f32f37e4680664964da910f68deffd2cc14c5dc620b4aa1c"
+  "invalidationHash": "09dc7e60d5bf972d84807e9459ad9a0df4d1825915226a3a8f9551b742265887"
 }

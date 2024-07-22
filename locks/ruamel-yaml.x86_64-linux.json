@@ -10,9 +10,9 @@
       },
       "ruamel-yaml-clib": {
         "is_direct": false,
-        "sha256": "25c515e350e5b739842fc3228d662413ef28f295791af5e5110b543cf0b57d9b",
+        "sha256": "d176b57452ab5b7028ac47e7b3cf644bcfdc8cacfecf7e71759f7f51a59e5c92",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/a4/f7/22d6b620ed895a05d40802d8281eff924dc6190f682d933d4efff60db3b5/ruamel.yaml.clib-0.2.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/30/d3/5fe978cd01a61c12efd24d65fa68c6f28f28c8073a06cf11db3a854390ca/ruamel.yaml.clib-0.2.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl",
         "version": "0.2.8"
       }
     },
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "d5c1d18a8cca6784b1466870b3f402453bff46ef4c032718789d5358fd2c972e"
+  "invalidationHash": "2927f94dd00bc3a252a2ec49277f7b6db1b4199142990b269c6ded0bb5cfb1f2"
 }

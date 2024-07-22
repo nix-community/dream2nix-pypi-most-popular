@@ -17,9 +17,9 @@
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "idna": {
@@ -52,16 +52,16 @@
       },
       "langsmith": {
         "is_direct": false,
-        "sha256": "8acb27844ff5263bde14b23425f83ee63996f4d5a8e9998cdeef07fd913137ff",
+        "sha256": "811210b9d5f108f36431bd7b997eb9476a9ecf5a2abd7ddbb606c1cdcf0f43ce",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/02/01/9715e44fea7466718a36b5746889f64b10af7a237c7cd8772f8da5ee1521/langsmith-0.1.92-py3-none-any.whl",
-        "version": "0.1.92"
+        "url": "https://files.pythonhosted.org/packages/97/06/f7a49f0414796ba181a31ef0a26a9f9a3af193327cbf21a668e72d769076/langsmith-0.1.93-py3-none-any.whl",
+        "version": "0.1.93"
       },
       "orjson": {
         "is_direct": false,
-        "sha256": "05ac3d3916023745aa3b3b388e91b9166be1ca02b7c7e41045da6d12985685f0",
+        "sha256": "446dee5a491b5bc7d8f825d80d9637e7af43f86a331207b9c9610e2f93fee22a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/09/28/2f44c58edd42d53ef4a994e0a548eef1df170454fb74416ef80271850588/orjson-3.10.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/2f/d9/f6158899462baaf13f98c80186965201b8920a1cfd58c3b614b8f2924535/orjson-3.10.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.10.6"
       },
       "packaging": {
@@ -80,16 +80,16 @@
       },
       "pydantic-core": {
         "is_direct": false,
-        "sha256": "d3f3ed29cd9f978c604708511a1f9c2fdcb6c38b9aae36a51905b8811ee5cbf1",
+        "sha256": "26dc97754b57d2fd00ac2b24dfa341abffc380b823211994c4efac7f13b9e90e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3c/ae/fc99ce1ba791c9e9d1dee04ce80eef1dae5b25b27e3fc8e19f4e3f1348bf/pydantic_core-2.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/b3/a5a54b47cccd1ab661ed5775235c5e06924753c2d4817737c5667bfa19a8/pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.20.1"
       },
       "pyyaml": {
         "is_direct": false,
-        "sha256": "d2b04aac4d386b172d5b9692e2d2da8de7bfb6c387fa4f801fbf6fb2e6ba4673",
+        "sha256": "6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/7b/5e/efd033ab7199a0b2044dab3b9f7a4f6670e6a52c089de572e928d2873b06/PyYAML-6.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/b4/33/720548182ffa8344418126017aa1d4ab4aeec9a2275f04ce3f3573d8ace8/PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "6.0.1"
       },
       "requests": {
@@ -167,5 +167,5 @@
       }
     }
   },
-  "invalidationHash": "10666777173cb77e7fa6fad4475aaacf167a6f39933a65877e3371be8f6f4fea"
+  "invalidationHash": "c7f79c08aa3e3508627c54d94380e2463a19bf4b31188caca60dc7fab5260d08"
 }

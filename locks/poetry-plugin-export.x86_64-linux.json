@@ -24,16 +24,16 @@
       },
       "cffi": {
         "is_direct": false,
-        "sha256": "7b78010e7b97fef4bee1e896df8a4bbb6712b7f05b7ef630f9d1da00f6444d2e",
+        "sha256": "e715596e683d2ce000574bae5d07bd522c781a822866c20495e52520564f0969",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9b/89/a31c81e36bbb793581d8bba4406a8aac4ba84b2559301c44eef81f4cf5df/cffi-1.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/d4/8759cc3b2222c159add8ce3af0089912203a31610f4be4c36f98e320b4c6/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.16.0"
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "cleo": {
@@ -52,10 +52,10 @@
       },
       "cryptography": {
         "is_direct": false,
-        "sha256": "9c0c1716c8447ee7dbf08d6db2e5c41c688544c61074b54fc4564196f55c25a7",
+        "sha256": "cb013933d4c127349b3948aa8aaf2f12c0353ad0eccd715ca789c8a0f671646f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fa/e2/b7e6e8c261536c489d9cf908769880d94bd5d9a187e166b0dc838d2e6a56/cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl",
-        "version": "42.0.8"
+        "url": "https://files.pythonhosted.org/packages/0f/6c/b42660b3075ff543065b2c1c5a3d9bedaadcff8ebce2ee981be2babc2934/cryptography-43.0.0-cp39-abi3-manylinux_2_28_x86_64.whl",
+        "version": "43.0.0"
       },
       "distlib": {
         "is_direct": false,
@@ -66,9 +66,9 @@
       },
       "dulwich": {
         "is_direct": false,
-        "sha256": "7bca4b86e96d6ef18c5bc39828ea349efb5be2f9b1f6ac9863f90589bac1084d",
+        "sha256": "6c589468e5c0cd84e97eb7ec209ab005a2cb69399e8c5861c3edfe38989ac3a8",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d3/42/4f9d76a5d6dc9a952553418379d17364c161c0d3da6e5dfff6d5e455c666/dulwich-0.21.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/e0/a1/fcfabd5bba9b0cfb99bbbe9c3f2c6634e17dfb3e2c0c3b6e84352c6a8fd9/dulwich-0.21.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.21.7"
       },
       "fastjsonschema": {
@@ -91,13 +91,6 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/e5/3e/741d8c82801c347547f8a2a06aa57dbb1992be9e948df2ea0eda2c8b79e8/idna-3.7-py3-none-any.whl",
         "version": "3.7"
-      },
-      "importlib-metadata": {
-        "is_direct": false,
-        "sha256": "15584cf2b1bf449d98ff8a6ff1abef57bf20f3ac6454f431736cd3e660921b2f",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/dc/ef/38766b2edb096260d9b1b6ad35adaa0bce3b0567abb452b21eb074af88c4/importlib_metadata-8.0.0-py3-none-any.whl",
-        "version": "8.0.0"
       },
       "installer": {
         "is_direct": false,
@@ -136,9 +129,9 @@
       },
       "msgpack": {
         "is_direct": false,
-        "sha256": "83b5c044f3eff2a6534768ccfd50425939e7a8b5cf9a7261c385de1e20dcfc85",
+        "sha256": "8db8e423192303ed77cff4dce3a4b88dbfaf43979d280181558af5e2c3c71afc",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f6/f0/a7bdb48223cd21b9abed814b08fca8fe6a40931e70ec97c24d2f15d68ef3/msgpack-1.0.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/04/2a/c833a8503be9030083f0469e7a3c74d3622a3b4eae676c3934d3ccc01036/msgpack-1.0.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.0.8"
       },
       "packaging": {
@@ -213,9 +206,9 @@
       },
       "rapidfuzz": {
         "is_direct": false,
-        "sha256": "b76f611935f15a209d3730c360c56b6df8911a9e81e6a38022efbfb96e433bab",
+        "sha256": "db0bf0663b4b6da1507869722420ea9356b6195aa907228d6201303e69837af9",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/a0/ee/fdea3f1cff33bc806f7f13e3405d752b0844ec8ba47c634784e49ea14280/rapidfuzz-3.9.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0f/b0/ba391db47a5ae3139c97b68f97248c79c794293818be26899dbaee9d16c8/rapidfuzz-3.9.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.9.4"
       },
       "requests": {
@@ -273,13 +266,6 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/07/4d/410156100224c5e2f0011d435e477b57aed9576fc7fe137abcf14ec16e11/virtualenv-20.26.3-py3-none-any.whl",
         "version": "20.26.3"
-      },
-      "zipp": {
-        "is_direct": false,
-        "sha256": "f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/20/38/f5c473fe9b90c8debdd29ea68d5add0289f1936d6f923b6b9cc0b931194c/zipp-3.19.2-py3-none-any.whl",
-        "version": "3.19.2"
       }
     },
     "targets": {
@@ -313,16 +299,12 @@
         "fastjsonschema": [],
         "filelock": [],
         "idna": [],
-        "importlib-metadata": [
-          "zipp"
-        ],
         "installer": [],
         "jaraco-classes": [
           "more-itertools"
         ],
         "jeepney": [],
         "keyring": [
-          "importlib-metadata",
           "jaraco-classes",
           "jeepney",
           "secretstorage"
@@ -387,10 +369,9 @@
           "distlib",
           "filelock",
           "platformdirs"
-        ],
-        "zipp": []
+        ]
       }
     }
   },
-  "invalidationHash": "25506b468491649897ccc5c4c512dc16190476deba4c8a878051ed72c2d6d269"
+  "invalidationHash": "60a43b4317b2d6ff29350d0e93928c7bae57815624b30ef3f2daf5237277082b"
 }

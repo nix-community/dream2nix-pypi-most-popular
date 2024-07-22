@@ -10,9 +10,9 @@
       },
       "frozenlist": {
         "is_direct": false,
-        "sha256": "4f9c515e7914626b2a2e1e311794b4c35720a0be87af52b79ff8e1429fc25f19",
+        "sha256": "9acbb16f06fe7f52f441bb6f413ebae6c37baa6ef9edd49cdd567216da8600cd",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b3/c9/0bc5ee7e1f5cc7358ab67da0b7dfe60fbd05c254cea5c6108e7d1ae28c63/frozenlist-1.4.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0b/f2/b8158a0f06faefec33f4dff6345a575c18095a44e52d4f10c678c137d0e0/frozenlist-1.4.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.4.1"
       }
     },
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "37a10f7b57d697755d2f445db5a01b1b20e2c6d279da9c98d401010ccaecedce"
+  "invalidationHash": "8143811e5041de48fda8eebcfd19785f7d9f5c379d6e83f8b4a92814d04829d9"
 }

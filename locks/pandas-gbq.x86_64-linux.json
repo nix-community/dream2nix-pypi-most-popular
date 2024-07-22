@@ -17,9 +17,9 @@
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "db-dtypes": {
@@ -66,9 +66,9 @@
       },
       "google-crc32c": {
         "is_direct": false,
-        "sha256": "77e2fd3057c9d78e225fa0a2160f96b64a824de17840351b26825b0848022906",
+        "sha256": "89284716bc6a5a415d4eaa11b1726d2d60a0cd12aadf5439828353662ede9dd7",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/72/92/2a2fa23db7d0b0382accbdf09768c28f7c07fc8c354cdcf2f44a47f4314e/google_crc32c-1.5.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/d3/a5/4bb58448fffd36ede39684044df93a396c13d1ea3516f585767f9f960352/google-crc32c-1.5.0.tar.gz",
         "version": "1.5.0"
       },
       "google-resumable-media": {
@@ -87,9 +87,9 @@
       },
       "grpcio": {
         "is_direct": false,
-        "sha256": "27adee2338d697e71143ed147fe286c05810965d5d30ec14dd09c22479bfe48a",
+        "sha256": "9e6a8f3d6c41e6b642870afe6cafbaf7b61c57317f9ec66d0efdaf19db992b90",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f5/b1/30d9103229c9a6c8f869fd5148e774be16a5bafc7ef8623540e1b7554155/grpcio-1.65.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/d3/2d/b8fcbe1d504a2b86ffd7f20591a62553b96d38f879aa9045961ae47b8eb6/grpcio-1.65.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.65.1"
       },
       "grpcio-status": {
@@ -108,10 +108,10 @@
       },
       "numpy": {
         "is_direct": false,
-        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "sha256": "6790654cb13eab303d8402354fabd47472b24635700f631f041bd0b65e37298a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "2.0.0"
+        "url": "https://files.pythonhosted.org/packages/2c/f3/61eeef119beb37decb58e7cb29940f19a1464b8608f2cab8a8616aba75fd/numpy-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.1"
       },
       "oauthlib": {
         "is_direct": false,
@@ -129,9 +129,9 @@
       },
       "pandas": {
         "is_direct": false,
-        "sha256": "6d2123dc9ad6a814bcdea0f099885276b31b24f7edf40f6cdbc0912672e22eee",
+        "sha256": "eee3a87076c0756de40b05c5e9a6069c035ba43e8dd71c379e68cab2c20f16ad",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fc/a5/4d82be566f069d7a9a702dcdf6f9106df0e0b042e738043c0cc7ddd7e3f6/pandas-2.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/40/10/79e52ef01dfeb1c1ca47a109a01a248754ebe990e159a844ece12914de83/pandas-2.2.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.2.2"
       },
       "pandas-gbq": {
@@ -157,9 +157,9 @@
       },
       "pyarrow": {
         "is_direct": false,
-        "sha256": "e3343cb1e88bc2ea605986d4b94948716edc7a8d14afd4e2c097232f729758b4",
+        "sha256": "b0c6ac301093b42d34410b187bba560b17c0330f64907bfa4f7f7f2444b0cf9b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4c/21/9ca93b84b92ef927814cb7ba37f0774a484c849d58f0b692b16af8eebcfb/pyarrow-17.0.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/c4/9625418a1413005e486c006e56675334929fad864347c5ae7c1b2e7fe639/pyarrow-17.0.0-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "17.0.0"
       },
       "pyasn1": {
@@ -220,10 +220,10 @@
       },
       "setuptools": {
         "is_direct": false,
-        "sha256": "f501b6e6db709818dc76882582d9c516bf3b67b948864c5fa1d1624c09a49207",
+        "sha256": "33874fdc59b3188304b2e7c80d9029097ea31627180896fb549c578ceb8a0855",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/32/10/e72bb221cdd2f11e649cf38bd7ba8ea6d527c77f330366e10ae9bb798730/setuptools-71.0.3-py3-none-any.whl",
-        "version": "71.0.3"
+        "url": "https://files.pythonhosted.org/packages/51/a0/ee460cc54e68afcf33190d198299c9579a5eafeadef0016ae8563237ccb6/setuptools-71.1.0-py3-none-any.whl",
+        "version": "71.1.0"
       },
       "six": {
         "is_direct": false,
@@ -365,5 +365,5 @@
       }
     }
   },
-  "invalidationHash": "c2fd9a1db6d08b0c8fc06117736d77b8ce24577534cb2b8af62da2b647904a76"
+  "invalidationHash": "fa820d40fe3df5117d40873bcbd065b0829f2f602a5d9522d0af23e8903423b4"
 }

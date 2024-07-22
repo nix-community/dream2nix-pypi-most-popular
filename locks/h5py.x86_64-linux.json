@@ -10,10 +10,10 @@
       },
       "numpy": {
         "is_direct": false,
-        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "sha256": "6790654cb13eab303d8402354fabd47472b24635700f631f041bd0b65e37298a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "2.0.0"
+        "url": "https://files.pythonhosted.org/packages/2c/f3/61eeef119beb37decb58e7cb29940f19a1464b8608f2cab8a8616aba75fd/numpy-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.1"
       }
     },
     "targets": {
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "0198a63ffb1cd6fd8cb964e7ca20efb4f0e2cda7421d3d36c095a0da1f820280"
+  "invalidationHash": "c21db98fc0bda35b3044043367e6e1dd989993abaa062cfb001f762ebad2394e"
 }

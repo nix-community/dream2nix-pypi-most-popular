@@ -10,9 +10,9 @@
       },
       "h5py": {
         "is_direct": false,
-        "sha256": "52c416f8eb0daae39dabe71415cb531f95dce2d81e1f61a74537a50c63b28ab3",
+        "sha256": "aa6ae84a14103e8dc19266ef4c3e5d7c00b68f21d07f2966f0ca7bdb6c2761fb",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/af/26/f231ee425c8df93c1abbead3d90ea4a5ff3d6aa49e0edfd3b4c017e74844/h5py-3.11.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/db/7e/fedac8bb8c4729409e2dec5e4136a289116d701d54f69ce73c5617afc5f0/h5py-3.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.11.0"
       },
       "keras": {
@@ -38,9 +38,9 @@
       },
       "ml-dtypes": {
         "is_direct": false,
-        "sha256": "e1e2f4237b459a63c97c2c9f449baa637d7e4c20addff6a9bac486f22432f3b6",
+        "sha256": "eaa32979ebfde3a0d7c947cafbf79edc1ec77ac05ad0780ee86c1d8df70f2259",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/84/17/a936d3dfad84d028ba8539a93167274b7dcd7985e0d9df487e94a62f9428/ml_dtypes-0.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/8c/ef/5635b60d444db9c949b32d4e1a0a30b3ac237afbd71cce8bd1ccfb145723/ml_dtypes-0.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.4.0"
       },
       "namex": {
@@ -52,16 +52,16 @@
       },
       "numpy": {
         "is_direct": false,
-        "sha256": "a7039a136017eaa92c1848152827e1424701532ca8e8967fe480fe1569dae581",
+        "sha256": "6790654cb13eab303d8402354fabd47472b24635700f631f041bd0b65e37298a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d1/27/2a7bd6855dc717aeec5f553073a3c426b9c816126555f8e616392eab856b/numpy-2.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "2.0.0"
+        "url": "https://files.pythonhosted.org/packages/2c/f3/61eeef119beb37decb58e7cb29940f19a1464b8608f2cab8a8616aba75fd/numpy-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.0.1"
       },
       "optree": {
         "is_direct": false,
-        "sha256": "e124f30daf79d51b1bbbda7e74d01e637fa47aff4aa64cb082b88057535daa64",
+        "sha256": "24d74a9d97d7bdbdbb30356850f204950c39ab8fad7f273ed29d1feda19060b2",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3d/fd/0d4e38b34ee0483f5fdfffda9523b0fbc9869e15ad1863b3b4d9ce9b32b1/optree-0.12.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/31/93/51ca86599d53d6fed0047ff3abbc4dacd9c4212d4e8c2ff92dc885e66d91/optree-0.12.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.12.1"
       },
       "packaging": {
@@ -131,5 +131,5 @@
       }
     }
   },
-  "invalidationHash": "02b0d0e45c2f9016f59a777c7eeb34d80c5997019e29c24ddcab2996721d21dc"
+  "invalidationHash": "c26fc3bfb943d31ed02d6dd32a5053e445cbd77970cb0904e64d24877c1b2f83"
 }

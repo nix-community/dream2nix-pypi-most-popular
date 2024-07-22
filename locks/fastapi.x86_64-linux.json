@@ -73,9 +73,9 @@
       },
       "httptools": {
         "is_direct": false,
-        "sha256": "7d9ceb2c957320def533671fc9c715a80c47025139c8d1f3797477decbc6edd2",
+        "sha256": "93ad80d7176aa5788902f207a4e79885f0576134695dfb0fefc15b7a4648d503",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/59/23/047a89e66045232fb82c50ae57699e40f70e073ae5ccd53f54e532fbd2a2/httptools-0.6.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/a2/9a/aa406864f3108e06f7320425a528ff8267124dead1fd72a3e9da2067f893/httptools-0.6.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.6.1"
       },
       "httpx": {
@@ -108,9 +108,9 @@
       },
       "markupsafe": {
         "is_direct": false,
-        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "sha256": "f5dfb42c4604dddc8e4305050aa6deb084540643ed5804d7455b5df8fe16f5e5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0a/0d/2454f072fae3b5a137c119abf15465d1771319dfe9e4acbb31722a0fff91/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.1.5"
       },
       "mdurl": {
@@ -129,9 +129,9 @@
       },
       "pydantic-core": {
         "is_direct": false,
-        "sha256": "d3f3ed29cd9f978c604708511a1f9c2fdcb6c38b9aae36a51905b8811ee5cbf1",
+        "sha256": "26dc97754b57d2fd00ac2b24dfa341abffc380b823211994c4efac7f13b9e90e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3c/ae/fc99ce1ba791c9e9d1dee04ce80eef1dae5b25b27e3fc8e19f4e3f1348bf/pydantic_core-2.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/b3/a5a54b47cccd1ab661ed5775235c5e06924753c2d4817737c5667bfa19a8/pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.20.1"
       },
       "pygments": {
@@ -157,9 +157,9 @@
       },
       "pyyaml": {
         "is_direct": false,
-        "sha256": "d2b04aac4d386b172d5b9692e2d2da8de7bfb6c387fa4f801fbf6fb2e6ba4673",
+        "sha256": "6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/7b/5e/efd033ab7199a0b2044dab3b9f7a4f6670e6a52c089de572e928d2873b06/PyYAML-6.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/b4/33/720548182ffa8344418126017aa1d4ab4aeec9a2275f04ce3f3573d8ace8/PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "6.0.1"
       },
       "rich": {
@@ -206,30 +206,30 @@
       },
       "uvicorn": {
         "is_direct": false,
-        "sha256": "cd17daa7f3b9d7a24de3617820e634d0933b69eed8e33a516071174427238c81",
+        "sha256": "94a3608da0e530cea8f69683aa4126364ac18e3826b6630d1a65f4638aade503",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b2/f9/e6f30ba6094733e4f9794fd098ca0543a19b07ac1fa3075d595bf0f1fb60/uvicorn-0.30.1-py3-none-any.whl",
-        "version": "0.30.1"
+        "url": "https://files.pythonhosted.org/packages/63/84/2a26b4eac1cf0c6b5b176dd4346cc4912af5e1b0efc150b865e28636ac34/uvicorn-0.30.3-py3-none-any.whl",
+        "version": "0.30.3"
       },
       "uvloop": {
         "is_direct": false,
-        "sha256": "5138821e40b0c3e6c9478643b4660bd44372ae1e16a322b8fc07478f92684e24",
+        "sha256": "7010271303961c6f0fe37731004335401eb9075a12680738731e9c92ddd96ad6",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/86/cc/1829b3f740e4cb1baefff8240a1c6fc8db9e3caac7b93169aec7d4386069/uvloop-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/fd/96/fdc318ffe82ae567592b213ec2fcd8ecedd927b5da068cf84d56b28c51a4/uvloop-0.19.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.19.0"
       },
       "watchfiles": {
         "is_direct": false,
-        "sha256": "94ebe84a035993bb7668f58a0ebf998174fb723a39e4ef9fce95baabb42b787f",
+        "sha256": "28585744c931576e535860eaf3f2c0ec7deb68e3b9c5a85ca566d69d36d8dd27",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9e/eb/a11634f2ac58e609ac1150c45897ec29361b2bcbfdae388f3f4fc709104b/watchfiles-0.22.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ae/10/97374c7c13827041c14dcda3cc1531a96b79c281ce6b1885dd62ae3419ad/watchfiles-0.22.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.22.0"
       },
       "websockets": {
         "is_direct": false,
-        "sha256": "6e9e7db18b4539a29cc5ad8c8b252738a30e2b13f033c2d6e9d0549b45841c04",
+        "sha256": "1f38a7b376117ef7aff996e737583172bdf535932c9ca021746573bce40165ed",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/e3/05/f52a60b66d9faf07a4f7d71dc056bffafe36a7e98c4eb5b78f04fe6e4e85/websockets-12.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/00/d6f01ca2b191f8b0808e4132ccd2e7691f0453cbd7d0f72330eb97453c3a/websockets-12.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "12.0"
       }
     },
@@ -329,5 +329,5 @@
       }
     }
   },
-  "invalidationHash": "0ad3137e72954532495f42c06d6cfbf4a7ef37fd85e2eddd551007bfe135b8c0"
+  "invalidationHash": "460ea325a3ec01095c4747bdeda89836ad33d8171725b4af376b4b3cba00cd57"
 }

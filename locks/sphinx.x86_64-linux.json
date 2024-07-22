@@ -24,9 +24,9 @@
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "docutils": {
@@ -59,9 +59,9 @@
       },
       "markupsafe": {
         "is_direct": false,
-        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "sha256": "f5dfb42c4604dddc8e4305050aa6deb084540643ed5804d7455b5df8fe16f5e5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0a/0d/2454f072fae3b5a137c119abf15465d1771319dfe9e4acbb31722a0fff91/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.1.5"
       },
       "packaging": {
@@ -115,10 +115,10 @@
       },
       "sphinxcontrib-htmlhelp": {
         "is_direct": false,
-        "sha256": "393f04f112b4d2f53d93448d4bce35842f62b307ccdc549ec1585e950bc35e04",
+        "sha256": "1b9af5a2671a61410a868fce050cab7ca393c218e6205cbc7f590136f207395c",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c2/e9/74c4cda5b409af3222fda38f0774e616011bc935f639dbc0da5ca2d1be7d/sphinxcontrib_htmlhelp-2.0.5-py3-none-any.whl",
-        "version": "2.0.5"
+        "url": "https://files.pythonhosted.org/packages/a4/b4/6ebbdc57b5b216b400b355f34ef669e9b6b5c31a6ede8cf5ac36f9e8fc0c/sphinxcontrib_htmlhelp-2.0.6-py3-none-any.whl",
+        "version": "2.0.6"
       },
       "sphinxcontrib-jsmath": {
         "is_direct": false,
@@ -129,10 +129,10 @@
       },
       "sphinxcontrib-qthelp": {
         "is_direct": false,
-        "sha256": "e2ae3b5c492d58fcbd73281fbd27e34b8393ec34a073c792642cd8e529288182",
+        "sha256": "323d6acc4189af76dfe94edd2a27d458902319b60fcca2aeef3b2180c106a75f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/80/b3/1beac14a88654d2e5120d0143b49be5ad450b86eb1963523d8dbdcc51eb2/sphinxcontrib_qthelp-1.0.7-py3-none-any.whl",
-        "version": "1.0.7"
+        "url": "https://files.pythonhosted.org/packages/cf/91/cec9416d27ebe9b8aa83f014a1ac8402c729aed791da67704e10bb2c8f33/sphinxcontrib_qthelp-1.0.8-py3-none-any.whl",
+        "version": "1.0.8"
       },
       "sphinxcontrib-serializinghtml": {
         "is_direct": false,
@@ -198,5 +198,5 @@
       }
     }
   },
-  "invalidationHash": "ec9427a3c5bb6cc5b0657def9cb9bb9cd95120d2a81c6ebb1f663872beddd6fa"
+  "invalidationHash": "edbde27599b0c5be5f5f4a02178f49a78bc288a2afc03d533fe4df4da0e21b04"
 }

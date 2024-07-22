@@ -10,23 +10,23 @@
       },
       "greenlet": {
         "is_direct": false,
-        "sha256": "b7f009caad047246ed379e1c4dbcb8b020f0a390667ea74d2387be2998f58a22",
+        "sha256": "fcd2469d6a2cf298f198f0487e0a5b1a47a42ca0fa4dfd1b6862c999f018ebbf",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c6/1f/12d5a6cc26e8b483c2e7975f9c22e088ac735c0d8dcb8a8f72d31a4e5f04/greenlet-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/bd/37/56b0da468a85e7704f3b2bc045015301bdf4be2184a44868c71f6dca6fe2/greenlet-3.0.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
         "version": "3.0.3"
       },
       "lxml": {
         "is_direct": false,
-        "sha256": "eb00b549b13bd6d884c863554566095bf6fa9c3cecb2e7b399c4bc7904cb33b5",
+        "sha256": "d26a618ae1766279f2660aca0081b2220aca6bd1aa06b2cf73f07383faf48927",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/ad/b7/0dc82afed00c4c189cfd0b83464f9a431c66de8e73d911063956a147276a/lxml-5.2.2-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/9a/87/cff3c63ebe067ec9a7cc1948c379b8a16e7990c29bd5baf77c0a1dbd03c0/lxml-5.2.2-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "5.2.2"
       },
       "sqlalchemy": {
         "is_direct": false,
-        "sha256": "2196208432deebdfe3b22185d46b08f00ac9d7b01284e168c212919891289396",
+        "sha256": "74afabeeff415e35525bf7a4ecdab015f00e06456166a2eba7590e49f8db940e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/bb/be/4045425132a2fde3422e0d2062e6a3b874e385b98b0442c1d7d29ac152bc/SQLAlchemy-2.0.31-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/60/f8/7794f3055d50e96cee04c19c7faeedacb323c7762f334660ba03bed95485/SQLAlchemy-2.0.31-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.0.31"
       },
       "typing-extensions": {
@@ -53,5 +53,5 @@
       }
     }
   },
-  "invalidationHash": "d1b8b40bdbbdca8bd5129b71cb0696b1804a264b42ed49fe64edcbfa186240ac"
+  "invalidationHash": "591ff70378eaf625c9d111d441965dfec33d46d1ad0056f104bfe61deaf48b31"
 }

@@ -10,9 +10,9 @@
       },
       "wrapt": {
         "is_direct": false,
-        "sha256": "72554a23c78a8e7aa02abbd699d129eead8b147a23c56e08d08dfc29cfdddca1",
+        "sha256": "98b5e1f498a8ca1858a1cdbffb023bfd954da4e3fa2c0cb5853d40014557248b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/6e/52/2da48b35193e39ac53cfb141467d9f259851522d0e8c87153f0ba4205fb1/wrapt-1.16.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/62/62/30ca2405de6a20448ee557ab2cd61ab9c5900be7cbd18a2639db595f0b98/wrapt-1.16.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.16.0"
       }
     },
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "7f306d74b8ca738924cb6cd645fd9bcaeda51e845172c27183a222bb2b4f342e"
+  "invalidationHash": "bd2cf803f73def961a02a73c469f1df33ebfc361ce8f002129dc973ef2f37e5d"
 }

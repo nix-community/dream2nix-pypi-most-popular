@@ -17,9 +17,9 @@
       },
       "rapidfuzz": {
         "is_direct": false,
-        "sha256": "b76f611935f15a209d3730c360c56b6df8911a9e81e6a38022efbfb96e433bab",
+        "sha256": "db0bf0663b4b6da1507869722420ea9356b6195aa907228d6201303e69837af9",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/a0/ee/fdea3f1cff33bc806f7f13e3405d752b0844ec8ba47c634784e49ea14280/rapidfuzz-3.9.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0f/b0/ba391db47a5ae3139c97b68f97248c79c794293818be26899dbaee9d16c8/rapidfuzz-3.9.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.9.4"
       }
     },
@@ -34,5 +34,5 @@
       }
     }
   },
-  "invalidationHash": "2a36116f1c0a53f3cdb76baba95da9ba14e8e005f996c03fe70579dc011bdaca"
+  "invalidationHash": "f7613361977166e8593c7a2ec31a910bb6aa18bc852a7c5ef5eb710f3d2f7ed4"
 }

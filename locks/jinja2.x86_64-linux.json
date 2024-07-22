@@ -10,9 +10,9 @@
       },
       "markupsafe": {
         "is_direct": false,
-        "sha256": "b91c037585eba9095565a3556f611e3cbfaa42ca1e865f7b8015fe5c7336d5a5",
+        "sha256": "f5dfb42c4604dddc8e4305050aa6deb084540643ed5804d7455b5df8fe16f5e5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/97/18/c30da5e7a0e7f4603abfc6780574131221d9148f323752c2755d48abad30/MarkupSafe-2.1.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0a/0d/2454f072fae3b5a137c119abf15465d1771319dfe9e4acbb31722a0fff91/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.1.5"
       }
     },
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "5b946505f753664f8c20e77ab4a34a1e921ec57bbb12572761c6d343625ca432"
+  "invalidationHash": "2770b1917c11ec6d84ab10a9430c257f832abab041f29fa668b945d44923b344"
 }

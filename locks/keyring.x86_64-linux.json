@@ -1,33 +1,19 @@
 {
   "fetchPipMetadata": {
     "sources": {
-      "backports-tarfile": {
-        "is_direct": false,
-        "sha256": "77e284d754527b01fb1e6fa8a1afe577858ebe4e9dad8919e34c862cb399bc34",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b9/fa/123043af240e49752f1c4bd24da5053b6bd00cad78c2be53c0d1e8b975bc/backports.tarfile-1.2.0-py3-none-any.whl",
-        "version": "1.2.0"
-      },
       "cffi": {
         "is_direct": false,
-        "sha256": "7b78010e7b97fef4bee1e896df8a4bbb6712b7f05b7ef630f9d1da00f6444d2e",
+        "sha256": "e715596e683d2ce000574bae5d07bd522c781a822866c20495e52520564f0969",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9b/89/a31c81e36bbb793581d8bba4406a8aac4ba84b2559301c44eef81f4cf5df/cffi-1.16.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/d4/8759cc3b2222c159add8ce3af0089912203a31610f4be4c36f98e320b4c6/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.16.0"
       },
       "cryptography": {
         "is_direct": false,
-        "sha256": "9c0c1716c8447ee7dbf08d6db2e5c41c688544c61074b54fc4564196f55c25a7",
+        "sha256": "cb013933d4c127349b3948aa8aaf2f12c0353ad0eccd715ca789c8a0f671646f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fa/e2/b7e6e8c261536c489d9cf908769880d94bd5d9a187e166b0dc838d2e6a56/cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl",
-        "version": "42.0.8"
-      },
-      "importlib-metadata": {
-        "is_direct": false,
-        "sha256": "15584cf2b1bf449d98ff8a6ff1abef57bf20f3ac6454f431736cd3e660921b2f",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/dc/ef/38766b2edb096260d9b1b6ad35adaa0bce3b0567abb452b21eb074af88c4/importlib_metadata-8.0.0-py3-none-any.whl",
-        "version": "8.0.0"
+        "url": "https://files.pythonhosted.org/packages/0f/6c/b42660b3075ff543065b2c1c5a3d9bedaadcff8ebce2ee981be2babc2934/cryptography-43.0.0-cp39-abi3-manylinux_2_28_x86_64.whl",
+        "version": "43.0.0"
       },
       "jaraco-classes": {
         "is_direct": false,
@@ -84,39 +70,25 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/54/24/b4293291fa1dd830f353d2cb163295742fa87f179fcc8a20a306a81978b7/SecretStorage-3.3.3-py3-none-any.whl",
         "version": "3.3.3"
-      },
-      "zipp": {
-        "is_direct": false,
-        "sha256": "f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/20/38/f5c473fe9b90c8debdd29ea68d5add0289f1936d6f923b6b9cc0b931194c/zipp-3.19.2-py3-none-any.whl",
-        "version": "3.19.2"
       }
     },
     "targets": {
       "default": {
-        "backports-tarfile": [],
         "cffi": [
           "pycparser"
         ],
         "cryptography": [
           "cffi"
         ],
-        "importlib-metadata": [
-          "zipp"
-        ],
         "jaraco-classes": [
           "more-itertools"
         ],
-        "jaraco-context": [
-          "backports-tarfile"
-        ],
+        "jaraco-context": [],
         "jaraco-functools": [
           "more-itertools"
         ],
         "jeepney": [],
         "keyring": [
-          "importlib-metadata",
           "jaraco-classes",
           "jaraco-context",
           "jaraco-functools",
@@ -128,10 +100,9 @@
         "secretstorage": [
           "cryptography",
           "jeepney"
-        ],
-        "zipp": []
+        ]
       }
     }
   },
-  "invalidationHash": "2db9f8644919d2989545767614983b8b23f685b69261c4dad83d47ec07f2bf78"
+  "invalidationHash": "cab6ef1a4a8baf771197e978a8bcd57eb6914b81ec5d1db1fbb666833f966e80"
 }

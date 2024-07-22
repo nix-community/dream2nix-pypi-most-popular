@@ -66,9 +66,9 @@
       },
       "pydantic-core": {
         "is_direct": false,
-        "sha256": "d3f3ed29cd9f978c604708511a1f9c2fdcb6c38b9aae36a51905b8811ee5cbf1",
+        "sha256": "26dc97754b57d2fd00ac2b24dfa341abffc380b823211994c4efac7f13b9e90e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3c/ae/fc99ce1ba791c9e9d1dee04ce80eef1dae5b25b27e3fc8e19f4e3f1348bf/pydantic_core-2.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/b3/a5a54b47cccd1ab661ed5775235c5e06924753c2d4817737c5667bfa19a8/pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.20.1"
       },
       "python-dateutil": {
@@ -87,9 +87,9 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "071d4adc734de562bd11d43bd134330fb6249769b2f66b9310dab7460f4bf714",
+        "sha256": "3b4cf5a9497874822341c2ebe0d5850fed392034caadc0bad134ab6822c0925b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/51/21/6fe3ff45570611d5475e9938d28785def6e4661cbd9aca48980aebe95031/rpds_py-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/8d/4f/11392ec52a9a4f9d37b5d07790139d31235fec1f552338612730e62e7126/rpds_py-0.19.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.19.0"
       },
       "s3transfer": {
@@ -176,5 +176,5 @@
       }
     }
   },
-  "invalidationHash": "9e3d6786ba6cfc2d7cb18e7c7b2f648d72d78a4730ea662ad9fc872289795ec1"
+  "invalidationHash": "2b6fc6cce90a284beb70d348b6f28598a80c9157a1c1ddea0f8863f5a55309c6"
 }

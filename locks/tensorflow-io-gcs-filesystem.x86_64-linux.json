@@ -3,9 +3,9 @@
     "sources": {
       "tensorflow-io-gcs-filesystem": {
         "is_direct": false,
-        "sha256": "ee7c8ee5fe2fd8cb6392669ef16e71841133041fee8a330eff519ad9b36e4556",
+        "sha256": "286389a203a5aee1a4fa2e53718c661091aa5fea797ff4fa6715ab8436b02e6c",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/66/7f/e36ae148c2f03d61ca1bff24bc13a0fef6d6825c966abef73fc6f880a23b/tensorflow_io_gcs_filesystem-0.37.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f0/9b/790d290c232bce9b691391cf16e95a96e469669c56abfb1d9d0f35fa437c/tensorflow_io_gcs_filesystem-0.37.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.37.1"
       }
     },
@@ -15,5 +15,5 @@
       }
     }
   },
-  "invalidationHash": "d3c377350a9bbe340bcf153ee8938c1969978f4d787dc4753a61809324298cee"
+  "invalidationHash": "021f6646cbd889f9f320967e26908921cf08fbd515608ee435f56b49b1a59ca0"
 }

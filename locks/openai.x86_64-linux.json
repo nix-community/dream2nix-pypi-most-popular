@@ -73,9 +73,9 @@
       },
       "pydantic-core": {
         "is_direct": false,
-        "sha256": "d3f3ed29cd9f978c604708511a1f9c2fdcb6c38b9aae36a51905b8811ee5cbf1",
+        "sha256": "26dc97754b57d2fd00ac2b24dfa341abffc380b823211994c4efac7f13b9e90e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3c/ae/fc99ce1ba791c9e9d1dee04ce80eef1dae5b25b27e3fc8e19f4e3f1348bf/pydantic_core-2.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/09/b3/a5a54b47cccd1ab661ed5775235c5e06924753c2d4817737c5667bfa19a8/pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.20.1"
       },
       "sniffio": {
@@ -145,5 +145,5 @@
       }
     }
   },
-  "invalidationHash": "35983049dbded6c3cc7c419a9a74778f0f2e43131f22885f818b194170fec48a"
+  "invalidationHash": "04147f6008b5d18c40069cce231da0e8189aa0dacc87f7b280529e84a5a227d8"
 }

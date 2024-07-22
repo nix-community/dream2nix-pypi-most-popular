@@ -73,9 +73,9 @@
       },
       "pyzmq": {
         "is_direct": false,
-        "sha256": "ac97a21de3712afe6a6c071abfad40a6224fd14fa6ff0ff8d0c6e6cd4e2f807a",
+        "sha256": "6ca7a9a06b52d0e38ccf6bca1aeff7be178917893f3883f37b75589d42c4ac20",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9b/20/92275f936eaa612f0192f8a02b2f66564e41498216f37a760501d2591149/pyzmq-26.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/4e/c0/7d2549581c074ac1016cc44a1f34d080c0a598c7b86747892012d1a04f0c/pyzmq-26.0.3-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "26.0.3"
       },
       "referencing": {
@@ -87,9 +87,9 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "071d4adc734de562bd11d43bd134330fb6249769b2f66b9310dab7460f4bf714",
+        "sha256": "3b4cf5a9497874822341c2ebe0d5850fed392034caadc0bad134ab6822c0925b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/51/21/6fe3ff45570611d5475e9938d28785def6e4661cbd9aca48980aebe95031/rpds_py-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/8d/4f/11392ec52a9a4f9d37b5d07790139d31235fec1f552338612730e62e7126/rpds_py-0.19.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "0.19.0"
       },
       "six": {
@@ -166,5 +166,5 @@
       }
     }
   },
-  "invalidationHash": "25144c300cbbf4965558d5dfdd74f55cc95a600607d193650a723ef38cfb0d22"
+  "invalidationHash": "1671add9b6d9bd5c20bcfe1616c97208586b2043ce57a2761220024f4ed9b1c5"
 }

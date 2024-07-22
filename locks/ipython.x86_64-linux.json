@@ -73,10 +73,10 @@
       },
       "pure-eval": {
         "is_direct": false,
-        "sha256": "01eaab343580944bc56080ebe0a674b39ec44a945e6d09ba7db3cb8cec289350",
+        "sha256": "1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/2b/27/77f9d5684e6bce929f5cfe18d6cfbe5133013c06cb2fbf5933670e60761d/pure_eval-0.2.2-py3-none-any.whl",
-        "version": "0.2.2"
+        "url": "https://files.pythonhosted.org/packages/8e/37/efad0257dc6e593a18957422533ff0f87ede7c9c6ea010a2177d738fb82f/pure_eval-0.2.3-py3-none-any.whl",
+        "version": "0.2.3"
       },
       "pygments": {
         "is_direct": false,
@@ -106,13 +106,6 @@
         "url": "https://files.pythonhosted.org/packages/00/c0/8f5d070730d7836adc9c9b6408dec68c6ced86b304a9b26a14df072a6e8c/traitlets-5.14.3-py3-none-any.whl",
         "version": "5.14.3"
       },
-      "typing-extensions": {
-        "is_direct": false,
-        "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
-        "type": "url",
-        "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
-        "version": "4.12.2"
-      },
       "wcwidth": {
         "is_direct": false,
         "sha256": "3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859",
@@ -136,8 +129,7 @@
           "prompt-toolkit",
           "pygments",
           "stack-data",
-          "traitlets",
-          "typing-extensions"
+          "traitlets"
         ],
         "jedi": [
           "parso"
@@ -162,10 +154,9 @@
           "pure-eval"
         ],
         "traitlets": [],
-        "typing-extensions": [],
         "wcwidth": []
       }
     }
   },
-  "invalidationHash": "3f36702b61efde33d393ff42fc127c6a22a544dade7b67ea993d47168826ccdf"
+  "invalidationHash": "fe43e4ec27215e4a49ae08b04ffc4ee8332390c261106e888fbb51e20c2b847a"
 }

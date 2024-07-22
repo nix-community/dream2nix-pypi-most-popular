@@ -10,9 +10,9 @@
       },
       "charset-normalizer": {
         "is_direct": false,
-        "sha256": "753f10e867343b4511128c6ed8c82f7bec3bd026875576dfd88483c5c73b2fd8",
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/40/26/f35951c45070edc957ba40a5b1db3cf60a9dbb1b350c2d5bef03e01e61de/charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "3.3.2"
       },
       "databricks-sql-connector": {
@@ -38,16 +38,16 @@
       },
       "lz4": {
         "is_direct": false,
-        "sha256": "0e9c410b11a31dbdc94c05ac3c480cb4b222460faf9231f12538d0074e56c563",
+        "sha256": "bca8fccc15e3add173da91be8f34121578dc777711ffd98d399be35487c934bf",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/cf/d4/12915eb3083dfd1746d50b71b73334030b129cd25abbed9133dd2d413c21/lz4-4.3.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/d9/93/4a7e489156fa7ded03ba9cde4a8ca7f373672b5787cac9a0391befa752a1/lz4-4.3.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "4.3.3"
       },
       "numpy": {
         "is_direct": false,
-        "sha256": "666dbfb6ec68962c033a450943ded891bed2d54e6755e35e5835d63f4f6931d5",
+        "sha256": "675d61ffbfa78604709862923189bad94014bef562cc35cf61d3a07bba02a7ed",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/3a/d0/edc009c27b406c4f9cbc79274d6e46d634d139075492ad055e3d68445925/numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/0f/50/de23fde84e45f5c4fda2488c759b69990fd4512387a8632860f3ac9cd225/numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.26.4"
       },
       "oauthlib": {
@@ -66,16 +66,16 @@
       },
       "pandas": {
         "is_direct": false,
-        "sha256": "d797591b6846b9db79e65dc2d0d48e61f7db8d10b2a9480b4e3faaddc421a171",
+        "sha256": "e9f17f2b6fc076b2a0078862547595d66244db0f41bf79fc5f64a5c4d635bead",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f8/8c/9ad173c5cd2c7178c84075c02ec37b5d1d53fb1d015f51ea3e623ea9c31c/pandas-2.1.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/5b/5f/076b1ce74f80df0a9db244d30e30c4d4dee45342cbfa5f3e01f64cadf663/pandas-2.1.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.1.4"
       },
       "pyarrow": {
         "is_direct": false,
-        "sha256": "a33a64576fddfbec0a44112eaf844c20853647ca833e9a647bfae0582b2ff94b",
+        "sha256": "e1369af39587b794873b8a307cc6623a3b1194e69399af0efd05bb202195a5a7",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fa/15/48a68b30542a0231a75c26d8661bc5c9bbc07b42c5b219e929adba814ba7/pyarrow-16.1.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/25/7b/8da91f8de0b40b760dd748031973b6ac2aa3d4f85c67f45b7e58577ca22e/pyarrow-16.1.0-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "16.1.0"
       },
       "python-dateutil": {
@@ -179,5 +179,5 @@
       }
     }
   },
-  "invalidationHash": "cb1f14bd745b5824164c6ff431198bf1de41bc60c1f98c8cfff37833c0723e21"
+  "invalidationHash": "8e8a18461c47ca518cb6111109128ac5748e784b3d3204a24ff780e8fa89f757"
 }

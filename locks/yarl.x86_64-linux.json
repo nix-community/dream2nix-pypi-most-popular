@@ -10,9 +10,9 @@
       },
       "multidict": {
         "is_direct": false,
-        "sha256": "85f67aed7bb647f93e7520633d8f51d3cbc6ab96957c71272b286b2f30dc70ed",
+        "sha256": "d84a5c3a5f7ce6db1f999fb9438f686bc2e09d38143f2d93d8406ed2dd6b9226",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/52/ec/be54a3ad110f386d5bd7a9a42a4ff36b3cd723ebe597f41073a73ffa16b8/multidict-6.0.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/24/1f/af976383b0b772dd351210af5b60ff9927e3abb2f4a103e93da19a957da0/multidict-6.0.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "6.0.5"
       },
       "yarl": {
@@ -34,5 +34,5 @@
       }
     }
   },
-  "invalidationHash": "e2a8ebe5cc66e02b9ebcb2f6c833094cf937d7c548b52cb88bbaa9ef6b6c71f8"
+  "invalidationHash": "98a84337aaf6677423c774213d1c300a5484b34ad7befbdc13620ecc88e9a897"
 }

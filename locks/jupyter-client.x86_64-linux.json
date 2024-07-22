@@ -31,9 +31,9 @@
       },
       "pyzmq": {
         "is_direct": false,
-        "sha256": "ac97a21de3712afe6a6c071abfad40a6224fd14fa6ff0ff8d0c6e6cd4e2f807a",
+        "sha256": "6ca7a9a06b52d0e38ccf6bca1aeff7be178917893f3883f37b75589d42c4ac20",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/9b/20/92275f936eaa612f0192f8a02b2f66564e41498216f37a760501d2591149/pyzmq-26.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/4e/c0/7d2549581c074ac1016cc44a1f34d080c0a598c7b86747892012d1a04f0c/pyzmq-26.0.3-cp312-cp312-manylinux_2_28_x86_64.whl",
         "version": "26.0.3"
       },
       "six": {
@@ -82,5 +82,5 @@
       }
     }
   },
-  "invalidationHash": "9a67acd36ee27ba25b89f633a0fca33fbf1564f21cb0191ae0ad1b5495bbce00"
+  "invalidationHash": "3d45ebc581d4cd936c715a0ee6c01718a300200d7fa88f49bb25027cb303ded8"
 }

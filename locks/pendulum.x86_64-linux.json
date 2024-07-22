@@ -24,9 +24,9 @@
       },
       "time-machine": {
         "is_direct": false,
-        "sha256": "55f373873583c93e2107e4e9e4db4cb4d637df75d82c57aaa6349c4993305b77",
+        "sha256": "faa7c67a1dafa29d17ca098b61a717419dd5c7ebb21f4f644f4a859983013273",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/81/1d/26c094f3f90baa52ef62ce154326e57325897278822a0038fd0ef6a10e5d/time_machine-2.14.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/10/1f/280452b24c86ff5929fa1d1270a0867aade5cd6af1fbf00fb9dc943dd7d5/time_machine-2.14.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "2.14.2"
       },
       "tzdata": {
@@ -55,5 +55,5 @@
       }
     }
   },
-  "invalidationHash": "6c77272f7b1aa85979aeceec8f682689c28aa15c596dde662926b20441d3f110"
+  "invalidationHash": "4903cbe8b07eb0f47f52705f3907d487b49402f835d24ee622a7b164bae394f5"
 }
