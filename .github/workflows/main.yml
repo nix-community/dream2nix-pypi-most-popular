@@ -6,11 +6,18 @@ on:
 
 jobs:
   Preparation:
+
+    permissions:
+      id-token: "write"
+      contents: "read"
     name: Lock
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
       - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Lock adal
         run: nix run .#adal.lock
       - name: Commit lock file
