@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.follows = "dream2nix/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     dream2nix.url = "github:nix-community/dream2nix";
     systems.url = "github:nix-systems/default";
   };
@@ -29,15 +29,8 @@
               (lib.readFile ./500-most-popular-pypi-packages.txt)))));
 
     toSkip = [
-      "dataclasses"  # in stdlib from 3.8
-      "pypular"  # TODO investigate how this got into the dataset, not even on pypi
-      # locking failed
-      "shapely"  # libstdc++.6.so
-      "ipykernel" # libstdc++.6.so
-      "matplotlib" # fails at np.get_include() from numpy
-      "pandas" # fails at np.get_include() from numpy
-      "scikit-learn"  # fails at np.get_include() from numpy
-      "scipy" # fails at np.get_include() from numpy
+      "dataclasses"  # in pythons stdlib since python 3.8
+      "pypular" # https://tomaselli.page/blog/pypular-removed-from-pypi.html
     ];
     requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
 
@@ -54,7 +47,9 @@
       useWheel.pip.pipFlags = lib.mkForce [];
 
       withLibCPP = { config, ...}: {
-        # TODO FIXME
+        config.pip.env = {
+          LD_LIBRARY_PATH = "${config.deps.stdenv.cc.cc.lib}/lib";
+        };
       };
 
       withPkgConfig = { config, ...}: {
@@ -213,6 +208,26 @@
           };
         };
       };
+
+      withNumpy = {config, ...}: {
+        imports = [withMesonPy withPkgConfig];
+        config = let
+          python = config.deps.python;
+          inherit (python.pkgs) numpy_2 pythran;
+          numpyCrossFile = config.deps.writeText "cross-file-numpy.conf" ''
+                [properties]
+                numpy-include-dir = '${numpy_2}/${python.sitePackages}/numpy/_core/include'
+                pythran-include-dir = '${pythran}/${python.sitePackages}/pythran'
+                host-python-path = '${python.interpreter}'
+                host-python-version = '${python.pythonVersion}'
+            '';
+        in {
+          mkDerivation.propagatedBuildInputs = [numpy_2 pythran];
+          pip.env.PIP_CONFIG_SETTINGS = "setup-args=--cross-file=${numpyCrossFile}";
+        };
+      };
+
+
     in {
       aiofiles = withHatchling;
       aioitertools = withFlitCore;
@@ -369,7 +384,22 @@
 
       markdown-it-py = withFlitCore;
       marshmallow = withFlitCore;
-      matplotlib = withMesonPy;
+      matplotlib = {config, ...}: {
+        imports = [withNumpy];
+        config = {
+          deps = {nixpkgs, ...}: {
+            inherit (nixpkgs) openblas;
+          };
+          mkDerivation = {
+            nativeBuildInputs = [
+              config.deps.openblas
+            ];
+          };
+          pip.nativeBuildInputs = [
+            config.deps.openblas
+          ];
+        };
+      };
       mdurl = withFlitCore;
       more-itertools = withFlitCore;
       msgpack = withCython;
@@ -412,7 +442,7 @@
       ordered-set = withFlitCore;
       orjson = withMaturin;
       packaging = withFlitCore;
-      pandas = withMesonPy;
+      pandas.imports = [withNumpy];
       pathspec = withFlitCore;
       pendulum = withMaturin;
       pg8000 = {config, ...}: {
@@ -480,20 +510,23 @@
       rpds-py = withMaturin;
       rsa = withPoetryCore;
       safetensors = withMaturin;
-      scikit-image.imports = [withMesonPy withPkgConfig];
-      scikit-learn = withMesonPy;
+      scikit-image = {config,...}: {
+        imports = [withNumpy ];
+        config.pip.env = {
+          LD_LIBRARY_PATH = "${config.deps.stdenv.cc.cc.lib}/lib";
+        };
+      };
+      scikit-learn.imports = [withNumpy];
       scipy = { config, ...}: {
-        imports = [withMesonPy];
+        imports = [withNumpy];
         config = {
           deps = { nixpkgs, ... }: {
             inherit (nixpkgs) gfortran openblas;
           };
-          pip = {
-            nativeBuildInputs = [
-              config.deps.gfortran
-              config.deps.openblas
-            ];
-          };
+          pip.nativeBuildInputs = [
+            config.deps.gfortran
+            config.deps.openblas
+          ];
         };
       };
       scramp = {config, ...}: {
