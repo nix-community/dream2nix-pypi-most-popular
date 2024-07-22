@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:  
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  Preparation:
+    name: Lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - name: Lock adal
+        run: nix run .#adal.lock
+      - name: Commit lock file
+        run: |
+          git config --global user.name 'automated lock update'
+          git config --global user.email 'lock@users.noreply.github.com'
+          git commit -am "Automated lock update"
+          git push
+      - run: nix build .#adal
