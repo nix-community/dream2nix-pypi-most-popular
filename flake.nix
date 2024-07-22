@@ -643,24 +643,18 @@
         text = lib.concatStringsSep "\n"
           (lib.mapAttrsToList
             (name: pkg: ''
-              if [ -f ${pkg.config.paths.lockFile} ]
+              echo -n '${name}: locking (${lib.getExe pkg.lock}) ... ';
+              error_log="locks/$(basename ${pkg.config.paths.lockFile} ".json").error.log"
+              if ${lib.getExe pkg.lock} &>lock_out
               then
-                echo "${name}: lock exists, skipping"
+                echo "success!";
+                rm "$error_log" || true
               else
-                echo -n '${name}: locking (${lib.getExe pkg.lock}) ... ';
-                error_log="locks/$(basename ${pkg.config.paths.lockFile} ".json").error.log"
-
-                if ${lib.getExe pkg.lock} &>lock_out
-                then
-                  echo "success!";
-                  rm "$error_log" || true
-                else
-                  echo "error!"
-                  mv lock_out  "$error_log"
-                fi
-                rm lock_out || true
+                echo "error!"
+                mv lock_out  "$error_log"
               fi
-             '')
+              rm lock_out || true
+            '')
             self.packages.${system});
       };
     in {
