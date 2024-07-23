@@ -227,6 +227,15 @@
         };
       };
 
+      withCoreutils = {config, ... }: {
+          deps = {nixpkgs, ...}: {
+            inherit (nixpkgs) coreutils;
+          };
+          mkDerivation.nativeBuildInputs = [config.deps.coreutils];
+          pip.nativeBuildInputs = [config.deps.coreutils];
+      };
+
+
 
     in {
       aiofiles = withHatchling;
@@ -385,19 +394,13 @@
       markdown-it-py = withFlitCore;
       marshmallow = withFlitCore;
       matplotlib = {config, ...}: {
-        imports = [withNumpy];
+        imports = [withNumpy withCoreutils];
         config = {
           deps = {nixpkgs, ...}: {
             inherit (nixpkgs) openblas;
           };
-          mkDerivation = {
-            nativeBuildInputs = [
-              config.deps.openblas
-            ];
-          };
-          pip.nativeBuildInputs = [
-            config.deps.openblas
-          ];
+          mkDerivation.nativeBuildInputs = [config.deps.openblas];
+          pip.nativeBuildInputs = [config.deps.openblas];
         };
       };
       mdurl = withFlitCore;
@@ -511,12 +514,9 @@
       rsa = withPoetryCore;
       safetensors = withMaturin;
       scikit-image = {config,...}: {
-        imports = [withNumpy ];
-        config.pip.env = {
-          LD_LIBRARY_PATH = "${config.deps.stdenv.cc.cc.lib}/lib";
-        };
+        imports = [withNumpy withLibCPP];
       };
-      scikit-learn.imports = [withNumpy];
+      scikit-learn.imports = [withNumpy withCoreutils];
       scipy = { config, ...}: {
         imports = [withNumpy];
         config = {
