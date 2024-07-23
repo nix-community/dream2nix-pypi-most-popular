@@ -31,6 +31,13 @@
     toSkip = [
       "dataclasses"  # in pythons stdlib since python 3.8
       "pypular" # https://tomaselli.page/blog/pypular-removed-from-pypi.html
+      # locking currently broken
+      "great-expectations"  # versioneer is broken with python3.12
+      "opencv-python" # distutils, scikit-build
+      "opt-einsum"  # versioneer is broken with python3.12
+      "pandas"  # numpy import broken
+      "pydata-google-auth" # versioneer is broken with python3.12
+      "scipy" # f2py fortran failed
     ];
     requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
 
