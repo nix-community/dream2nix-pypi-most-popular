@@ -647,22 +647,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
       lockAll = pkgs.writeShellApplication {
         name = "lock-all";
-        text = lib.concatStringsSep "\n"
-          (lib.mapAttrsToList
-            (name: pkg: ''
-              echo -n '${name}: locking (${lib.getExe pkg.lock}) ... ';
-              error_log="locks/$(basename ${pkg.config.paths.lockFile} ".json").error.log"
-              if ${lib.getExe pkg.lock} &>lock_out
-              then
-                echo "success!";
-                rm "$error_log" || true
-              else
-                echo "error!"
-                mv lock_out  "$error_log"
-              fi
-              rm lock_out || true
-            '')
-            self.packages.${system});
+        runtimeInputs = [ pkgs.nix-eval-jobs pkgs.parallel pkgs.jq ];
+        text = ''
+          nix-eval-jobs --flake .#lib.${system}.lockScripts \
+           | parallel --pipe "jq -r .drvPath" \
+           | parallel "nix build --no-link --print-out-paths {}^out" \
+           | parallel "{}/bin/refresh"
+        '';
       };
     in {
       lock-all = {
@@ -671,6 +662,22 @@
       };
     });
 
+    lib = eachSystem (system:
+      let
+        packages = self.packages.${system};
+        partitioned = builtins.partition (package:
+          let
+            result = builtins.tryEval package.config.lock.isValid;
+          in
+            result.success && result.value
+        ) (builtins.attrValues packages);
+        packagesValid = map (p: p.config.name) partitioned.right;
+        packagesToLock = map (p: p.config.name) partitioned.wrong;
+        lockScripts = lib.genAttrs packagesToLock (name: packages.${name}.lock);
+
+    in {
+      inherit packages packagesValid packagesToLock lockScripts;
+    });
     devShells = eachSystem(system: let
       pkgs = nixpkgs.legacyPackages.${system};
       python = pkgs.python3.withPackages (ps: [
