@@ -100,7 +100,7 @@
           in
             result.success && result.value
         ) (builtins.attrValues packages);
-        packagesValid = map (p: p.config.name) partitioned.right;
+        packagesValid = lib.listToAttrs (map (p: {name = p.config.name; value = p;}) partitioned.right);
         packagesToLock = map (p: p.config.name) partitioned.wrong;
         lockScripts = lib.genAttrs packagesToLock (name: packages.${name}.lock);
 

@@ -16,6 +16,7 @@ jobs:
         run: |
           currentSystem="$(nix eval --raw --impure --expr builtins.currentSystem)"
           nix run github:Mic92/nix-fast-build -- \
+            --eval-workers 1 \
             --no-nom \
             --skip-cached \
             --flake .#lib.$currentSystem.packagesValid
