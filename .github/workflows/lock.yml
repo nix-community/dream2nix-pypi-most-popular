@@ -1,0 +1,27 @@
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: "write"
+      contents: "read"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: lock all packages with missing or outdated locks
+        run: |
+          nix run .#lock-all
+      - name: Commit lock file
+        run: |
+          git config --global user.name 'automated lock update'
+          git config --global user.email 'lock@users.noreply.github.com'
+          git commit -am "Automated lock update"
+          git push

@@ -1,29 +1,21 @@
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   pull_request:
   push:
     branches: [main]
 
 jobs:
-  Preparation:
-
-    permissions:
-      id-token: "write"
-      contents: "read"
-    name: Lock
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT }}
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: Lock adal
-        run: nix run .#adal.lock
-      - name: Commit lock file
+      - name: Build packages
+        # Github CI has a limit of 256 jobs per matrix, so we just try to build everything at once.
         run: |
-          git config --global user.name 'automated lock update'
-          git config --global user.email 'lock@users.noreply.github.com'
-          git commit -am "Automated lock update"
-          git push
-      - run: nix build .#adal
+          currentSystem="$(nix eval --raw --impure --expr builtins.currentSystem)"
+          nix run github:Mic92/nix-fast-build -- \
+            --no-nom \
+            --skip-cached \
+            --flake .#lib.$currentSystem.packagesValid
