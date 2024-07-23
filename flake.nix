@@ -42,8 +42,11 @@
     overrides = import ./overrides.nix { inherit lib; };
     requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
     makePackage = {name, version, system}:
-      dream2nix.lib.evalModules {
-        packageSets.nixpkgs = nixpkgs.legacyPackages.${system};
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in dream2nix.lib.evalModules {
+        packageSets.nixpkgs = pkgs;
+        packageSets.local = { maturin = pkgs.callPackage ./maturin.nix {}; };
         modules = [
           ({
             config,
@@ -70,6 +73,7 @@
           (overrides.${name} or {})
         ];
       };
+
   in {
     packages = eachSystem (system: lib.mapAttrs (name: version: makePackage {inherit name version system; }) requirements);
     apps = eachSystem(system: let

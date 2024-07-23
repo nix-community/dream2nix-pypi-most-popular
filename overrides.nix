@@ -8,7 +8,13 @@
     };
   };
 
-  useWheel.pip.pipFlags = lib.mkForce [];
+  useWheel = {
+    pip.pipFlags = lib.mkForce [];
+    buildPythonPackage = {
+      pyproject = lib.mkForce null;
+      format = lib.mkForce "wheel";
+    };
+  };
 
   withLibCPP = { config, ...}: {
     config.pip.env = {
@@ -55,7 +61,7 @@
       };
       mkDerivation.nativeBuildInputs = [
         config.deps.ninja
-        config.deps.python.pkgs.meson
+        config.deps.python.pkgs.meson-python
       ];
     };
   };
@@ -83,8 +89,9 @@
         config.deps.cargo config.deps.rustc
       ];
     in {
-      deps = { nixpkgs, ... }: {
-        inherit (nixpkgs) cargo rustc maturin;
+      deps = { nixpkgs, local, ... }: {
+        inherit (nixpkgs) cargo rustc;
+        inherit (local) maturin;
       };
       pip = {inherit nativeBuildInputs;};
       mkDerivation = {inherit nativeBuildInputs;};
@@ -157,9 +164,9 @@
         inherit (nixpkgs) cargo rustc;
       };
       pip.nativeBuildInputs = [
-          config.deps.python.pkgs.setuptools-rust
-          config.deps.cargo config.deps.rustc
-        ];
+        config.deps.python.pkgs.setuptools-rust
+        config.deps.cargo config.deps.rustc
+      ];
       mkDerivation = {
         nativeBuildInputs = [
           config.deps.python.pkgs.setuptools-rust
@@ -169,10 +176,27 @@
     };
   };
 
+  withDistutils = { config, ...}: {
+    config = {
+      # https://nixpk.gs/pr-tracker.html?pr=328379
+      #mkDerivation = lib.mkIf (config.deps.python.pythonAtLeast "3.12") {
+      #  nativeBuildInputs = [config.deps.python.pkgs.distutils];
+      #};
+    };
+  };
+
   withSetuptoolsScm = { config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.setuptools-scm];
+      };
+    };
+  };
+
+  withSKBuild = { config, ...}: {
+    config = {
+      mkDerivation = {
+        nativeBuildInputs = [config.deps.python.pkgs.scikit-build];
       };
     };
   };
@@ -272,9 +296,10 @@ in {
 
   contourpy = withMesonPy;
   crashtest = withPoetryCore;
-  cryptography.imports = [withSetuptoolsRust];
-  databricks-sql-connector = withPoetryCore;
+  cryptography.imports = [withMaturin];
+  databricks-sql-connector.imports = [withPoetryCore withDistutils];
   dataclasses-json = {config, ...}: {
+    imports = [ withPoetryCore ];
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.poetry-dynamic-versioning ];
   };
   datadog = withHatchling;
@@ -293,12 +318,18 @@ in {
   fastapi = withPdmBackend;
   filelock = withHatchVcs;
   flask = withFlitCore;
-  frozenlist = withExpandVars;
+  frozenlist.imports = [withExpandVars withCython];
   fsspec = withHatchVcs;
   graphql-core = withPoetryCore;
   grpcio-tools = withCC;
   grpcio = withCC;
-  h5py.imports = [ withPkgConfig withCython ];
+  h5py = {config, ...}: {
+    imports = [ withPkgConfig withCython ];
+    config = {
+      deps = { nixpkgs, ... }: { inherit (nixpkgs) hdf5; };
+      mkDerivation.nativeBuildInputs = [ config.deps.hdf5.dev ];
+    };
+  };
   httpcore = withHatchVcs;
   httpx = withHatchVcs;
   hvac = withPoetryCore;
@@ -307,7 +338,7 @@ in {
   importlib-resources = withSetuptoolsScm;
   iniconfig = withHatchVcs;
   installer = withFlitCore;
-  ipykernel = withLibCPP;
+  ipykernel.imports = [ withHatchling withLibCPP];
   isort = withPoetryCore;
   itsdangerous = withFlitCore;
   jaraco-classes = withSetuptoolsScm;
@@ -330,18 +361,33 @@ in {
   };
   jupyterlab-server = withHatchling;
   jupyterlab-pygments = useWheel;
-  #jupyterlab-widgets = ('jupyter_packaging',)
+
+  jupyterlab-widgets = {config, ...}: {
+    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.jupyter-packaging];
+  };
+
   keyring = withSetuptoolsScm;
-  #kiwisolver = ('cppy',)
+  kiwisolver = {config, ...}: {
+    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.cppy];
+  };
   langchain-core = withPoetryCore;
   lazy-object-proxy = withSetuptoolsScm;
   libcst = {
     imports = [withSetuptoolsRust withSetuptoolsScm];
   };
+  llvmlite = {config, ...}: {
+    config = {
+      deps = { nixpkgs, ... }: {
+        inherit (nixpkgs) llvm;
+      };
+      mkDerivation.buildInputs = [config.deps.llvm];
+    };
+  };
+
   lockfile = withPbr;
 
   lxml = { config, ...}: {
-    imports = [ withPkgConfig ];
+    imports = [ withPkgConfig withCython ];
     config = {
       deps = { nixpkgs, ... }: {
         inherit (nixpkgs) libxml2 libxslt;
@@ -359,6 +405,7 @@ in {
     imports = [withPkgConfig withSetuptoolsScm];
   };
 
+  makefun = withSetuptoolsScm;
   markdown-it-py = withFlitCore;
   marshmallow = withFlitCore;
   matplotlib = {config, ...}: {
@@ -388,7 +435,10 @@ in {
   nodeenv = withSetuptoolsScm;
   notebook = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+    config.mkDerivation = {
+      nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+      buildInputs = [ config.deps.python.pkgs.jupyterlab ];
+    };
   };
   notebook-shim = withHatchling;
   numpy = {config, ...}: {
@@ -401,7 +451,7 @@ in {
     };
   };
   openai = withHatchVcs;
-  #opencv-python = ('skbuild',) # distutils
+  opencv-python.imports = [ withSKBuild withDistutils ];
   opentelemetry-api = withHatchling;
   opentelemetry-exporter-otlp-proto-common = withHatchling;
   opentelemetry-exporter-otlp-proto-grpc = withHatchling;
@@ -421,6 +471,19 @@ in {
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
   };
   pkgutil-resolve-name = withFlitCore;
+  pillow = {config, ...}: {
+    config = {
+      deps = { nixpkgs, ... }: {
+        inherit (nixpkgs) zlib;
+      };
+      mkDerivation = {
+        buildInputs = [
+          config.deps.zlib.dev
+        ];
+      };
+    };
+  };
+
   platformdirs = withHatchVcs;
   plotly = {config, ...}: {
     mkDerivation.propagatedBuildInputs = [ config.deps.python.pkgs.jupyterlab ];
@@ -447,7 +510,7 @@ in {
   ptyprocess = withFlitCore;
   pure-eval = withSetuptoolsScm;
   py = withSetuptoolsScm;
-  pyarrow = withCython;
+  pyarrow.imports = [withSetuptoolsScm withCython];
   pydantic = withHatchVcs;
   pydantic-core = withMaturin;
   pydeequ = withPoetryCore;
@@ -457,8 +520,21 @@ in {
     imports = [withHatchling];
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-requirements-txt ];
   };
-  pymssql.imports = [ withCC withCython ];
+  pymssql.imports = [ withCC withCython withSetuptoolsScm ];
   pyparsing = withFlitCore;
+  pyodbc = {config, ...}: {
+    config = {
+      deps = { nixpkgs, ... }: {
+        inherit (nixpkgs) unixODBC;
+      };
+      mkDerivation = {
+        buildInputs = [
+          config.deps.unixODBC
+        ];
+      };
+    };
+  };
+
   pyproject-hooks = withFlitCore;
   pytest = withSetuptoolsScm;
   pytest-mock = withSetuptoolsScm;
@@ -468,8 +544,19 @@ in {
   python-multipart = withHatchling;
   pytzdata = withPoetryCore;
   pyyaml = withCython;
-  pyzmq = withCMake; #('scikit_build_core',)
-  #rapidfuzz = ('skbuild',)
+  pyzmq = { config, ...}: {
+    imports = [withCMake];
+    config = {
+      deps = { nixpkgs, ... }: {
+        inherit (nixpkgs) zeromq libsodium;
+      };
+      mkDerivation.buildInputs = [
+        config.deps.zeromq
+        config.deps.libsodium
+      ];
+    };
+  };
+  rapidfuzz.imports = [ withSKBuild ];
   redshift-connector = useWheel;
   referencing = withHatchVcs;
   requests-file = withSetuptoolsScm;
@@ -495,6 +582,10 @@ in {
         config.deps.gfortran
         config.deps.openblas
       ];
+      mkDerivation.buildInputs = [
+        config.deps.gfortran
+        config.deps.openblas
+      ];
     };
   };
   scramp = {config, ...}: {
@@ -502,9 +593,21 @@ in {
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
   };
   seaborn = withFlitCore;
+  selenium.imports = [ withSetuptoolsRust ];
   semver = withSetuptoolsScm;
+  sentencepiece.imports = [ withCMake ];
   setuptools.pip.ignoredDependencies = lib.mkForce [ "wheel" ];
-  shapely = withLibCPP;
+  shapely = { config, ...}: {
+    imports = [withLibCPP];
+    config = {
+      deps = { nixpkgs, ... }: {
+        inherit (nixpkgs) geos;
+      };
+      mkDerivation.buildInputs = [
+        config.deps.geos
+      ];
+    };
+  };
   slack-sdk = {config, ...}: {
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.pytest-runner ];
   };
@@ -530,6 +633,7 @@ in {
   tensorflow-io-gcs-filesystem = useWheel;
   tensorflow = useWheel;
   threadpoolctl = withFlitCore;
+  thrift.imports = [withDistutils];
   tinycss2 = withFlitCore;
   tokenizers = withMaturin;
   torch = useWheel;
@@ -558,7 +662,10 @@ in {
     imports = [ withFlitCore ];
     config.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
   };
-  #widgetsnbextension = ('jupyter_packaging',)
+  widgetsnbextension = {config, ...}: {
+    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.jupyter-packaging];
+  };
+
   xgboost = {config,...}: {
     imports = [withCMake];
     config = {
@@ -569,6 +676,6 @@ in {
       mkDerivation.nativeBuildInputs = [ config.deps.gnumake ];
     };
   };
-  yarl = withExpandVars;
+  yarl.imports = [ withCython withExpandVars];
   zipp = withSetuptoolsScm;
 }
