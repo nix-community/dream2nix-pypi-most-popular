@@ -45,10 +45,10 @@
       },
       "langchain-core": {
         "is_direct": false,
-        "sha256": "3d1e28179a5d496b900ebef45e1471eaae9fb63fc570f89ded78b026fd08ba84",
+        "sha256": "582d6f929a43b830139444e4124123cd415331ad62f25757b1406252958cdcac",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/15/d7/3b81a0cb080879ece5ec9b7c7f63b011312131f2dd020b297349e281deba/langchain_core-0.2.21.tar.gz",
-        "version": "0.2.21"
+        "url": "https://files.pythonhosted.org/packages/0d/ca/ba5136a6100696b1a4ea9be2afa2cd5cf84e53757bf934620a2d5df47bf6/langchain_core-0.2.22.tar.gz",
+        "version": "0.2.22"
       },
       "langsmith": {
         "is_direct": false,
@@ -167,5 +167,5 @@
       }
     }
   },
-  "invalidationHash": "c7f79c08aa3e3508627c54d94380e2463a19bf4b31188caca60dc7fab5260d08"
+  "invalidationHash": "c888c78e3bd97da790bbca12c5525cfcacb1d7abc6c500ecc899a612deab68d2"
 }

@@ -3,10 +3,10 @@
     "sources": {
       "mypy": {
         "is_direct": false,
-        "sha256": "1f8f492d7db9e3593ef42d4f115f04e556130f2819ad33ab84551403e97dd4c0",
+        "sha256": "93743608c7348772fdc717af4aeee1997293a1ad04bc0ea6efa15bf65385c538",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c7/b9/81e4c6dbb1ec1e72503de3ff2c5fe4b7f224e04613b670f8b9004cd8a4dd/mypy-1.10.1.tar.gz",
-        "version": "1.10.1"
+        "url": "https://files.pythonhosted.org/packages/b1/95/a6dbb4fef19402c488b001ff4bd9f1a770e44049ce049b904dcffc65356c/mypy-1.11.0.tar.gz",
+        "version": "1.11.0"
       },
       "mypy-extensions": {
         "is_direct": false,
@@ -34,5 +34,5 @@
       }
     }
   },
-  "invalidationHash": "96fd2f7e79e6c5e00ad3a4ad9aa5eac738e98ae04fcf1a579f400963ff42aa1f"
+  "invalidationHash": "dc4618c135ffb3e5214c473d563600dc773a57f31633ad81047e73879627e6f6"
 }

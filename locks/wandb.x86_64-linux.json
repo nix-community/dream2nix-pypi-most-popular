@@ -129,10 +129,10 @@
       },
       "wandb": {
         "is_direct": false,
-        "sha256": "40aa85e0fc6d875f9597c6c02e968bc35a571ddac1cbfac2223fcdb941bf1214",
+        "sha256": "10e4b954ce7ff8615ee64b2dd5a04e51e8c64568d47ec39f5995dbbc9df172db",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/98/08/fbd9f14b414c08a0b8376490f9877ce12e2bfe7a5b3cde3ba3e5a86d7f9d/wandb-0.17.4-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "0.17.4"
+        "url": "https://files.pythonhosted.org/packages/88/e4/2e6a7e925a44da70248130c763440d87f3fc28791964bb6c0c2b2cfbe55f/wandb-0.17.5-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.17.5"
       }
     },
     "targets": {
@@ -185,5 +185,5 @@
       }
     }
   },
-  "invalidationHash": "d971bade6cc96d5ba10202ddebe74deac1a372453c727321dc76a3486c40818b"
+  "invalidationHash": "7992bd8b6b5a3ecdcd201ab4ce4099c9ec28ac1e14f77a26bc9cc9f956fc94b7"
 }

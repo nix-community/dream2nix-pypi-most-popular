@@ -17,10 +17,10 @@
       },
       "azure-storage-file-datalake": {
         "is_direct": false,
-        "sha256": "bc6c07fa22a93446c2c9097b10ad6572396e82ab34230d697f30034258415a0b",
+        "sha256": "3185580e4e438162ef84fb88cb46b2ef248dafbfb07f53297762417bb7000333",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/e4/06/451af3af4842567d20f697e32375832aab91e786e6fa6b213e432e81bfe5/azure-storage-file-datalake-12.15.0.tar.gz",
-        "version": "12.15.0"
+        "url": "https://files.pythonhosted.org/packages/71/a6/980d2d1405ae5397b618cc9a21b4530fb7e6c9078ccf48b5ce0eec1b25cd/azure-storage-file-datalake-12.16.0.tar.gz",
+        "version": "12.16.0"
       },
       "certifi": {
         "is_direct": false,
@@ -144,5 +144,5 @@
       }
     }
   },
-  "invalidationHash": "5ae30236e33f40afdda40f358aa533a6fabc8189b14d662ff37e590c4752b8c0"
+  "invalidationHash": "d4bfd00b5d6b93e40c417be277d3056425a4c0f8f7c932fb54b1a73b8694cb1b"
 }

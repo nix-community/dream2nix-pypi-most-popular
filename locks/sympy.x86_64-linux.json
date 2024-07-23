@@ -10,10 +10,10 @@
       },
       "sympy": {
         "is_direct": false,
-        "sha256": "3b6af8f4d008b9a1a6a4268b335b984b23835f26d1d60b0526ebc71d48a25f57",
+        "sha256": "9cebf7e04ff162015ce31c9c6c9144daa34a93bd082f54fd8f12deca4f47515f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/cb/f5/8c7d91ce35816b72c2dd061dc4a33f00f59053aeffe881d42aed17279381/sympy-1.13.0.tar.gz",
-        "version": "1.13.0"
+        "url": "https://files.pythonhosted.org/packages/ca/99/5a5b6f19ff9f083671ddf7b9632028436167cd3d33e11015754e41b249a4/sympy-1.13.1.tar.gz",
+        "version": "1.13.1"
       }
     },
     "targets": {
@@ -25,5 +25,5 @@
       }
     }
   },
-  "invalidationHash": "f592db2522c229622f1d4e9ed07abc9934b2b80cb2c35bc67258bff3ad785485"
+  "invalidationHash": "a33fcd090aadf3cf3b1967181934c956428636bc6559429f0ffae09054e54608"
 }

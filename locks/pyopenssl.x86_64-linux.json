@@ -10,10 +10,10 @@
       },
       "cryptography": {
         "is_direct": false,
-        "sha256": "9c0c1716c8447ee7dbf08d6db2e5c41c688544c61074b54fc4564196f55c25a7",
+        "sha256": "cb013933d4c127349b3948aa8aaf2f12c0353ad0eccd715ca789c8a0f671646f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fa/e2/b7e6e8c261536c489d9cf908769880d94bd5d9a187e166b0dc838d2e6a56/cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl",
-        "version": "42.0.8"
+        "url": "https://files.pythonhosted.org/packages/0f/6c/b42660b3075ff543065b2c1c5a3d9bedaadcff8ebce2ee981be2babc2934/cryptography-43.0.0-cp39-abi3-manylinux_2_28_x86_64.whl",
+        "version": "43.0.0"
       },
       "pycparser": {
         "is_direct": false,
@@ -24,10 +24,10 @@
       },
       "pyopenssl": {
         "is_direct": false,
-        "sha256": "cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f",
+        "sha256": "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/91/a8/cbeec652549e30103b9e6147ad433405fdd18807ac2d54e6dbb73184d8a1/pyOpenSSL-24.1.0.tar.gz",
-        "version": "24.1.0"
+        "url": "https://files.pythonhosted.org/packages/5d/70/ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8/pyopenssl-24.2.1.tar.gz",
+        "version": "24.2.1"
       }
     },
     "targets": {
@@ -45,5 +45,5 @@
       }
     }
   },
-  "invalidationHash": "e196a2d85894ed3277c855274b16dc10cd5bc3f17ff598f0405b7af297f2c299"
+  "invalidationHash": "f6f306804fc528789609142190ec5b6d70c5cbc4957448acbe3fdc810d4bbe09"
 }

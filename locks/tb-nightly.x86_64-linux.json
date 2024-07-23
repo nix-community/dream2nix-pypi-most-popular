@@ -59,10 +59,10 @@
       },
       "tb-nightly": {
         "is_direct": false,
-        "sha256": "c0e49c4f5879eb701a7a71fd9afb1e52af97591320a6af6527813a33e9d3e45d",
+        "sha256": "6806fb4accd248a9b52d2c3b9384b7ae4a2d94b557cbbaf6ca935a176d21d5fc",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c9/5b/52c2203cb7352e8451961e87c07c5761676d9d247464b38e7a36ef630bc6/tb_nightly-2.18.0a20240717-py3-none-any.whl",
-        "version": "2.18.0a20240717"
+        "url": "https://files.pythonhosted.org/packages/69/59/bad84a643c77a8013dc6b68af4f0dc0b77da66c9ee5fbf38d73f42dab141/tb_nightly-2.18.0a20240723-py3-none-any.whl",
+        "version": "2.18.0a20240723"
       },
       "tensorboard-data-server": {
         "is_direct": false,
@@ -107,5 +107,5 @@
       }
     }
   },
-  "invalidationHash": "d8c539976a4becef9aeb5138cfae5923e2aa55352a6acd6be8d32103df2a0393"
+  "invalidationHash": "f49c7a0a9a340ae55c9588d3ffef3916a4e5460f207a99b76b74f7ba282c64a5"
 }

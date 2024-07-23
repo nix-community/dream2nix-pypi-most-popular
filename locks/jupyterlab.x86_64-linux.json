@@ -276,10 +276,10 @@
       },
       "jupyterlab": {
         "is_direct": false,
-        "sha256": "df6e46969ea51d66815167f23d92f105423b7f1f06fa604d4f44aeb018c82c7b",
+        "sha256": "343a979fb9582fd08c8511823e320703281cd072a0049bcdafdc7afeda7f2537",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/bd/78/0dceb7cf382613f6ad629fd421f9604d0befcb85ec800ba389ff856a9bbe/jupyterlab-4.2.3.tar.gz",
-        "version": "4.2.3"
+        "url": "https://files.pythonhosted.org/packages/75/5f/32cc1280b7608f28ba76db1956672950ece63d7631b38a5677a35af5897e/jupyterlab-4.2.4.tar.gz",
+        "version": "4.2.4"
       },
       "jupyterlab-pygments": {
         "is_direct": false,
@@ -909,5 +909,5 @@
       }
     }
   },
-  "invalidationHash": "8d26bb31149c879f0d0d735b2f422037f03b39490449d4844bbe242de11567a4"
+  "invalidationHash": "6b37b70934412ace9f4f423673ce05aa66cfacfa07c44ccf12a9f7df1e3830fa"
 }
