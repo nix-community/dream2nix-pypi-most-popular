@@ -16,6 +16,7 @@ jobs:
         run: |
           currentSystem="$(nix eval --raw --impure --expr builtins.currentSystem)"
           nix run github:Mic92/nix-fast-build -- \
+            --option min-free 250M \
             --eval-workers 1 \
             --no-nom \
             --skip-cached \
