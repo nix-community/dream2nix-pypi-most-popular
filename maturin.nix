@@ -8,7 +8,7 @@
   cargo,
   rustc,
   pkg-config,
-  openssl
+  openssl,
 }:
 python3.pkgs.buildPythonPackage rec {
   inherit (maturin) pname version src;

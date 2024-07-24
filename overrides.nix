@@ -1,6 +1,6 @@
-{ lib, ...}: let
-  withCC = { config, ...}: {
-    deps = { nixpkgs, ... }: {
+{lib, ...}: let
+  withCC = {config, ...}: {
+    deps = {nixpkgs, ...}: {
       inherit (nixpkgs) stdenv;
     };
     pip = {
@@ -16,42 +16,41 @@
     };
   };
 
-  withLibCPP = { config, ...}: {
+  withLibCPP = {config, ...}: {
     config.pip.env = {
       LD_LIBRARY_PATH = "${config.deps.stdenv.cc.cc.lib}/lib";
     };
   };
 
-  withPkgConfig = { config, ...}: {
+  withPkgConfig = {config, ...}: {
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) pkg-config;
       };
       pip = {
         nativeBuildInputs = [config.deps.pkg-config config.deps.python.pkgs.pkgconfig];
       };
-      mkDerivation = { inherit (config.pip) nativeBuildInputs; };
+      mkDerivation = {inherit (config.pip) nativeBuildInputs;};
     };
   };
 
-  withCMake = { config, ...}: {
-    imports = [ withCC ];
+  withCMake = {config, ...}: {
+    imports = [withCC];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) cmake;
       };
       pip = {
         nativeBuildInputs = [config.deps.cmake];
       };
-      mkDerivation = { inherit (config.pip) nativeBuildInputs; };
+      mkDerivation = {inherit (config.pip) nativeBuildInputs;};
     };
   };
 
-
-  withMesonPy = { config, ...}: {
-    imports = [ withCC ];
+  withMesonPy = {config, ...}: {
+    imports = [withCC];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) ninja;
       };
       pip = {
@@ -66,7 +65,7 @@
     };
   };
 
-  withCython = { config, ...}: {
+  withCython = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.cython];
@@ -74,7 +73,7 @@
     };
   };
 
-  withExpandVars = { config, ...}: {
+  withExpandVars = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.expandvars];
@@ -82,14 +81,19 @@
     };
   };
 
-  withMaturin = { config, ...}: {
+  withMaturin = {config, ...}: {
     config = let
       nativeBuildInputs = [
         config.deps.maturin
-        config.deps.cargo config.deps.rustc
+        config.deps.cargo
+        config.deps.rustc
       ];
     in {
-      deps = { nixpkgs, local, ... }: {
+      deps = {
+        nixpkgs,
+        local,
+        ...
+      }: {
         inherit (nixpkgs) cargo rustc;
         inherit (local) maturin;
       };
@@ -98,7 +102,7 @@
     };
   };
 
-  withFlitCore = { config, ...}: {
+  withFlitCore = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.flit-core];
@@ -106,7 +110,7 @@
     };
   };
 
-  withFlitScm = { config, ...}: {
+  withFlitScm = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.flit-scm];
@@ -114,7 +118,7 @@
     };
   };
 
-  withHatchling = { config, ...}: {
+  withHatchling = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.hatchling];
@@ -122,7 +126,7 @@
     };
   };
 
-  withHatchVcs = { config, ...}: {
+  withHatchVcs = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [
@@ -134,7 +138,7 @@
     };
   };
 
-  withPbr = { config, ...}: {
+  withPbr = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.pbr];
@@ -142,7 +146,7 @@
     };
   };
 
-  withPdmBackend = { config, ...}: {
+  withPdmBackend = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.pdm-backend];
@@ -150,7 +154,7 @@
     };
   };
 
-  withPoetryCore = { config, ...}: {
+  withPoetryCore = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.poetry-core];
@@ -158,25 +162,27 @@
     };
   };
 
-  withSetuptoolsRust = { config, ...}: {
+  withSetuptoolsRust = {config, ...}: {
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) cargo rustc;
       };
       pip.nativeBuildInputs = [
         config.deps.python.pkgs.setuptools-rust
-        config.deps.cargo config.deps.rustc
+        config.deps.cargo
+        config.deps.rustc
       ];
       mkDerivation = {
         nativeBuildInputs = [
           config.deps.python.pkgs.setuptools-rust
-          config.deps.cargo config.deps.rustc
+          config.deps.cargo
+          config.deps.rustc
         ];
       };
     };
   };
 
-  withDistutils = { config, ...}: {
+  withDistutils = {config, ...}: {
     config = {
       # https://nixpk.gs/pr-tracker.html?pr=328379
       #mkDerivation = lib.mkIf (config.deps.python.pythonAtLeast "3.12") {
@@ -185,7 +191,7 @@
     };
   };
 
-  withSetuptoolsScm = { config, ...}: {
+  withSetuptoolsScm = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.setuptools-scm];
@@ -193,7 +199,7 @@
     };
   };
 
-  withSKBuild = { config, ...}: {
+  withSKBuild = {config, ...}: {
     config = {
       mkDerivation = {
         nativeBuildInputs = [config.deps.python.pkgs.scikit-build];
@@ -207,49 +213,45 @@
       python = config.deps.python;
       inherit (python.pkgs) numpy_2 pythran;
       numpyCrossFile = config.deps.writeText "cross-file-numpy.conf" ''
-                [properties]
-                numpy-include-dir = '${numpy_2}/${python.sitePackages}/numpy/_core/include'
-                pythran-include-dir = '${pythran}/${python.sitePackages}/pythran'
-                host-python-path = '${python.interpreter}'
-                host-python-version = '${python.pythonVersion}'
-            '';
+        [properties]
+        numpy-include-dir = '${numpy_2}/${python.sitePackages}/numpy/_core/include'
+        pythran-include-dir = '${pythran}/${python.sitePackages}/pythran'
+        host-python-path = '${python.interpreter}'
+        host-python-version = '${python.pythonVersion}'
+      '';
     in {
       mkDerivation.propagatedBuildInputs = [numpy_2 pythran];
       pip.env.PIP_CONFIG_SETTINGS = "setup-args=--cross-file=${numpyCrossFile}";
     };
   };
 
-  withCoreutils = {config, ... }: {
+  withCoreutils = {config, ...}: {
     deps = {nixpkgs, ...}: {
       inherit (nixpkgs) coreutils;
     };
     mkDerivation.nativeBuildInputs = [config.deps.coreutils];
     pip.nativeBuildInputs = [config.deps.coreutils];
   };
-
-
-
 in {
   aiofiles = withHatchling;
   aioitertools = withFlitCore;
-  alembic = {config, ...}:
-    let
-      version = "69.2.0";
-      setuptools_69_2 = config.deps.python.pkgs.setuptools.overridePythonAttrs {
+  alembic = {config, ...}: let
+    version = "69.2.0";
+    setuptools_69_2 = config.deps.python.pkgs.setuptools.overridePythonAttrs {
+      inherit version;
+      patches = [];
+      src = config.deps.fetchPypi {
+        pname = "setuptools";
         inherit version;
-        patches = [];
-        src = config.deps.fetchPypi {
-          pname = "setuptools";
-          inherit version;
-          hash = "sha256-D/QYP49CzY+jrOoWxFIFUhpO8o9zxjkdiiXpKJMTTy4=";
-        };
+        hash = "sha256-D/QYP49CzY+jrOoWxFIFUhpO8o9zxjkdiiXpKJMTTy4=";
       };
-    in {
-      deps = {nixpkgs, ...}: {
-        inherit (nixpkgs) fetchPypi;
-      };
-      mkDerivation.nativeBuildInputs = [setuptools_69_2];
     };
+  in {
+    deps = {nixpkgs, ...}: {
+      inherit (nixpkgs) fetchPypi;
+    };
+    mkDerivation.nativeBuildInputs = [setuptools_69_2];
+  };
   altair = withHatchling;
   annotated-types = withHatchling;
   anyio = withSetuptoolsScm;
@@ -285,7 +287,7 @@ in {
   cloudpickle = withFlitCore;
   colorama = withHatchling;
   comm = withHatchling;
-  confluent-kafka = {config,...}: {
+  confluent-kafka = {config, ...}: {
     deps = {nixpkgs, ...}: {
       inherit (nixpkgs) rdkafka;
     };
@@ -299,8 +301,8 @@ in {
   cryptography.imports = [withMaturin];
   databricks-sql-connector.imports = [withPoetryCore withDistutils];
   dataclasses-json = {config, ...}: {
-    imports = [ withPoetryCore ];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.poetry-dynamic-versioning ];
+    imports = [withPoetryCore];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.poetry-dynamic-versioning];
   };
   datadog = withHatchling;
   delta-spark = useWheel;
@@ -324,10 +326,10 @@ in {
   grpcio-tools = withCC;
   grpcio = withCC;
   h5py = {config, ...}: {
-    imports = [ withPkgConfig withCython ];
+    imports = [withPkgConfig withCython];
     config = {
-      deps = { nixpkgs, ... }: { inherit (nixpkgs) hdf5; };
-      mkDerivation.nativeBuildInputs = [ config.deps.hdf5.dev ];
+      deps = {nixpkgs, ...}: {inherit (nixpkgs) hdf5;};
+      mkDerivation.nativeBuildInputs = [config.deps.hdf5.dev];
     };
   };
   httpcore = withHatchVcs;
@@ -338,7 +340,7 @@ in {
   importlib-resources = withSetuptoolsScm;
   iniconfig = withHatchVcs;
   installer = withFlitCore;
-  ipykernel.imports = [ withHatchling withLibCPP];
+  ipykernel.imports = [withHatchling withLibCPP];
   isort = withPoetryCore;
   itsdangerous = withFlitCore;
   jaraco-classes = withSetuptoolsScm;
@@ -352,12 +354,12 @@ in {
   jupyter-events = withHatchling;
   jupyter-server = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-jupyter-builder];
   };
   jupyter-server-terminals = withHatchling;
   jupyterlab = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-jupyter-builder];
   };
   jupyterlab-server = withHatchling;
   jupyterlab-pygments = useWheel;
@@ -377,7 +379,7 @@ in {
   };
   llvmlite = {config, ...}: {
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) llvm;
       };
       mkDerivation.buildInputs = [config.deps.llvm];
@@ -386,10 +388,10 @@ in {
 
   lockfile = withPbr;
 
-  lxml = { config, ...}: {
-    imports = [ withPkgConfig withCython ];
+  lxml = {config, ...}: {
+    imports = [withPkgConfig withCython];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) libxml2 libxslt;
       };
       pip = {
@@ -401,7 +403,7 @@ in {
     };
   };
 
-  lz4 = { config, ...}: {
+  lz4 = {config, ...}: {
     imports = [withPkgConfig withSetuptoolsScm];
   };
 
@@ -429,15 +431,15 @@ in {
   nbconvert = withHatchling;
   nbformat = {config, ...}: {
     imports = [withHatchling];
-    mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-nodejs-version ];
+    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-nodejs-version];
   };
   nest-asyncio = withSetuptoolsScm;
   nodeenv = withSetuptoolsScm;
   notebook = {config, ...}: {
     imports = [withHatchling];
     config.mkDerivation = {
-      nativeBuildInputs = [ config.deps.python.pkgs.hatch-jupyter-builder ];
-      buildInputs = [ config.deps.python.pkgs.jupyterlab ];
+      nativeBuildInputs = [config.deps.python.pkgs.hatch-jupyter-builder];
+      buildInputs = [config.deps.python.pkgs.jupyterlab];
     };
   };
   notebook-shim = withHatchling;
@@ -447,11 +449,11 @@ in {
       deps = {nixpkgs, ...}: {
         inherit (nixpkgs) coreutils;
       };
-      pip.nativeBuildInputs = [ config.deps.coreutils ];
+      pip.nativeBuildInputs = [config.deps.coreutils];
     };
   };
   openai = withHatchVcs;
-  opencv-python.imports = [ withSKBuild withDistutils ];
+  opencv-python.imports = [withSKBuild withDistutils];
   opentelemetry-api = withHatchling;
   opentelemetry-exporter-otlp-proto-common = withHatchling;
   opentelemetry-exporter-otlp-proto-grpc = withHatchling;
@@ -468,12 +470,12 @@ in {
   pendulum = withMaturin;
   pg8000 = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.versioningit];
   };
   pkgutil-resolve-name = withFlitCore;
   pillow = {config, ...}: {
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) zlib;
       };
       mkDerivation = {
@@ -486,16 +488,16 @@ in {
 
   platformdirs = withHatchVcs;
   plotly = {config, ...}: {
-    mkDerivation.propagatedBuildInputs = [ config.deps.python.pkgs.jupyterlab ];
+    mkDerivation.propagatedBuildInputs = [config.deps.python.pkgs.jupyterlab];
   };
   pluggy = withSetuptoolsScm;
   portalocker = withSetuptoolsScm;
   prettytable = withHatchVcs;
   progressbar2 = withSetuptoolsScm;
-  psycopg2 = { config, ...}: {
-    imports = [ withPkgConfig ];
+  psycopg2 = {config, ...}: {
+    imports = [withPkgConfig];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) postgresql;
       };
       pip = {
@@ -503,7 +505,7 @@ in {
           config.deps.postgresql
         ];
       };
-      mkDerivation = { inherit (config.pip) nativeBuildInputs; };
+      mkDerivation = {inherit (config.pip) nativeBuildInputs;};
     };
   };
   psycopg2-binary = useWheel;
@@ -518,13 +520,13 @@ in {
   pygments = withHatchling;
   pymongo = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.hatch-requirements-txt ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-requirements-txt];
   };
-  pymssql.imports = [ withCC withCython withSetuptoolsScm ];
+  pymssql.imports = [withCC withCython withSetuptoolsScm];
   pyparsing = withFlitCore;
   pyodbc = {config, ...}: {
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) unixODBC;
       };
       mkDerivation = {
@@ -544,10 +546,10 @@ in {
   python-multipart = withHatchling;
   pytzdata = withPoetryCore;
   pyyaml = withCython;
-  pyzmq = { config, ...}: {
+  pyzmq = {config, ...}: {
     imports = [withCMake];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) zeromq libsodium;
       };
       mkDerivation.buildInputs = [
@@ -556,26 +558,26 @@ in {
       ];
     };
   };
-  rapidfuzz.imports = [ withSKBuild ];
+  rapidfuzz.imports = [withSKBuild];
   redshift-connector = useWheel;
   referencing = withHatchVcs;
   requests-file = withSetuptoolsScm;
   retry = withPbr;
   rfc3986-validator = {config, ...}: {
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.pytest-runner ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.pytest-runner];
   };
   rich = withPoetryCore;
   rpds-py = withMaturin;
   rsa = withPoetryCore;
   safetensors = withMaturin;
-  scikit-image = {config,...}: {
+  scikit-image = {config, ...}: {
     imports = [withNumpy withLibCPP];
   };
   scikit-learn.imports = [withNumpy withCoreutils];
-  scipy = { config, ...}: {
+  scipy = {config, ...}: {
     imports = [withNumpy];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) gfortran openblas;
       };
       pip.nativeBuildInputs = [
@@ -590,17 +592,17 @@ in {
   };
   scramp = {config, ...}: {
     imports = [withHatchling];
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.versioningit ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.versioningit];
   };
   seaborn = withFlitCore;
-  selenium.imports = [ withSetuptoolsRust ];
+  selenium.imports = [withSetuptoolsRust];
   semver = withSetuptoolsScm;
-  sentencepiece.imports = [ withCMake ];
-  setuptools.pip.ignoredDependencies = lib.mkForce [ "wheel" ];
-  shapely = { config, ...}: {
+  sentencepiece.imports = [withCMake];
+  setuptools.pip.ignoredDependencies = lib.mkForce ["wheel"];
+  shapely = {config, ...}: {
     imports = [withLibCPP];
     config = {
-      deps = { nixpkgs, ... }: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) geos;
       };
       mkDerivation.buildInputs = [
@@ -609,7 +611,7 @@ in {
     };
   };
   slack-sdk = {config, ...}: {
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.pytest-runner ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.pytest-runner];
   };
   sniffio = withSetuptoolsScm;
   snowflake-connector-python = withCython;
@@ -644,7 +646,7 @@ in {
   tqdm = withSetuptoolsScm;
   traitlets = withHatchling;
   trove-classifiers = {config, ...}: {
-    config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.calver ];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.calver];
   };
   typeguard = withSetuptoolsScm;
   typer = withPdmBackend;
@@ -659,23 +661,23 @@ in {
   watchfiles = withMaturin;
   werkzeug = withFlitCore;
   wheel = {
-    imports = [ withFlitCore ];
-    config.pip.ignoredDependencies = lib.mkForce [ "setuptools" ];
+    imports = [withFlitCore];
+    config.pip.ignoredDependencies = lib.mkForce ["setuptools"];
   };
   widgetsnbextension = {config, ...}: {
     mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.jupyter-packaging];
   };
 
-  xgboost = {config,...}: {
+  xgboost = {config, ...}: {
     imports = [withCMake];
     config = {
-      deps = { nixpkgs, ...}: {
+      deps = {nixpkgs, ...}: {
         inherit (nixpkgs) gnumake;
       };
-      pip.nativeBuildInputs = [ config.deps.gnumake ];
-      mkDerivation.nativeBuildInputs = [ config.deps.gnumake ];
+      pip.nativeBuildInputs = [config.deps.gnumake];
+      mkDerivation.nativeBuildInputs = [config.deps.gnumake];
     };
   };
-  yarl.imports = [ withCython withExpandVars];
+  yarl.imports = [withCython withExpandVars];
   zipp = withSetuptoolsScm;
 }
