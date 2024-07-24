@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>dreampkgs report</title>
+    <style>
+     .inputs, .navigation, .failures, .successes {
+         padding: 1rem;
+     }
+
+     .navigation {
+         list-style-type: none;
+     }
+     .navigation li {
+         display: inline-block;
+     }
+
+     .build-log {
+         padding: 1rem;
+         max-height: 15rem;
+         overflow: scroll;
+     }
+    </style>
+    <script>
+     window.onload = function() {
+         document
+             .querySelectorAll('.build-log')
+             .forEach(el => {
+                 el.scrollTop = el.scrollHeight;
+             });
+     };
+    </script>
+</head>
+<body>
+    <h1>dreampkgs on {{system}}</h1>
+
+    {% set all_count = (failures + successes) | length %}
+    {% set success_count = successes | length %}
+    {% set success_percent = (success_count / all_count) * 100 %}
+    <p>{{success_count}} builds out of {{ all_count }} were successful ({{ success_percent }}%)</p>
+
+    <h2>inputs</h2>
+    <ul class="inputs">
+        {% for name, url in inputs.items() %}
+        <li><a href="{{url}}">{{name}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>builds</h2>
+    <ul class="navigation">
+        {% for item in failures + successes %}
+        <li><a href="#{{ item.name }}">{{ item.icon}} {{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>failures</h2>
+    <div class="failures">
+        {% for item in failures %}
+        <div class="{{ item.state }}">
+            <h3 id="{{item.name}}">{{ item.icon }} {{ item.name }}</h3>
+            <pre class="build-log"><code>{{ item.log }}</code></pre>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>successes</h2>
+    <div class="successes">
+        {% for item in successes %}
+        <div class="{{ item.state }}">
+            <h3 id="{{item.name}}">{{ item.icon }} {{ item.name }}</h3>
+            <p>{{ item.output }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>

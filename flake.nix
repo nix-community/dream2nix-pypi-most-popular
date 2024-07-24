@@ -116,21 +116,33 @@
            | parallel "{}/bin/refresh"
         '';
       };
+      report = pkgs.writers.writePython3Bin "report" {
+        libraries = [
+          pkgs.python3.pkgs.jinja2
+          pkgs.python3.pkgs.requests
+        ];
+        flakeIgnore = [ "E501" ];  # lines too long
+      } ./report.py;
     in {
       lock-all = {
         type = "app";
         program = lib.getExe lockAll;
+      };
+      report = {
+        type = "app";
+        program = lib.getExe report;
       };
     });
 
     devShells = eachSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       python = pkgs.python3.withPackages (ps: [
-        ps.jinja2
         ps.python-lsp-server
         ps.python-lsp-ruff
         ps.pylsp-mypy
         ps.ipython
+        ps.requests
+        ps.jinja2
       ]);
     in {
       default = pkgs.mkShell {
