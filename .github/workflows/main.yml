@@ -20,4 +20,4 @@ jobs:
             --eval-workers 1 \
             --no-nom \
             --skip-cached \
-            --flake .#lib.$currentSystem.packagesValid
+            --flake .#checks.$currentSystem

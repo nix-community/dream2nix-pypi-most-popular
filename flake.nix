@@ -74,15 +74,34 @@
         ];
       };
 
+    packagesToCheck = eachSystem (system: lib.mapAttrs (name: version: makePackage {inherit name version system; }) requirements);
+
+    validated = eachSystem (system: let
+    partitioned = builtins.partition (package:
+      let
+        result = builtins.tryEval package.config.lock.isValid;
+      in
+        result.success && result.value
+    ) (builtins.attrValues packagesToCheck.${system});
+    packages = lib.listToAttrs (map (p: {name = p.config.name; value = p;}) partitioned.right);
+    toLock = map (p: p.config.name) partitioned.wrong;
+    lockScripts = lib.genAttrs toLock (name: packagesToCheck.${system}.${name}.lock);
+    in {
+      inherit packages lockScripts;
+    });
   in {
-    packages = eachSystem (system: lib.mapAttrs (name: version: makePackage {inherit name version system; }) requirements);
+    packages = packagesToCheck;
+
+    checks =  eachSystem (system: validated.${system}.packages);
+    lockScripts =  eachSystem (system: validated.${system}.packages);
+
     apps = eachSystem(system: let
       pkgs = nixpkgs.legacyPackages.${system};
       lockAll = pkgs.writeShellApplication {
         name = "lock-all";
         runtimeInputs = [ pkgs.nix-eval-jobs pkgs.parallel pkgs.jq ];
         text = ''
-          nix-eval-jobs --flake .#lib.${system}.lockScripts \
+          nix-eval-jobs --flake .#lockScripts.${system} \
            | parallel --pipe "jq -r .drvPath" \
            | parallel "nix build --no-link --print-out-paths {}^out" \
            | parallel "{}/bin/refresh"
@@ -95,22 +114,6 @@
       };
     });
 
-    lib = eachSystem (system:
-      let
-        packages = self.packages.${system};
-        partitioned = builtins.partition (package:
-          let
-            result = builtins.tryEval package.config.lock.isValid;
-          in
-            result.success && result.value
-        ) (builtins.attrValues packages);
-        packagesValid = lib.listToAttrs (map (p: {name = p.config.name; value = p;}) partitioned.right);
-        packagesToLock = map (p: p.config.name) partitioned.wrong;
-        lockScripts = lib.genAttrs packagesToLock (name: packages.${name}.lock);
-
-    in {
-      inherit packages packagesValid packagesToLock lockScripts;
-    });
     devShells = eachSystem(system: let
       pkgs = nixpkgs.legacyPackages.${system};
       python = pkgs.python3.withPackages (ps: [
