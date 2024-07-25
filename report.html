@@ -40,24 +40,58 @@
     </script>
 </head>
 <body>
-    <h1>dream2nix report</h1>
-    {#
-    {% set all_count = (failures + successes) | length %}
-    {% set success_count = successes | length %}
-    {% set success_percent = (success_count / all_count) * 100 %}
-    <p>{{success_count}} builds out of {{ all_count }} were successful ({{ success_percent }}%)</p>
-    #}
+    <h1>dream2nix-pypi-most-popular</h1>
+    <p>
+        The 500 most popular python packages on pypi, built with <a href="https://dream2nix.dev/reference/pip/">dream2nix pip module</a>
+        on <a href="https://buildbot.nix-community.org/#/projects/15">buildbot.nix-community.org</a>.
+    </p>
+    <h2>stats</h2>
+    <table class="stats">
+        {% for system, stats in stats_per_system.items() %}
+        <tr>
+            <td><strong>{{system}}</strong></td>
+            <td><progress value="{{stats.success}}" max="{{stats.total}}"></progress></td>
+        {% for stat, value in stats.items() %}
+            <td>{{stat}}: {{ value }}</td>
+        {% endfor %}
+        {% endfor %}
+        <tr>
+    </table>
+
 
 
     <h2>inputs</h2>
+    <p>
+        This report was generated on {{ now.strftime("%Y-%m-%d %H:%M") }} with the following flake inputs:
+    </p>
     <ul class="inputs">
         {% for name, url in inputs.items() %}
-        <li><a href="{{url}}">{{name}}</a></li>
+        <li><a href="{{url}}">{{name}} ({{url.split('/')[-1]}})</a></li>
         {% endfor %}
     </ul>
 
+    <h2>skipped</h2>
+    <p>the following packages where skipped on all platforms, mostly due to locking them is still broken.</p>
+    <table class="skipped">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package, reason in skipped_packages.items() %}
+            <tr>
+                <td>{{package}}</td>
+                <td>{{reason}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <h2>builds</h2>
-    📦 marks packages which are re-using wheels, i.e. are not built from source distributions.
+    <p>packages marked with 📦 are re-using wheels, i.e. are not built from source distributions.
+    failed builds are listed first.</p>
     <table class="results">
         <thead>
             <tr>

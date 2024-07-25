@@ -7,6 +7,7 @@ of that project for build status and parts of the error logs
 import re
 import json
 import logging
+from datetime import datetime
 from pathlib import Path
 import subprocess
 import concurrent.futures
@@ -23,7 +24,7 @@ re_name = re.compile(r"^.*#checks\.(x86_64-linux|aarch64-darwin)\.(.*)$")
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('report')
 logger.setLevel(logging.DEBUG)
-#logging.getLogger("urllib3").setLevel(logging.INFO)
+logging.getLogger("urllib3").setLevel(logging.INFO)
 
 
 def api_get(path, json=True):
@@ -147,6 +148,13 @@ def get_checks(systems):
     }
 
 
+def get_skipped_packages():
+    logger.info("evaluating locking errors ...")
+    return run_nix([
+        "eval", ".#skippedPackages",
+    ])
+
+
 def cache_json(name, fun, *args):
     path = Path(f"{name}.json")
     if path.exists():
@@ -166,30 +174,46 @@ if __name__ == '__main__':
     inputs = get_inputs()
     ci_results = cache_json("ci_results", get_ci_results)
     checks = cache_json("checks", get_checks, systems)
+    skipped_packages = cache_json("skipped_packages", get_skipped_packages)
 
     results = []
     for package, check in checks["x86_64-linux"].items():
         if package not in ci_results:
             logging.error(f"Could NOT find ci results for {package}!")
             continue
-        info = ci_results[package]
-        info["name"] = package
-        info["x86_64-linux"]["store_path"] = check["storePath"]
-        info["from_wheel"] = check["source"].endswith(".whl")
+        result = ci_results[package]
+        result["name"] = package
+        result["x86_64-linux"]["store_path"] = check["storePath"]
+        result["from_wheel"] = check["source"].endswith(".whl")
 
-        stati = [info.get(system, {}).get("status") == "success" for system in systems]
+        stati = [result.get(system, {}).get("status") == "success" for system in systems]
         if all(stati):
-            info["status"] = "success"
+            result["status"] = "success"
         elif any(stati):
-            info["status"] = "some"
+            result["status"] = "some"
         else:
-            info["status"] = "failure"
+            result["status"] = "failure"
+
         if package not in checks["aarch64-darwin"]:
             logging.warning(f"Could NOT evaluate aarch64-darwin store_path for {package}! Lock file out-dated?")
         else:
-            info["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]["storePath"]
-        results.append(info)
+            result["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]["storePath"]
+        results.append(result)
 
+    stats_per_system = {
+        system: dict(
+            success=0,
+            failure=0,
+            skipped_packages=len(skipped_packages.keys())
+        ) for system in systems
+    }
+
+    for result in results:
+        for system in systems:
+            status = result.get(system, {}).get("status", "failure")
+            stats_per_system[system][status] += 1
+    for system, stats in stats_per_system.items():
+        stats["total"] = sum(stats.values())
 
     environment = Environment(loader=FileSystemLoader("."))
     template = environment.get_template("report.html")
@@ -198,5 +222,8 @@ if __name__ == '__main__':
         f.write(template.render(
             results=sorted(results, key=lambda i: i["status"]),
             systems=systems,
-            inputs=inputs
+            inputs=inputs,
+            stats_per_system=stats_per_system,
+            skipped_packages=skipped_packages,
+            now=datetime.now()
         ))

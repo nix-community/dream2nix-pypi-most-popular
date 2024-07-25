@@ -29,19 +29,19 @@
             (lib.removeSuffix "\n"
               (lib.readFile ./500-most-popular-pypi-packages.txt)))));
 
-    toSkip = [
-      "dataclasses" # in pythons stdlib since python 3.8
-      "pypular" # https://tomaselli.page/blog/pypular-removed-from-pypi.html
-      # locking currently broken
-      "great-expectations" # versioneer is broken with python3.12
-      "opencv-python" # distutils, scikit-build
-      "opt-einsum" # versioneer is broken with python3.12
-      "pandas" # numpy import broken
-      "pydata-google-auth" # versioneer is broken with python3.12
-      "scipy" # f2py fortran failed
-    ];
+    skippedPackages = {
+      "dataclasses" = "in pythons stdlib since python 3.8";
+      "pypular" = "removed from pypi; https://tomaselli.page/blog/pypular-removed-from-pypi.html";
+      "great-expectations" = "TODO versioneer is broken with python3.12";
+      "opencv-python" = "TODO missing build inputs";
+      "opt-einsum"  = "TODO versioneer is broken with python3.12";
+      "pandas" = "TODO something about the numpy import breaks locking";
+      "pydata-google-auth" = "TODO versioneer is broken with python3.12";
+      "scipy" = "TODO f2py, a fortran tool failed during locking";
+    };
+    skippedPackageNames = lib.attrNames skippedPackages;
     overrides = import ./overrides.nix {inherit lib;};
-    requirements = lib.filterAttrs (n: v: !(builtins.elem n toSkip)) mostPopular;
+    requirements = lib.filterAttrs (n: v: !(builtins.elem n skippedPackageNames)) mostPopular;
     makePackage = {
       name,
       version,
@@ -103,6 +103,7 @@
 
     checks = eachSystem (system: validated.${system}.packages);
     lockScripts = eachSystem (system: validated.${system}.packages);
+    inherit skippedPackages;
 
     apps = eachSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
