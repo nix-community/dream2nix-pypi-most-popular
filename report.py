@@ -78,7 +78,7 @@ def get_ci_results_from_builder(builder):
         return package, system, {
             "status": status,
             "log_uri": log_uri,
-            "started_at": step.get("complete_at"),
+            "started_at": step.get("started_at"),
             "complete_at": step.get("complete_at"),
             "log_tail": log_tail
         }
@@ -216,6 +216,7 @@ if __name__ == '__main__':
         stats["total"] = sum(stats.values())
 
     environment = Environment(loader=FileSystemLoader("."))
+    environment.filters["parse_timestamp"] = datetime.fromtimestamp
     template = environment.get_template("report.html")
 
     with open("index.html", "w") as f:

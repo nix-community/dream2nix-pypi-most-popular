@@ -97,7 +97,11 @@
             <tr>
                 <th>name</th>
                 <th>x86_64-linux</th>
+                <th>started</th>
+                <th>duration</th>
                 <th>aarch64-darwin</th>
+                <th>started</th>
+                <th>duration</th>
             </tr>
         </thead>
         <tbody>
@@ -114,6 +118,12 @@
                     <a href="#{{system}}-{{result.name}}">log</a>
                     {% endif -%}
                 </td>
+                {% if item.started_at %}
+                <td>{{(item.started_at | parse_timestamp).strftime("%Y-%m-%d %H:%M") }}</td>
+                <td>{{(item.complete_at - item.started_at)}}s</td>
+                {% else %}
+                <td>n/a</td><td>n/a</td>
+                {% endif %}
                 {% endfor -%}
             </tr>
             {% endfor %}
