@@ -1,3 +1,9 @@
+"""
+Evaluates checks for x86_64-linux and aarch64-darwin and queries
+a project on a buildbot instance for the last successful builds
+of that project for build status and parts of the error logs
+"""
+
 import re
 import json
 import logging
@@ -17,13 +23,16 @@ re_name = re.compile(r"^.*#checks\.(x86_64-linux|aarch64-darwin)\.(.*)$")
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('report')
 logger.setLevel(logging.DEBUG)
-logging.getLogger("urllib3").setLevel(logging.INFO)
+#logging.getLogger("urllib3").setLevel(logging.INFO)
 
 
-def get_json(path):
+def api_get(path, json=True):
     with requests.get(f"{BUILDBOT_API_URI}{path}") as response:
         response.raise_for_status()
-        return response.json()
+        if json:
+            return response.json()
+        else:
+            return response.text
 
 
 def get_ci_results_from_builder(builder):
@@ -34,9 +43,9 @@ def get_ci_results_from_builder(builder):
     system, package = name_match.groups()
     builder_id = builder.get("builderid")
 
-    build = get_json(f"/builders/{builder_id}/builds?order=-started_at&limit=1&complete=true")["builds"][0]
+    build = api_get(f"/builders/{builder_id}/builds?order=-started_at&limit=1&complete=true")["builds"][0]
     build_id = build.get("buildid")
-    steps = get_json(f"builds/{build_id}/steps") \
+    steps = api_get(f"builds/{build_id}/steps") \
         .get("steps", [])
 
     for step in steps:
@@ -45,7 +54,7 @@ def get_ci_results_from_builder(builder):
             continue
         step_id = step['stepid']
 
-        logs = get_json(f"/steps/{step_id}/logs").get("logs", "[]")
+        logs = api_get(f"/steps/{step_id}/logs").get("logs", "[]")
         if len(logs) == 0:
             continue
         elif len(logs) > 1:
@@ -60,20 +69,22 @@ def get_ci_results_from_builder(builder):
         else:
             raise NotImplementedError("unknown step results value")
 
-        log_id = log['logid']
-        log_uri = f"{BUILDBOT_API_URI}logs/{log_id}/raw_inline"
-        logging.debug(f"collected ci job info from {package} ({system}, {status}, {log_uri})")
+        log_path = f"logs/{log["logid"]}/raw_inline"
+        log_uri = f"{BUILDBOT_API_URI}{log_path}"
+        log_tail = "\n".join(api_get(log_path, json=False).split("\n")[-100:])
 
+        logging.debug(f"collected ci job info from {package} ({system}, {status}, {log_uri})")
         return package, system, {
             "status": status,
             "log_uri": log_uri,
             "started_at": step.get("complete_at"),
-            "complete_at": step.get("complete_at")
+            "complete_at": step.get("complete_at"),
+            "log_tail": log_tail
         }
 
 
 def get_ci_results():
-    builders = get_json(f"builders?projectid={BUILDBOT_PROJECT_ID}") \
+    builders = api_get(f"builders?projectid={BUILDBOT_PROJECT_ID}") \
         .get("builders", [])
 
     ci_results = {}
@@ -164,7 +175,6 @@ if __name__ == '__main__':
         stati = [info.get(system, {}).get("status") == "success" for system in systems]
         info["name"] = package
         info["x86_64-linux"]["store_path"] = store_path
-
         if all(stati):
             info["status"] = "success"
         elif any(stati):

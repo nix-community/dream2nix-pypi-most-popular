@@ -2,22 +2,32 @@
 <head>
     <title>dreampkgs report</title>
     <style>
-     .inputs, .navigation, .failures, .successes {
+     .inputs, .results, .logs {
          padding: 1rem;
-     }
-
-     .navigation {
-         list-style-type: none;
-     }
-     .navigation li {
-         display: inline-block;
      }
 
      .build-log {
          padding: 1rem;
-         max-height: 15rem;
+         height: 15rem;
          overflow: scroll;
+         background-color: #121212;
+         color: #f2f2f2;
      }
+
+     .results tr:nth-child(even) {
+         background-color: #f2f2f2;
+     }
+
+     .systems {
+         display: flex;
+         flex-wrap: wrap;
+     }
+     .systems > .system {
+         width: 50%;
+         box-sizing: border-box;
+         padding: 1rem;
+     }
+
     </style>
     <script>
      window.onload = function() {
@@ -30,13 +40,13 @@
     </script>
 </head>
 <body>
-    <h1>dreampkgs on {{system}}</h1>
-
+    <h1>dream2nix report</h1>
+    {#
     {% set all_count = (failures + successes) | length %}
     {% set success_count = successes | length %}
     {% set success_percent = (success_count / all_count) * 100 %}
     <p>{{success_count}} builds out of {{ all_count }} were successful ({{ success_percent }}%)</p>
-
+    #}
     <h2>inputs</h2>
     <ul class="inputs">
         {% for name, url in inputs.items() %}
@@ -45,28 +55,53 @@
     </ul>
 
     <h2>builds</h2>
-    <ul class="navigation">
-        {% for item in failures + successes %}
-        <li><a href="#{{ item.name }}">{{ item.icon}} {{ item.name }}</a></li>
-        {% endfor %}
-    </ul>
+    <table class="results">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>x86_64-linux</th>
+                <th>aarch64-darwin</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <h2>failures</h2>
-    <div class="failures">
-        {% for item in failures %}
-        <div class="{{ item.state }}">
-            <h3 id="{{item.name}}">{{ item.icon }} {{ item.name }}</h3>
-            <pre class="build-log"><code>{{ item.log }}</code></pre>
-        </div>
-        {% endfor %}
-    </div>
+            {% for result in results %}
+            <tr class="{{ result.status }}">
+                <td>{{ result.name }}</td>
+                {%- for system in ["x86_64-linux", "aarch64-darwin"] %}
+                <td>
+                    {% set item = result.get(system, {}) -%}
+                    {% set status = item.status -%}
+                    {{ status | status_icon }}
+                    {% if status == "success" -%}
+                    <a href="{{ item.store_path }}">store path</a>
+                    {% else -%}
+                    <a href="#{{system}}-{{result.name}}">log</a>
+                    {% endif -%}
+                </td>
+                {% endfor -%}
+            </tr>
+            {% endfor %}
+        </tbody>
 
-    <h2>successes</h2>
-    <div class="successes">
-        {% for item in successes %}
-        <div class="{{ item.state }}">
-            <h3 id="{{item.name}}">{{ item.icon }} {{ item.name }}</h3>
-            <p>{{ item.output }}</p>
+    </table>
+
+    <h2>logs</h2>
+    <div class="logs">
+        {% for result in results %}
+        {%- if result.status != "success" %}
+        <h3>{{ result.name }}</h3>
+        {% endif -%}
+        <div class="systems">
+            {% for system, item in result.items() %}
+            {%- if system in ["x86_64-linux", "aarch64-darwin"] and item.status != "success" %}
+            <div class="system">
+                <h4 id="{{system}}-{{result.name}}">{{ system }}</h4>
+                <p>(last 100 lines only, <a href="{{item.log_uri}}">full log</a>)</p>
+                <pre class="build-log">{{ item.log_tail }}</pre>
+            </div>
+            {% endif -%}
+            {% endfor %}
         </div>
         {% endfor %}
     </div>
