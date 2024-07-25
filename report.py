@@ -1,57 +1,91 @@
 import re
 import json
-import pickle
 import logging
-import multiprocessing
+from pathlib import Path
 import subprocess
-from dataclasses import dataclass
-from typing import Callable, Sequence, Tuple, TypeVar
+import concurrent.futures
 from jinja2 import Environment, FileSystemLoader
+import requests
 
+
+BUILDBOT_API_URI = "https://buildbot.nix-community.org/api/v2/"
+BUILDBOT_PROJECT_ID = 15
 POOL_SIZE = 20
+re_name = re.compile(r"^.*#checks\.(x86_64-linux|aarch64-darwin)\.(.*)$")
+
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('report')
 logger.setLevel(logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.INFO)
 
 
-@dataclass
-class Dependency:
-    name: str
-    drv: str
+def get_json(path):
+    with requests.get(f"{BUILDBOT_API_URI}{path}") as response:
+        response.raise_for_status()
+        return response.json()
 
 
-@dataclass
-class Result:
-    @property
-    def state(self):
-        return "success" if isinstance(self, Success) else "failure"
+def get_ci_results_from_builder(builder):
+    builder_name = builder.get('name')
+    name_match = re_name.match(builder_name)
+    if not name_match:
+        return  # skip non-check jobs like the eval one
+    system, package = name_match.groups()
+    builder_id = builder.get("builderid")
 
-    @property
-    def icon(self):
-        return "✅" if isinstance(self, Success) else "❌"
+    build = get_json(f"/builders/{builder_id}/builds?order=-started_at&limit=1&complete=true")["builds"][0]
+    build_id = build.get("buildid")
+    steps = get_json(f"builds/{build_id}/steps") \
+        .get("steps", [])
+
+    for step in steps:
+        step_name = step['name']
+        if step_name != "Build flake attr":
+            continue
+        step_id = step['stepid']
+
+        logs = get_json(f"/steps/{step_id}/logs").get("logs", "[]")
+        if len(logs) == 0:
+            continue
+        elif len(logs) > 1:
+            raise NotImplementedError("only 1 log per build implemented")
+        log = logs[0]
+
+        result = step["results"]
+        if result == 0:
+            status = "success"
+        elif result == 2:
+            status = "failure"
+        else:
+            raise NotImplementedError("unknown step results value")
+
+        log_id = log['logid']
+        log_uri = f"{BUILDBOT_API_URI}logs/{log_id}/raw_inline"
+        logging.debug(f"collected ci job info from {package} ({system}, {status}, {log_uri})")
+
+        return package, system, {
+            "status": status,
+            "log_uri": log_uri,
+            "started_at": step.get("complete_at"),
+            "complete_at": step.get("complete_at")
+        }
 
 
-@dataclass
-class Success(Result):
-    name: str
-    output: str
+def get_ci_results():
+    builders = get_json(f"builders?projectid={BUILDBOT_PROJECT_ID}") \
+        .get("builders", [])
 
-
-@dataclass
-class Failure(Result):
-    name: str
-    log: str
-
-
-T = TypeVar("T")
-
-
-def partition_list(items: Sequence[T], predicate: Callable[[T], bool]):
-    yes, no = [], []
-    for i in items:
-        (yes if predicate(i) else no).append(i)
-    return [yes, no]
+    ci_results = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        futures = [executor.submit(get_ci_results_from_builder, builder) for builder in builders]
+        for future in concurrent.futures.as_completed(futures):
+            if result := future.result():
+                package, system, info = result
+                if package not in ci_results:
+                    ci_results[package] = dict()
+                ci_results[package][system] = info
+    return ci_results
 
 
 def run_nix(args, with_json=True):
@@ -91,81 +125,73 @@ def get_inputs():
     }
 
 
-def get_dependency_drv_paths(system):
-    logger.info("evaluating nix drvPaths...")
-    args = [
-        'nix-eval-jobs',
-        "--flake",
-        f".#packages.{system}",
-    ]
-
-    with subprocess.Popen(args, stdout=subprocess.PIPE, encoding="utf-8") as proc:
-        for line in proc.stdout:
-            data = json.loads(line)
-            yield (data['attr'], data['drvPath'])
+def get_checks(systems):
+    logger.info(f"evaluating nix checks for: {systems}...")
+    return {
+        system: run_nix([
+            "eval", f".#checks.{system}",
+        ])
+        for system in systems
+    }
 
 
-def process_package(arg: Tuple[int, Dependency]) -> Success | Failure:
-    count, dependency = arg
-    logger.debug(f"building {dependency.name} (#{count})")
-
-    proc = subprocess.run(
-        ["nix", "build", "--print-build-logs", "--print-out-paths", "--no-link", f"{dependency.drv}^out"],
-        capture_output=True,
-        encoding="utf-8"
-    )
-
-    if proc.returncode != 0:
-        error = proc.stderr.strip()
-        logger.error(f"build of {dependency.name} failed")
-        return Failure(dependency.name, error)
-
-    logger.info(f"build of {dependency.name} succeeded")
-    output = proc.stdout.strip()
-    return Success(dependency.name, output)
+def cache_json(name, fun, *args):
+    path = Path(f"{name}.json")
+    if path.exists():
+        logging.debug(f"found cached {path}, using that.")
+        with open(path, "r") as f:
+            results = json.load(f)
+    else:
+        logging.info(f"did NOT find cached {path}, creating it...")
+        results = fun(*args)
+        with open(path, "w") as f:
+            json.dump(results, f)
+    return results
 
 
 if __name__ == '__main__':
-    # system = get_current_system()
-    # inputs = get_inputs()
-    # dependencies = get_dependency_drv_paths(system)
-    # pool = multiprocessing.Pool(POOL_SIZE)
-    # items = pool.map(process_package, enumerate([Dependency(name, drv) for name, drv in dependencies]))
-    # successes, failures = partition_list(items, lambda r: r.state == "success")
+    systems = ["x86_64-linux", "aarch64-darwin"]
+    inputs = get_inputs()
+    ci_results = cache_json("ci_results", get_ci_results)
+    checks = cache_json("checks", get_checks, systems)
 
-    # #module_not_found_error = re.compile(r"^       > ModuleNotFoundError: No module named '(.*)'$", re.M)
-    # missing_dependency_error = re.compile(r"^\s*> ERROR Missing dependencies:.*$", re.M)
-    # with open("build-requirements.txt", "w") as f:
-    #     for failure in failures:
-    #         m = missing_dependency_error.search(failure.log)
-    #         if m:
-    #             f.write(f'{failure.name} = {failure.log[m.end():]}\n')
+    results = []
+    for package, store_path in checks["x86_64-linux"].items():
+        if package not in ci_results:
+            logging.error(f"Could NOT find ci results for {package}!")
+            continue
+        info = ci_results[package]
+        stati = [info.get(system, {}).get("status") == "success" for system in systems]
+        info["name"] = package
+        info["x86_64-linux"]["store_path"] = store_path
 
-    # with open("./report_fixtures/successes.pickle", "wb") as f:
-    #     pickle.dump(successes, f)
-    # with open("./report_fixtures/failures.pickle", "wb") as f:
-    #     pickle.dump(failures, f)
-    # with open("./report_fixtures/system.pickle", "wb") as f:
-    #     pickle.dump(system, f)
-    # with open("./report_fixtures/inputs.pickle", "wb") as f:
-    #     pickle.dump(inputs, f)
+        if all(stati):
+            info["status"] = "success"
+        elif any(stati):
+            info["status"] = "some"
+        else:
+            info["status"] = "failure"
+        if package not in checks["aarch64-darwin"]:
+            logging.warning(f"Could NOT evaluate aarch64-darwin store_path for {package}! Lock file out-dated?")
+        else:
+            info["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]
+        results.append(info)
+
+    def get_status_icon(status):
+        if status == "success":
+            return "✅"
+        elif status == "some":
+            return "½"
+        else:
+            return "❌"
 
     environment = Environment(loader=FileSystemLoader("."))
+    environment.filters["status_icon"] = get_status_icon
     template = environment.get_template("report.html")
-
-    with open("./report_fixtures/successes.pickle", "rb") as f:
-        successes = pickle.load(f)
-    with open("./report_fixtures/failures.pickle", "rb") as f:
-        failures = pickle.load(f)
-    with open("./report_fixtures/system.pickle", "rb") as f:
-        system = pickle.load(f)
-    with open("./report_fixtures/inputs.pickle", "rb") as f:
-        inputs = pickle.load(f)
 
     with open("index.html", "w") as f:
         f.write(template.render(
-            successes=successes,
-            failures=failures,
-            system=system,
+            results=sorted(results, key=lambda i: i["status"]),
+            systems=systems,
             inputs=inputs
         ))
