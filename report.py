@@ -141,6 +141,7 @@ def get_checks(systems):
     return {
         system: run_nix([
             "eval", f".#checks.{system}",
+            "--apply", "builtins.mapAttrs (n: v: { storePath = v.out; source = v.config.mkDerivation.src.url;})"
         ])
         for system in systems
     }
@@ -167,14 +168,16 @@ if __name__ == '__main__':
     checks = cache_json("checks", get_checks, systems)
 
     results = []
-    for package, store_path in checks["x86_64-linux"].items():
+    for package, check in checks["x86_64-linux"].items():
         if package not in ci_results:
             logging.error(f"Could NOT find ci results for {package}!")
             continue
         info = ci_results[package]
-        stati = [info.get(system, {}).get("status") == "success" for system in systems]
         info["name"] = package
-        info["x86_64-linux"]["store_path"] = store_path
+        info["x86_64-linux"]["store_path"] = check["storePath"]
+        info["from_wheel"] = check["source"].endswith(".whl")
+
+        stati = [info.get(system, {}).get("status") == "success" for system in systems]
         if all(stati):
             info["status"] = "success"
         elif any(stati):
@@ -184,7 +187,7 @@ if __name__ == '__main__':
         if package not in checks["aarch64-darwin"]:
             logging.warning(f"Could NOT evaluate aarch64-darwin store_path for {package}! Lock file out-dated?")
         else:
-            info["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]
+            info["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]["storePath"]
         results.append(info)
 
     def get_status_icon(status):

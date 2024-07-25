@@ -47,6 +47,8 @@
     {% set success_percent = (success_count / all_count) * 100 %}
     <p>{{success_count}} builds out of {{ all_count }} were successful ({{ success_percent }}%)</p>
     #}
+
+
     <h2>inputs</h2>
     <ul class="inputs">
         {% for name, url in inputs.items() %}
@@ -55,6 +57,7 @@
     </ul>
 
     <h2>builds</h2>
+    📦 marks packages which are re-using wheels, i.e. are not built from source distributions.
     <table class="results">
         <thead>
             <tr>
@@ -64,10 +67,9 @@
             </tr>
         </thead>
         <tbody>
-
             {% for result in results %}
             <tr class="{{ result.status }}">
-                <td>{{ result.name }}</td>
+                <td>{{ result.name }} {% if result.from_wheel %}📦 {% endif %}</td>
                 {%- for system in ["x86_64-linux", "aarch64-darwin"] %}
                 <td>
                     {% set item = result.get(system, {}) -%}
