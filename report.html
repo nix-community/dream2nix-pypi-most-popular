@@ -73,8 +73,7 @@
                 {%- for system in ["x86_64-linux", "aarch64-darwin"] %}
                 <td>
                     {% set item = result.get(system, {}) -%}
-                    {% set status = item.status -%}
-                    {{ status | status_icon }}
+                    {%- if item.status == "success" %}✅{% else %}❌{% endif %}
                     {% if status == "success" -%}
                     <a href="{{ item.store_path }}">store path</a>
                     {% else -%}

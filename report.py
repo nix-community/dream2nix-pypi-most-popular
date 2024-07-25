@@ -190,16 +190,8 @@ if __name__ == '__main__':
             info["aarch64-darwin"]["store_path"] = checks["aarch64-darwin"][package]["storePath"]
         results.append(info)
 
-    def get_status_icon(status):
-        if status == "success":
-            return "✅"
-        elif status == "some":
-            return "½"
-        else:
-            return "❌"
 
     environment = Environment(loader=FileSystemLoader("."))
-    environment.filters["status_icon"] = get_status_icon
     template = environment.get_template("report.html")
 
     with open("index.html", "w") as f:
