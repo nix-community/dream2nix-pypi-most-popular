@@ -108,7 +108,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       lockAll = pkgs.writeShellApplication {
         name = "lock-all";
-        runtimeInputs = [pkgs.nix-eval-jobs pkgs.parallel pkgs.jq];
+        runtimeInputs = [pkgs.nix-eval-jobs pkgs.coreutils pkgs.parallel pkgs.jq];
         text = ''
           nix-eval-jobs --flake .#lockScripts.${system} \
            | parallel --pipe "jq -r .drvPath" \
