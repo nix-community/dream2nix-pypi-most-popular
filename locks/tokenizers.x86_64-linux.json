@@ -31,10 +31,10 @@
       },
       "huggingface-hub": {
         "is_direct": false,
-        "sha256": "7ad92edefb93d8145c061f6df8d99df2ff85f8379ba5fac8a95aca0642afa5d7",
+        "sha256": "abdf3244d3a274c4b1fbc5c4a1ef700032b3f60ba93cc63e4f036fd082aa2805",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/57/c0/cf4435f3186655e3bafdca08cd6c794e3866f1f89ed99595504e7240b6a2/huggingface_hub-0.24.0-py3-none-any.whl",
-        "version": "0.24.0"
+        "url": "https://files.pythonhosted.org/packages/93/14/6a82b1c2eab5a828f7d3d675811660eb68424e8b039191f418a94e8d9726/huggingface_hub-0.24.2-py3-none-any.whl",
+        "version": "0.24.2"
       },
       "idna": {
         "is_direct": false,
@@ -126,5 +126,5 @@
       }
     }
   },
-  "invalidationHash": "e7b3cec75c6a931e1c8c929c2949570c63601c264c7757f0aecca67bb8b6ce54"
+  "invalidationHash": "bbcc7b7bcf8d75bf46fd63ab3a9930986347f199798ce35dea93300336c8a21a"
 }

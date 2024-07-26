@@ -87,10 +87,10 @@
       },
       "sentry-sdk": {
         "is_direct": false,
-        "sha256": "87b3d413c87d8e7f816cc9334bff255a83d8b577db2b22042651c30c19c09190",
+        "sha256": "d964710e2dbe015d9dc4ff0ad16225d68c3b36936b742a6fe0504565b760a3b7",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4f/9e/9298785949269c8930e1fd3707b960da6e1a95a2442b747b8f8cca4578cb/sentry_sdk-2.10.0-py2.py3-none-any.whl",
-        "version": "2.10.0"
+        "url": "https://files.pythonhosted.org/packages/bc/3c/a8ab3309d22c1d7142f811882e7d45449696f87c6e4e723b1433b6069b84/sentry_sdk-2.11.0-py2.py3-none-any.whl",
+        "version": "2.11.0"
       },
       "setproctitle": {
         "is_direct": false,
@@ -185,5 +185,5 @@
       }
     }
   },
-  "invalidationHash": "7992bd8b6b5a3ecdcd201ab4ce4099c9ec28ac1e14f77a26bc9cc9f956fc94b7"
+  "invalidationHash": "a3bd500b2e10984f3a457e9fdfb2d9bdb43181fd123cdc48280a7eefd26302d4"
 }

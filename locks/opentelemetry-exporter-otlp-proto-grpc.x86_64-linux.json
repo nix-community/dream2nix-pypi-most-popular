@@ -73,10 +73,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "7c8daa26095f82482307bc717364e7c13f4f1c99659be82890dcfc215194554d",
+        "sha256": "3319e073562e2515c6ddc643eb92ce20809f5d8f10fead3332f71c63be6a7040",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/15/db/7f731524fe0e56c6b2eb57d05b55d3badd80ef7d1f1ed59db191b2fdd8ab/protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/ca/6c/cc7ab2fb3a4a7f07f211d8a7bbb76bba633eb09b148296dbd4281e217f95/protobuf-4.25.4-cp37-abi3-manylinux2014_x86_64.whl",
+        "version": "4.25.4"
       },
       "typing-extensions": {
         "is_direct": false,
@@ -146,5 +146,5 @@
       }
     }
   },
-  "invalidationHash": "86a36832a75fffe2506559cf168c403a8105b3c380b8aa7ca9a1411ef81b66c6"
+  "invalidationHash": "496f6378887691ba7569dbda32e537f4009070dca456357b18eb8a38fd29b0e3"
 }

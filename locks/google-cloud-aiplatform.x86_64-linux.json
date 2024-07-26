@@ -80,10 +80,10 @@
       },
       "google-cloud-storage": {
         "is_direct": false,
-        "sha256": "5b393bc766b7a3bc6f5407b9e665b2450d36282614b7945e570b3480a456d1e1",
+        "sha256": "e8e1a9577952143c3fca8163005ecfadd2d70ec080fa158a8b305000e2c22fbb",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c0/7d/9ec53c92ae8a87baf2fd0d8ccba4e72ce650eef653b3d34b8bc058ecfb64/google_cloud_storage-2.17.0-py2.py3-none-any.whl",
-        "version": "2.17.0"
+        "url": "https://files.pythonhosted.org/packages/27/6f/13f385443cba65e04922881fc44ad3fec51bc12bfcbb17488cee61f50e2f/google_cloud_storage-2.18.0-py2.py3-none-any.whl",
+        "version": "2.18.0"
       },
       "google-crc32c": {
         "is_direct": false,
@@ -157,10 +157,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "7c8daa26095f82482307bc717364e7c13f4f1c99659be82890dcfc215194554d",
+        "sha256": "3319e073562e2515c6ddc643eb92ce20809f5d8f10fead3332f71c63be6a7040",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/15/db/7f731524fe0e56c6b2eb57d05b55d3badd80ef7d1f1ed59db191b2fdd8ab/protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/ca/6c/cc7ab2fb3a4a7f07f211d8a7bbb76bba633eb09b148296dbd4281e217f95/protobuf-4.25.4-cp37-abi3-manylinux2014_x86_64.whl",
+        "version": "4.25.4"
       },
       "pyasn1": {
         "is_direct": false,
@@ -361,5 +361,5 @@
       }
     }
   },
-  "invalidationHash": "1d190c954bf050601204ba3a572c96491a7b9b0a7491733f46f25baa420ded41"
+  "invalidationHash": "aabbc61c5c211c51e288d45b4081bd0730497796537722afa4ab26f693261bad"
 }
