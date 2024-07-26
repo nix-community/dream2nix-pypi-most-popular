@@ -93,6 +93,7 @@
   withMaturin = {config, ...}: {
     config = let
       nativeBuildInputs = [
+        config.deps.pkg-config
         config.deps.maturin
         config.deps.cargo
         config.deps.rustc
@@ -105,7 +106,7 @@
           local,
           ...
       }: ({
-        inherit (nixpkgs) cargo rustc;
+        inherit (nixpkgs) cargo rustc pkg-config;
         inherit (local) maturin;
       } // lib.optionalAttrs nixpkgs.stdenv.isDarwin {
         inherit (nixpkgs) iconv;
