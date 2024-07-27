@@ -44,44 +44,44 @@ def get_ci_results_from_builder(builder):
     system, package = name_match.groups()
     builder_id = builder.get("builderid")
 
-    build = api_get(f"/builders/{builder_id}/builds?order=-started_at&limit=1&complete=true")["builds"][0]
-    build_id = build.get("buildid")
-    steps = api_get(f"builds/{build_id}/steps") \
-        .get("steps", [])
+    builds = api_get(f"/builders/{builder_id}/builds?order=-started_at&complete=true")["builds"]
+    for build in builds:
+        build_id = build.get("buildid")
+        steps = api_get(f"builds/{build_id}/steps") \
+            .get("steps", [])
+        for step in steps:
+            step_name = step['name']
+            if step_name != "Build flake attr":
+                continue
+            step_id = step['stepid']
 
-    for step in steps:
-        step_name = step['name']
-        if step_name != "Build flake attr":
-            continue
-        step_id = step['stepid']
+            logs = api_get(f"/steps/{step_id}/logs").get("logs", "[]")
+            if len(logs) != 1:
+                raise NotImplementedError("only 1 log per build implemented")
+            log = logs[0]
 
-        logs = api_get(f"/steps/{step_id}/logs").get("logs", "[]")
-        if len(logs) == 0:
-            continue
-        elif len(logs) > 1:
-            raise NotImplementedError("only 1 log per build implemented")
-        log = logs[0]
+            result = step["results"]
+            if result == 0:
+                status = "success"
+            elif result == 2:
+                status = "failure"
+            elif result == 3:
+                break
+            else:
+                raise NotImplementedError("unknown step results value")
 
-        result = step["results"]
-        if result == 0:
-            status = "success"
-        elif result == 2:
-            status = "failure"
-        else:
-            raise NotImplementedError("unknown step results value")
+            log_path = f"logs/{log["logid"]}/raw_inline"
+            log_uri = f"{BUILDBOT_API_URI}{log_path}"
+            log_tail = "\n".join(api_get(log_path, json=False).split("\n")[-100:])
 
-        log_path = f"logs/{log["logid"]}/raw_inline"
-        log_uri = f"{BUILDBOT_API_URI}{log_path}"
-        log_tail = "\n".join(api_get(log_path, json=False).split("\n")[-100:])
-
-        logging.debug(f"collected ci job info from {package} ({system}, {status}, {log_uri})")
-        return package, system, {
-            "status": status,
-            "log_uri": log_uri,
-            "started_at": step.get("started_at"),
-            "complete_at": step.get("complete_at"),
-            "log_tail": log_tail
-        }
+            logging.debug(f"collected ci job info from {package} ({system}, {status}, {log_uri})")
+            return package, system, {
+                "status": status,
+                "log_uri": log_uri,
+                "started_at": step.get("started_at"),
+                "complete_at": step.get("complete_at"),
+                "log_tail": log_tail
+            }
 
 
 def get_ci_project_id(name):
