@@ -38,10 +38,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "f1279ab38ecbfae7e456a108c5c0681e4956d5b1090027c1de0f934dfdb4b35c",
+        "sha256": "eecd41bfc0e4b1bd3fa7909ed93dd14dd5567b98c941d6c1ad08fdcab3d6884b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f3/bf/26deba06a4c910a85f78245cac7698f67cedd7efe00d04f6b3e1b3506a59/protobuf-4.25.3-cp37-abi3-macosx_10_9_universal2.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/34/ca/bf85ffe3dd16f1f2aaa6c006da8118800209af3da160ae4d4f47500eabd9/protobuf-4.25.4-cp37-abi3-macosx_10_9_universal2.whl",
+        "version": "4.25.4"
       },
       "setuptools": {
         "is_direct": false,
@@ -59,10 +59,10 @@
       },
       "tb-nightly": {
         "is_direct": false,
-        "sha256": "c0e49c4f5879eb701a7a71fd9afb1e52af97591320a6af6527813a33e9d3e45d",
+        "sha256": "6806fb4accd248a9b52d2c3b9384b7ae4a2d94b557cbbaf6ca935a176d21d5fc",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c9/5b/52c2203cb7352e8451961e87c07c5761676d9d247464b38e7a36ef630bc6/tb_nightly-2.18.0a20240717-py3-none-any.whl",
-        "version": "2.18.0a20240717"
+        "url": "https://files.pythonhosted.org/packages/69/59/bad84a643c77a8013dc6b68af4f0dc0b77da66c9ee5fbf38d73f42dab141/tb_nightly-2.18.0a20240723-py3-none-any.whl",
+        "version": "2.18.0a20240723"
       },
       "tensorboard-data-server": {
         "is_direct": false,
@@ -107,5 +107,5 @@
       }
     }
   },
-  "invalidationHash": "d8c539976a4becef9aeb5138cfae5923e2aa55352a6acd6be8d32103df2a0393"
+  "invalidationHash": "a62c994ab4a116af32a54a2fdcea5a7add0e85bcb5f515880b900f7d01623f6c"
 }

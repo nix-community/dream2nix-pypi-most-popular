@@ -94,10 +94,10 @@
       },
       "sphinx": {
         "is_direct": false,
-        "sha256": "a4abe5385bf856df094c1e6cadf24a2351b12057be3670b99a12c05a01d209f5",
+        "sha256": "242f92a7ea7e6c5b406fdc2615413890ba9f699114a9c09192d7dfead2ee9cfe",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/35/89/99d9fab99f04a94dc0344494c0f574b6e730994c4f3ce023b03575363472/sphinx-7.4.5.tar.gz",
-        "version": "7.4.5"
+        "url": "https://files.pythonhosted.org/packages/5b/be/50e50cb4f2eff47df05673d361095cafd95521d2a22521b920c67a372dcb/sphinx-7.4.7.tar.gz",
+        "version": "7.4.7"
       },
       "sphinxcontrib-applehelp": {
         "is_direct": false,
@@ -198,5 +198,5 @@
       }
     }
   },
-  "invalidationHash": "edbde27599b0c5be5f5f4a02178f49a78bc288a2afc03d533fe4df4da0e21b04"
+  "invalidationHash": "2dbca4b57ebcf22a070f1b3525cadb30c862061a40a59ae81f56917e47d53105"
 }

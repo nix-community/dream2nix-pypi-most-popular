@@ -24,10 +24,10 @@
       },
       "starlette": {
         "is_direct": false,
-        "sha256": "9af890290133b79fc3db55474ade20f6220a364a0402e0b556e7cd5e1e093823",
+        "sha256": "890e89d9b1b367bad6fd11a6e191f40d03504df1ff55fd15674a3b35a122990e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/61/b5/6bceb93ff20bd7ca36e6f7c540581abb18f53130fabb30ba526e26fd819b/starlette-0.37.2.tar.gz",
-        "version": "0.37.2"
+        "url": "https://files.pythonhosted.org/packages/21/fe/2da6181514acc31a779492172a39d7502fe7b216845cf44d12cd166bfe42/starlette-0.38.1.tar.gz",
+        "version": "0.38.1"
       }
     },
     "targets": {
@@ -44,5 +44,5 @@
       }
     }
   },
-  "invalidationHash": "67ef03467bd816aacd9c41c7219e9d9df47f2d663ee5349b7bc65e5c24d74976"
+  "invalidationHash": "e306a9aa2dcd4b8a99965cab5a9a18abcbb8c364bbe3b6b81b6c1c3b10e50d73"
 }

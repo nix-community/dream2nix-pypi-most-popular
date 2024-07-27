@@ -283,10 +283,10 @@
       },
       "jupyterlab": {
         "is_direct": false,
-        "sha256": "df6e46969ea51d66815167f23d92f105423b7f1f06fa604d4f44aeb018c82c7b",
+        "sha256": "343a979fb9582fd08c8511823e320703281cd072a0049bcdafdc7afeda7f2537",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/bd/78/0dceb7cf382613f6ad629fd421f9604d0befcb85ec800ba389ff856a9bbe/jupyterlab-4.2.3.tar.gz",
-        "version": "4.2.3"
+        "url": "https://files.pythonhosted.org/packages/75/5f/32cc1280b7608f28ba76db1956672950ece63d7631b38a5677a35af5897e/jupyterlab-4.2.4.tar.gz",
+        "version": "4.2.4"
       },
       "jupyterlab-pygments": {
         "is_direct": false,
@@ -507,10 +507,10 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "6f2f78ef14077e08856e788fa482107aa602636c16c25bdf59c22ea525a785e9",
+        "sha256": "6d1d7539043b2b31307f2c6c72957a97c839a88b2629a348ebabe5aa8b626d6b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/5c/a2/4796309ee72d7005abe844ffdd88efa9174f724e298aedcb834d08bb4b9b/rpds_py-0.19.0-cp312-cp312-macosx_11_0_arm64.whl",
-        "version": "0.19.0"
+        "url": "https://files.pythonhosted.org/packages/1e/2f/deb57a77c38db7affe54288157667c82397c6bd14473e77461a082b42286/rpds_py-0.19.1-cp312-cp312-macosx_11_0_arm64.whl",
+        "version": "0.19.1"
       },
       "send2trash": {
         "is_direct": false,
@@ -918,5 +918,5 @@
       }
     }
   },
-  "invalidationHash": "8d26bb31149c879f0d0d735b2f422037f03b39490449d4844bbe242de11567a4"
+  "invalidationHash": "dbcdc276c66ce3c0cd85e3a1f68bea6fbef534f4793d4b1875d292a2554658b3"
 }

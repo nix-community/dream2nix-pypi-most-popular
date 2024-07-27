@@ -31,10 +31,10 @@
       },
       "pytest": {
         "is_direct": false,
-        "sha256": "e9600ccf4f563976e2c99fa02c7624ab938296551f280835ee6516df8bc4ae8c",
+        "sha256": "4ba08f9ae7dcf84ded419494d229b48d0903ea6407b030eaec46df5e6a73bba5",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b9/77/ccea391104f576a6e54a54334fc26d29c28aa0ec85714c781fbd2c34ac86/pytest-8.3.1-py3-none-any.whl",
-        "version": "8.3.1"
+        "url": "https://files.pythonhosted.org/packages/0f/f9/cf155cf32ca7d6fa3601bc4c5dd19086af4b320b706919d48a4c79081cf9/pytest-8.3.2-py3-none-any.whl",
+        "version": "8.3.2"
       },
       "pytest-cov": {
         "is_direct": false,
@@ -62,5 +62,5 @@
       }
     }
   },
-  "invalidationHash": "0c800dd403afb692f2d336c46dade9311c0aeffdca8ef5db1672a92aec88b794"
+  "invalidationHash": "f77541fd0f3a5fc88bf33a0bc8afef2c8a93f0821aea14b463cbed0fc3498550"
 }
