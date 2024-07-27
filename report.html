@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>dreampkgs report</title>
+    <title>dream2nix-pypi-most-popular</title>
     <style>
      .inputs, .results, .logs {
          padding: 1rem;
@@ -58,8 +58,6 @@
         <tr>
     </table>
 
-
-
     <h2>inputs</h2>
     <p>
         This report was generated on {{ now.strftime("%Y-%m-%d %H:%M") }} with the following flake inputs:
@@ -71,7 +69,7 @@
     </ul>
 
     <h2>skipped</h2>
-    <p>the following packages where skipped on all platforms, mostly due to locking them is still broken.</p>
+    <p>the following {{skipped_packages.keys() | length}} packages where skipped on all platforms because locking them is still broken.</p>
     <table class="skipped">
         <thead>
             <tr>
