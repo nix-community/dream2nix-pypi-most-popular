@@ -229,12 +229,11 @@ if __name__ == '__main__':
     environment.filters["parse_timestamp"] = datetime.fromtimestamp
     template = environment.get_template("report.html")
 
-    with open("index.html", "w") as f:
-        f.write(template.render(
-            results=sorted(results, key=lambda i: i["status"]),
-            systems=systems,
-            inputs=inputs,
-            stats_per_system=stats_per_system,
-            skipped_packages=skipped_packages,
-            now=datetime.now()
-        ))
+    print(template.render(
+        results=sorted(results, key=lambda i: i["status"]),
+        systems=systems,
+        inputs=inputs,
+        stats_per_system=stats_per_system,
+        skipped_packages=skipped_packages,
+        now=datetime.now()
+    ))
