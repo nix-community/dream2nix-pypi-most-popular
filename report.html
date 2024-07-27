@@ -132,20 +132,22 @@
     <h2>logs</h2>
     <div class="logs">
         {% for result in results %}
-        {%- if result.status != "success" %}
+        {%- if result.status != "success" -%}
         <h3>{{ result.name }}</h3>
-        {% endif -%}
         <div class="systems">
+        {%- endif -%}
             {% for system, item in result.items() %}
-            {%- if system in ["x86_64-linux", "aarch64-darwin"] and item.status != "success" %}
             <div class="system">
+            {%- if system in ["x86_64-linux", "aarch64-darwin"] and item.status != "success" %}
                 <h4 id="{{system}}-{{result.name}}">{{ system }}</h4>
                 <p>(last 100 lines only, <a href="{{item.log_uri}}">full log</a>)</p>
                 <pre class="build-log">{{ item.log_tail }}</pre>
-            </div>
             {% endif -%}
+            </div>
             {% endfor %}
+        {%- if result.status != "success" -%}
         </div>
+        {%- endif -%}
         {% endfor %}
     </div>
 
