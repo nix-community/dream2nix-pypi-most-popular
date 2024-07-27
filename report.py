@@ -16,7 +16,7 @@ import requests
 
 
 BUILDBOT_API_URI = "https://buildbot.nix-community.org/api/v2/"
-BUILDBOT_PROJECT_ID = 15
+BUILDBOT_PROJECT_NAME = "nix-community/dream2nix-pypi-most-popular"
 POOL_SIZE = 20
 re_name = re.compile(r"^.*#checks\.(x86_64-linux|aarch64-darwin)\.(.*)$")
 
@@ -84,8 +84,18 @@ def get_ci_results_from_builder(builder):
         }
 
 
+def get_ci_project_id(name):
+    """project ids on buildbot.nix-community.org are unstable atm
+    and i didn't get name filtering to work on first try, so
+    we just filter the whole project list for now."""
+    for project in api_get("projects").get("projects"):
+        if project.get("name") == name:
+            return project.get('projectid')
+
+
 def get_ci_results():
-    builders = api_get(f"builders?projectid={BUILDBOT_PROJECT_ID}") \
+    project_id = get_ci_project_id(BUILDBOT_PROJECT_NAME)
+    builders = api_get(f"builders?projectid={project_id}") \
         .get("builders", [])
 
     ci_results = {}
