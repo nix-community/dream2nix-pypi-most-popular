@@ -87,10 +87,10 @@
       },
       "sentry-sdk": {
         "is_direct": false,
-        "sha256": "87b3d413c87d8e7f816cc9334bff255a83d8b577db2b22042651c30c19c09190",
+        "sha256": "d964710e2dbe015d9dc4ff0ad16225d68c3b36936b742a6fe0504565b760a3b7",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4f/9e/9298785949269c8930e1fd3707b960da6e1a95a2442b747b8f8cca4578cb/sentry_sdk-2.10.0-py2.py3-none-any.whl",
-        "version": "2.10.0"
+        "url": "https://files.pythonhosted.org/packages/bc/3c/a8ab3309d22c1d7142f811882e7d45449696f87c6e4e723b1433b6069b84/sentry_sdk-2.11.0-py2.py3-none-any.whl",
+        "version": "2.11.0"
       },
       "setproctitle": {
         "is_direct": false,
@@ -129,10 +129,10 @@
       },
       "wandb": {
         "is_direct": false,
-        "sha256": "78eb7e6a530848fc47792e95563b406019bed7c4dadb54415a982cd4900b7c75",
+        "sha256": "233b02d3643142cce8c0ae7986c233fe976b3f7ec0f7aded7478dad0d5a74d43",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/7f/ba/ecba013c632bdcdcfb986b4df9f4fb98cdf1d61cd0653c203fee2db209a2/wandb-0.17.4-py3-none-macosx_11_0_arm64.whl",
-        "version": "0.17.4"
+        "url": "https://files.pythonhosted.org/packages/3f/37/98073eca9a8e0e1ac66c97434b396956e2824623553f7472dbdd30b4b378/wandb-0.17.5-py3-none-macosx_11_0_arm64.whl",
+        "version": "0.17.5"
       }
     },
     "targets": {
@@ -185,5 +185,5 @@
       }
     }
   },
-  "invalidationHash": "d971bade6cc96d5ba10202ddebe74deac1a372453c727321dc76a3486c40818b"
+  "invalidationHash": "a3bd500b2e10984f3a457e9fdfb2d9bdb43181fd123cdc48280a7eefd26302d4"
 }

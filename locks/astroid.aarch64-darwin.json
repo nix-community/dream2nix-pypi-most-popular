@@ -3,10 +3,10 @@
     "sources": {
       "astroid": {
         "is_direct": false,
-        "sha256": "7099b5a60985529d8d46858befa103b82d0d05a5a5e8b816b5303ed96075e1d9",
+        "sha256": "0e14202810b30da1b735827f78f5157be2bbd4a7a59b7707ca0bfc2fb4c0063a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/96/77/a503a7bc6246b53f54305bce8aae6c474b3d2291dae00bb1b0226cfe4096/astroid-3.2.3.tar.gz",
-        "version": "3.2.3"
+        "url": "https://files.pythonhosted.org/packages/9e/53/1067e1113ecaf58312357f2cd93063674924119d80d173adc3f6f2387aa2/astroid-3.2.4.tar.gz",
+        "version": "3.2.4"
       }
     },
     "targets": {
@@ -15,5 +15,5 @@
       }
     }
   },
-  "invalidationHash": "a3dd4c8aec37f867fcb7c34d437f0d02071e5ce3875eb93f5af6147680461efd"
+  "invalidationHash": "a38d5a5ac65bc5168455370d5b37aeb77d4e9ad3413cc8e3e020dcdde72b329e"
 }

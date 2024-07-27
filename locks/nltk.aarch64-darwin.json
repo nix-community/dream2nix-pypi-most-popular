@@ -24,10 +24,10 @@
       },
       "regex": {
         "is_direct": false,
-        "sha256": "68811ab14087b2f6e0fc0c2bae9ad689ea3584cad6917fc57be6a48bbd012c49",
+        "sha256": "7df9ea48641da022c2a3c9c641650cd09f0cd15e8908bf931ad538f5ca7919c9",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/23/d3/65db07106b4584b62b1ec0061277c54f565da92d91f0a211057faccb841b/regex-2024.5.15-cp312-cp312-macosx_11_0_arm64.whl",
-        "version": "2024.5.15"
+        "url": "https://files.pythonhosted.org/packages/9b/f2/c6182095baf0a10169c34e87133a8e73b2e816a80035669b1278e927685e/regex-2024.7.24-cp312-cp312-macosx_11_0_arm64.whl",
+        "version": "2024.7.24"
       },
       "tqdm": {
         "is_direct": false,
@@ -52,5 +52,5 @@
       }
     }
   },
-  "invalidationHash": "402cacc76510959c6253775f8061509fa365e5898d0916e2d0f9569b326bb06d"
+  "invalidationHash": "99d0a7b09cc25dd8327eb1a0a42f482b926f1f3c04f98ec89c6b59834e6bed6f"
 }

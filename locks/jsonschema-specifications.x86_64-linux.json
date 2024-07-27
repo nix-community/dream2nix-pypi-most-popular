@@ -24,10 +24,10 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "3b4cf5a9497874822341c2ebe0d5850fed392034caadc0bad134ab6822c0925b",
+        "sha256": "08ce9c95a0b093b7aec75676b356a27879901488abc27e9d029273d280438505",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/8d/4f/11392ec52a9a4f9d37b5d07790139d31235fec1f552338612730e62e7126/rpds_py-0.19.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "0.19.0"
+        "url": "https://files.pythonhosted.org/packages/54/91/ea027a9f835c2c59603236b451f7cb1ee5a280b9df26da7b4850e4f1a13a/rpds_py-0.19.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.19.1"
       }
     },
     "targets": {
@@ -44,5 +44,5 @@
       }
     }
   },
-  "invalidationHash": "80572916b93e589c572c11bf505d5f9ae5d79f1864096e7ed57599eba4e5b40e"
+  "invalidationHash": "aedc5f16f34f1168f7e6050cba48be7123942497d57961be49d58f28fd3c12cd"
 }

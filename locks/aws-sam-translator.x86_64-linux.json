@@ -24,17 +24,17 @@
       },
       "boto3": {
         "is_direct": false,
-        "sha256": "69d5afb7a017d07dd6bdfb680d2912d5d369b3fafa0a45161207d9f393b14d7e",
+        "sha256": "11edeeacdd517bda3b7615b754d8440820cdc9ddd66794cc995a9693ddeaa3be",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/4e/c7/b0b4d4d0e150770f8f0afadc6e4f5f31da0cebed590ff184f3dff2ed25ee/boto3-1.34.145-py3-none-any.whl",
-        "version": "1.34.145"
+        "url": "https://files.pythonhosted.org/packages/f7/2e/7dfb55819c329f5b67e04d08027d32354adfe024d5d8623221e064e549bd/boto3-1.34.149-py3-none-any.whl",
+        "version": "1.34.149"
       },
       "botocore": {
         "is_direct": false,
-        "sha256": "2e72e262de02adcb0264ac2bac159a28f55dbba8d9e52aa0308773a42950dff5",
+        "sha256": "ae6c4be52eeee96f68c116b27d252bab069cd046d61a17cfe8e9da411cf22906",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/35/48/86b595223cd3159aa3e211a3552ece7bfbcf0d75689465f3c95754f43d26/botocore-1.34.145-py3-none-any.whl",
-        "version": "1.34.145"
+        "url": "https://files.pythonhosted.org/packages/ee/de/e17f53deb18de8f343e281ff06e697b85cf2056d50f2352a0d25ca2d8373/botocore-1.34.149-py3-none-any.whl",
+        "version": "1.34.149"
       },
       "jmespath": {
         "is_direct": false,
@@ -87,10 +87,10 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "3b4cf5a9497874822341c2ebe0d5850fed392034caadc0bad134ab6822c0925b",
+        "sha256": "08ce9c95a0b093b7aec75676b356a27879901488abc27e9d029273d280438505",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/8d/4f/11392ec52a9a4f9d37b5d07790139d31235fec1f552338612730e62e7126/rpds_py-0.19.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "0.19.0"
+        "url": "https://files.pythonhosted.org/packages/54/91/ea027a9f835c2c59603236b451f7cb1ee5a280b9df26da7b4850e4f1a13a/rpds_py-0.19.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.19.1"
       },
       "s3transfer": {
         "is_direct": false,
@@ -176,5 +176,5 @@
       }
     }
   },
-  "invalidationHash": "2b6fc6cce90a284beb70d348b6f28598a80c9157a1c1ddea0f8863f5a55309c6"
+  "invalidationHash": "c3d4bc8f13bc33cd28397ac0da60c4914e5b514cc2eccd6f3179dff88c51ffa3"
 }

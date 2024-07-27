@@ -17,17 +17,17 @@
       },
       "boto3": {
         "is_direct": false,
-        "sha256": "7ec568fb19bce82a70be51f08fddac1ef927ca3fb0896cbb34303a012ba228d8",
+        "sha256": "11edeeacdd517bda3b7615b754d8440820cdc9ddd66794cc995a9693ddeaa3be",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/86/e2/62f3763092e06e9341521854982f0fc05ecaef4016d7c88b73ebd4693727/boto3-1.34.146-py3-none-any.whl",
-        "version": "1.34.146"
+        "url": "https://files.pythonhosted.org/packages/f7/2e/7dfb55819c329f5b67e04d08027d32354adfe024d5d8623221e064e549bd/boto3-1.34.149-py3-none-any.whl",
+        "version": "1.34.149"
       },
       "botocore": {
         "is_direct": false,
-        "sha256": "3fd4782362bd29c192704ebf859c5c8c5189ad05719e391eefe23088434427ae",
+        "sha256": "ae6c4be52eeee96f68c116b27d252bab069cd046d61a17cfe8e9da411cf22906",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/83/fb/c9ccf2381051176f27cdde8008db1fba18796536efa33b7e9b341bc2d27c/botocore-1.34.146-py3-none-any.whl",
-        "version": "1.34.146"
+        "url": "https://files.pythonhosted.org/packages/ee/de/e17f53deb18de8f343e281ff06e697b85cf2056d50f2352a0d25ca2d8373/botocore-1.34.149-py3-none-any.whl",
+        "version": "1.34.149"
       },
       "certifi": {
         "is_direct": false,
@@ -198,5 +198,5 @@
       }
     }
   },
-  "invalidationHash": "2fe138a0150a9917ae9ae5573c3ccfd197d3b38891ee694493e737a0edb4561f"
+  "invalidationHash": "dabd95761565a0a8826e72f35010e587c0d5209aeadd94b658296289cf991284"
 }

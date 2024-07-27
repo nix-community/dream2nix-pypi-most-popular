@@ -10,10 +10,10 @@
       },
       "azure-storage-blob": {
         "is_direct": false,
-        "sha256": "eeb91256e41d4b5b9bad6a87fd0a8ade07dd58aa52344e2c8d2746e27a017d3b",
+        "sha256": "b9722725072f5b7373c0f4dd6d78fbae2bb37bffc5c3e01731ab8c750ee8dd7e",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/1b/0f/86cdaec4be486d12fd5bd2c56e835492a58d3bcd4915d24473e889b70f2c/azure-storage-blob-12.20.0.tar.gz",
-        "version": "12.20.0"
+        "url": "https://files.pythonhosted.org/packages/97/c9/0e1e864eef8071102de2d6b11dfcf8d35410735145b2fbc2e0a5f58d1490/azure-storage-blob-12.21.0.tar.gz",
+        "version": "12.21.0"
       },
       "certifi": {
         "is_direct": false,
@@ -131,5 +131,5 @@
       }
     }
   },
-  "invalidationHash": "859455404be362774a2ad436e21ddf5075f93c1d3d295654270d1ff45ac24eb0"
+  "invalidationHash": "0d022b51d8bf3f1ffaca0f15539aa70d4a249ef48989b32b20df552b120cb742"
 }

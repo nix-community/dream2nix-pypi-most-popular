@@ -24,10 +24,10 @@
       },
       "regex": {
         "is_direct": false,
-        "sha256": "4a605586358893b483976cffc1723fb0f83e526e8f14c6e6614e75919d9862cf",
+        "sha256": "d55588cba7553f0b6ec33130bc3e114b355570b45785cebdc9daed8c637dd440",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/91/28/a187c6eccd980454b668e837df35ad0935989a6b00b9288bc094296bc2f6/regex-2024.5.15-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "2024.5.15"
+        "url": "https://files.pythonhosted.org/packages/f9/ae/5f23e64f6cf170614237c654f3501a912dfb8549143d4b91d1cd13dba319/regex-2024.7.24-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2024.7.24"
       },
       "tqdm": {
         "is_direct": false,
@@ -52,5 +52,5 @@
       }
     }
   },
-  "invalidationHash": "402cacc76510959c6253775f8061509fa365e5898d0916e2d0f9569b326bb06d"
+  "invalidationHash": "99d0a7b09cc25dd8327eb1a0a42f482b926f1f3c04f98ec89c6b59834e6bed6f"
 }

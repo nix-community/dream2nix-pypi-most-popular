@@ -10,10 +10,10 @@
       },
       "importlib-metadata": {
         "is_direct": false,
-        "sha256": "15584cf2b1bf449d98ff8a6ff1abef57bf20f3ac6454f431736cd3e660921b2f",
+        "sha256": "11901fa0c2f97919b288679932bb64febaeacf289d18ac84dd68cb2e74213369",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/dc/ef/38766b2edb096260d9b1b6ad35adaa0bce3b0567abb452b21eb074af88c4/importlib_metadata-8.0.0-py3-none-any.whl",
-        "version": "8.0.0"
+        "url": "https://files.pythonhosted.org/packages/82/47/bb25ec04985d0693da478797c3d8c1092b140f3a53ccb984fbbd38affa5b/importlib_metadata-8.2.0-py3-none-any.whl",
+        "version": "8.2.0"
       },
       "py4j": {
         "is_direct": false,
@@ -54,5 +54,5 @@
       }
     }
   },
-  "invalidationHash": "1eb1dd867753053a76f1377613aef955faba16fa86522bd9f9d3dd309ce8ad35"
+  "invalidationHash": "3ba398b71b378e75b9541053ab41842675ff160beae93eb0d7f9d7b7e495e000"
 }

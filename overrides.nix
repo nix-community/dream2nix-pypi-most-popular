@@ -76,7 +76,7 @@
   withCython0 = {config, ...}: {
     config = {
       mkDerivation = {
-        nativeBuildInputs = [config.deps.python.pkgs.cython0];
+        nativeBuildInputs = [config.deps.python.pkgs.cython_0];
       };
     };
   };
@@ -93,6 +93,7 @@
   withMaturin = {config, ...}: {
     config = let
       nativeBuildInputs = [
+        config.deps.pkg-config
         config.deps.maturin
         config.deps.cargo
         config.deps.rustc
@@ -105,7 +106,7 @@
           local,
           ...
       }: ({
-        inherit (nixpkgs) cargo rustc;
+        inherit (nixpkgs) cargo rustc pkg-config;
         inherit (local) maturin;
       } // lib.optionalAttrs nixpkgs.stdenv.isDarwin {
         inherit (nixpkgs) iconv;
@@ -259,10 +260,12 @@
       };
     };
   in {
-    deps = {nixpkgs, ...}: {
-      inherit (nixpkgs) fetchPypi;
+    config = {
+      deps = {nixpkgs, ...}: {
+        inherit (nixpkgs) fetchPypi;
+      };
+      mkDerivation.nativeBuildInputs = [setuptools_69_2];
     };
-    mkDerivation.nativeBuildInputs = [setuptools_69_2];
   };
 
 in {
@@ -318,7 +321,7 @@ in {
 
   contourpy = {config,...}: {
     imports = [withMesonPy];
-    mkDerivation.nativeBuildInputs = [
+    config.mkDerivation.nativeBuildInputs = [
       config.deps.python.pkgs.pybind11
     ];
   };
@@ -396,14 +399,16 @@ in {
   jupyterlab-pygments = useWheel;
 
   jupyterlab-widgets = {config, ...}: {
-    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.jupyter-packaging];
-    mkDerivation.buildInputs = [config.deps.python.pkgs.jupyterlab];
+    config = {
+      mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.jupyter-packaging];
+      mkDerivation.buildInputs = [config.deps.python.pkgs.jupyterlab];
+    };
   };
 
   keyring = withSetuptoolsScm;
   kiwisolver = {config, ...}: {
     imports = [ withSetuptoolsScm ];
-    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.cppy];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.cppy];
   };
   langchain-core = withPoetryCore;
   lazy-object-proxy = withSetuptoolsScm;
@@ -415,7 +420,7 @@ in {
       deps = {nixpkgs, ...}: {
         inherit (nixpkgs) libllvm;
       };
-      mkDerivation.nativebuildInputs = [config.deps.libllvm.dev];
+      mkDerivation.nativeBuildInputs = [config.deps.libllvm.dev];
     };
   };
 
@@ -460,14 +465,14 @@ in {
   more-itertools = withFlitCore;
   msgpack = withCython;
   mypy = {config, ...}: {
-    mkDerivation.propagatedBuildInputs = with config.deps.python.pkgs; [types-setuptools types-psutil];
+    config.mkDerivation.propagatedBuildInputs = with config.deps.python.pkgs; [types-setuptools types-psutil];
   };
   mysql-connector-python = useWheel;
   nbclient = withHatchling;
   nbconvert = withHatchling;
   nbformat = {config, ...}: {
     imports = [withHatchling];
-    mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-nodejs-version];
+    config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-nodejs-version];
   };
   nest-asyncio = withSetuptoolsScm;
   nodeenv = withSetuptoolsScm;
@@ -517,7 +522,7 @@ in {
     imports = [ withPkgConfig ];
     config = {
       deps = {nixpkgs, ...}: {
-        inherit (nixpkgs) zlib;
+        inherit (nixpkgs) zlib libjpeg;
       };
       mkDerivation = {
         buildInputs = [
@@ -530,7 +535,7 @@ in {
 
   platformdirs = withHatchVcs;
   plotly = {config, ...}: {
-    mkDerivation.propagatedBuildInputs = [config.deps.python.pkgs.jupyterlab];
+    config.mkDerivation.propagatedBuildInputs = [config.deps.python.pkgs.jupyterlab];
     config.buildPythonPackage.pythonRelaxDeps = [ "jupyterlab" ];
   };
   pluggy = withSetuptoolsScm;
@@ -538,16 +543,18 @@ in {
   prettytable = withHatchVcs;
   progressbar2 = withSetuptoolsScm;
   psutil = {config, ...}: {
-    deps = { nixpkgs,... }: lib.optionalAttrs nixpkgs.stdenv.isDarwin {
-      inherit (nixpkgs.darwin.apple_sdk.frameworks) IOKit;
+    config = {
+      deps = { nixpkgs,... }: lib.optionalAttrs nixpkgs.stdenv.isDarwin {
+        inherit (nixpkgs.darwin.apple_sdk.frameworks) IOKit;
+      };
+      mkDerivation.nativeBuildInputs = lib.optionals config.deps.stdenv.isDarwin [ config.deps.IOKit ];
     };
-    mkDerivation.nativeBuildInputs = lib.optionals config.deps.stdenv.isDarwin [ config.deps.IOKit ];
   };
   psycopg2 = {config, ...}: {
     imports = [withPkgConfig];
     config = {
       deps = {nixpkgs, ...}: {
-        inherit (nixpkgs) postgresql;
+        inherit (nixpkgs) postgresql openssl;
       };
       pip = {
         nativeBuildInputs = [
@@ -573,17 +580,16 @@ in {
     config.mkDerivation.nativeBuildInputs = [config.deps.python.pkgs.hatch-requirements-txt];
   };
   pymssql = {config, ...}: {
-    config = {
-    imports = [withCC withCython withSetuptoolsScm];
+     imports = [withCC withCython withSetuptoolsScm];
     config.mkDerivation.nativeBuildInputs = [ config.deps.python.pkgs.tomli ];
-  };
   };
   pyparsing = withFlitCore;
   pyodbc = {config, ...}: {
     config = {
       deps = {nixpkgs, ...}: {
         inherit (nixpkgs) unixODBC;
-      };
+
+     };
       mkDerivation = {
         buildInputs = [
           config.deps.unixODBC

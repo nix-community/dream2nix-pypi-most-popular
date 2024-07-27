@@ -213,10 +213,10 @@
       },
       "croniter": {
         "is_direct": false,
-        "sha256": "f15e80828d23920c4bb7f4d9340b932c9dcabecafc7775703c8b36d1253ed526",
+        "sha256": "b3bd11f270dc54ccd1f2397b813436015a86d30ffc5a7a9438eec1ed916f2101",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/99/1b/62e5ef33bb8cd599004b85f1ae648aaaf329ec396a8e210906e3f04df66a/croniter-2.0.7-py2.py3-none-any.whl",
-        "version": "2.0.7"
+        "url": "https://files.pythonhosted.org/packages/93/6a/f2f68e0f9cf702b6d055ab53cab0d8c100f04e86228ca500a8ca9de94b58/croniter-3.0.3-py2.py3-none-any.whl",
+        "version": "3.0.3"
       },
       "cryptography": {
         "is_direct": false,
@@ -402,10 +402,10 @@
       },
       "importlib-metadata": {
         "is_direct": false,
-        "sha256": "30962b96c0c223483ed6cc7280e7f0199feb01a0e40cfae4d4450fc6fab1f570",
+        "sha256": "15584cf2b1bf449d98ff8a6ff1abef57bf20f3ac6454f431736cd3e660921b2f",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/2d/0a/679461c511447ffaf176567d5c496d1de27cbe34a87df6677d7171b2fbd4/importlib_metadata-7.1.0-py3-none-any.whl",
-        "version": "7.1.0"
+        "url": "https://files.pythonhosted.org/packages/dc/ef/38766b2edb096260d9b1b6ad35adaa0bce3b0567abb452b21eb074af88c4/importlib_metadata-8.0.0-py3-none-any.whl",
+        "version": "8.0.0"
       },
       "importlib-resources": {
         "is_direct": false,
@@ -563,59 +563,59 @@
       },
       "opentelemetry-api": {
         "is_direct": false,
-        "sha256": "757fa1aa020a0f8fa139f8959e53dec2051cc26b832e76fa839a6d76ecefd737",
+        "sha256": "7d7ea33adf2ceda2dd680b18b1677e4152000b37ca76e679da71ff103b943064",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/7e/b2/4bc5e52c9a23df0ac17dbb23923e609a8269cd67000a712b4f5bcfae1490/opentelemetry_api-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/e3/a7/6322d1d7a1fb926e8b99208c27730f21217da2f1e0e11dab48a78a0427a4/opentelemetry_api-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-exporter-otlp": {
         "is_direct": false,
-        "sha256": "d67a831757014a3bc3174e4cd629ae1493b7ba8d189e8a007003cacb9f1a6b60",
+        "sha256": "f839989f54bda85ee33c5dae033c44dcec9ccbb0dafc6a43d585df44da1d2036",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/75/fd/7d95c7320926a43b88e9d4350338d3dae3b5ac16dd344825194f01918f56/opentelemetry_exporter_otlp-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/87/71/b9221af6af61213c522401b5f46a5eaa41d8dd7daeb0740dc5604f5c3980/opentelemetry_exporter_otlp-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-exporter-otlp-proto-common": {
         "is_direct": false,
-        "sha256": "15637b7d580c2675f70246563363775b4e6de947871e01d0f4e3881d1848d693",
+        "sha256": "ee4d8f8891a1b9c372abf8d109409e5b81947cf66423fd998e56880057afbc71",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/05/02/74ac6619eec78c82a923324f916d3eccd2f2254cf4270b669e96b76bf717/opentelemetry_exporter_otlp_proto_common-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/25/2f/0f7e0a73fd901c9abc6ea680d7f19a803dac830c450f21e1123d3a3ec488/opentelemetry_exporter_otlp_proto_common-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-exporter-otlp-proto-grpc": {
         "is_direct": false,
-        "sha256": "3131028f0c0a155a64c430ca600fd658e8e37043cb13209f0109db5c1a3e4eb4",
+        "sha256": "e2be5eff72ebcb010675b818e8d7c2e7d61ec451755b8de67a140bc49b9b0280",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b0/f3/e24294e7b3f6d2b9aafc97b9b82e214dfe9ffa152dfecbd897e7ffbf6844/opentelemetry_exporter_otlp_proto_grpc-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/4d/0c/e4473692fec8076008c7926dfcef7223fc6d2785f04ad9d8402347a4eba9/opentelemetry_exporter_otlp_proto_grpc-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-exporter-otlp-proto-http": {
         "is_direct": false,
-        "sha256": "2eca686ee11b27acd28198b3ea5e5863a53d1266b91cda47c839d95d5e0541a6",
+        "sha256": "ee72a87c48ec977421b02f16c52ea8d884122470e0be573905237b540f4ee562",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/1d/b9/a47734f7c5a45619d8c64c227f119092b4679b2c49d37116fda7c0fc4573/opentelemetry_exporter_otlp_proto_http-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/cf/d3/0b7217b61903249035d219fbe93a8558287f86aead340c7b2dc1226b8ad4/opentelemetry_exporter_otlp_proto_http-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-proto": {
         "is_direct": false,
-        "sha256": "f07e3341c78d835d9b86665903b199893befa5e98866f63d22b00d0b7ca4972f",
+        "sha256": "6c4d7b4d4d9c88543bcf8c28ae3f8f0448a753dc291c18c5390444c90b76a725",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/64/ae/d6b5f11ecbffafe8b6d54130fed0cc78aad3711e00074d63a7359d6dcf3b/opentelemetry_proto-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/15/f4/66a3892eea913cded9bac0fdd3fb1a412fa2da8eb50014ec87a52648444a/opentelemetry_proto-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-sdk": {
         "is_direct": false,
-        "sha256": "d97ff7ec4b351692e9d5a15af570c693b8715ad78b8aafbec5c7100fe966b4c9",
+        "sha256": "feb5056a84a88670c041ea0ded9921fca559efec03905dddeb3885525e0af897",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/ae/b2/729a959a8aa032bce246c791f977161099ab60fb0188408ccec1bf283b00/opentelemetry_sdk-1.25.0-py3-none-any.whl",
-        "version": "1.25.0"
+        "url": "https://files.pythonhosted.org/packages/92/f1/a9b550d0f9c049653dd2eab45cecf8fe4baa9795ed143d87834056ffabaf/opentelemetry_sdk-1.26.0-py3-none-any.whl",
+        "version": "1.26.0"
       },
       "opentelemetry-semantic-conventions": {
         "is_direct": false,
-        "sha256": "6daef4ef9fa51d51855d9f8e0ccd3a1bd59e0e545abe99ac6203804e36ab3e07",
+        "sha256": "4ff9d595b85a59c1c1413f02bba320ce7ea6bf9e2ead2b0913c4395c7bbc1063",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/fd/41/28dae1ec1fe0151373f06bd06d9170ca14b52d5b3a6c2dc55f85bc219619/opentelemetry_semantic_conventions-0.46b0-py3-none-any.whl",
-        "version": "0.46b0"
+        "url": "https://files.pythonhosted.org/packages/00/c2/ca5cef8e4cd8eec5a95deed95ec3f6005e499fd9d17ca08731ced03a6921/opentelemetry_semantic_conventions-0.47b0-py3-none-any.whl",
+        "version": "0.47b0"
       },
       "ordered-set": {
         "is_direct": false,
@@ -661,10 +661,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "f1279ab38ecbfae7e456a108c5c0681e4956d5b1090027c1de0f934dfdb4b35c",
+        "sha256": "eecd41bfc0e4b1bd3fa7909ed93dd14dd5567b98c941d6c1ad08fdcab3d6884b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f3/bf/26deba06a4c910a85f78245cac7698f67cedd7efe00d04f6b3e1b3506a59/protobuf-4.25.3-cp37-abi3-macosx_10_9_universal2.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/34/ca/bf85ffe3dd16f1f2aaa6c006da8118800209af3da160ae4d4f47500eabd9/protobuf-4.25.4-cp37-abi3-macosx_10_9_universal2.whl",
+        "version": "4.25.4"
       },
       "psutil": {
         "is_direct": false,
@@ -780,10 +780,10 @@
       },
       "rpds-py": {
         "is_direct": false,
-        "sha256": "6f2f78ef14077e08856e788fa482107aa602636c16c25bdf59c22ea525a785e9",
+        "sha256": "6d1d7539043b2b31307f2c6c72957a97c839a88b2629a348ebabe5aa8b626d6b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/5c/a2/4796309ee72d7005abe844ffdd88efa9174f724e298aedcb834d08bb4b9b/rpds_py-0.19.0-cp312-cp312-macosx_11_0_arm64.whl",
-        "version": "0.19.0"
+        "url": "https://files.pythonhosted.org/packages/1e/2f/deb57a77c38db7affe54288157667c82397c6bd14473e77461a082b42286/rpds_py-0.19.1-cp312-cp312-macosx_11_0_arm64.whl",
+        "version": "0.19.1"
       },
       "setproctitle": {
         "is_direct": false,
@@ -1312,6 +1312,7 @@
           "typing-extensions"
         ],
         "opentelemetry-semantic-conventions": [
+          "deprecated",
           "opentelemetry-api"
         ],
         "ordered-set": [],
@@ -1417,5 +1418,5 @@
       }
     }
   },
-  "invalidationHash": "b825cec630e34e615854d345ae5268c551abac408d178c7daf056c6e39bdb953"
+  "invalidationHash": "d0b18baf8e3383d40cd1cc0211448b8caa9df9f40df2b8efbfb5de5548f67dee"
 }

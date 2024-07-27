@@ -101,10 +101,10 @@
       },
       "google-cloud-storage": {
         "is_direct": false,
-        "sha256": "5b393bc766b7a3bc6f5407b9e665b2450d36282614b7945e570b3480a456d1e1",
+        "sha256": "e8e1a9577952143c3fca8163005ecfadd2d70ec080fa158a8b305000e2c22fbb",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/c0/7d/9ec53c92ae8a87baf2fd0d8ccba4e72ce650eef653b3d34b8bc058ecfb64/google_cloud_storage-2.17.0-py2.py3-none-any.whl",
-        "version": "2.17.0"
+        "url": "https://files.pythonhosted.org/packages/27/6f/13f385443cba65e04922881fc44ad3fec51bc12bfcbb17488cee61f50e2f/google_cloud_storage-2.18.0-py2.py3-none-any.whl",
+        "version": "2.18.0"
       },
       "google-crc32c": {
         "is_direct": false,
@@ -307,5 +307,5 @@
       }
     }
   },
-  "invalidationHash": "e4c93bcd88d50613a6b902cbce5f26bafbe9082f858d4e9e6fc89246ba194d42"
+  "invalidationHash": "8f310ddbccb6d9a9e6943c81916d68ac6bb6ece3e62c6b9dd7e224bda407247d"
 }

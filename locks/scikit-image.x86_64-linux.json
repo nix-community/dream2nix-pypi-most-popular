@@ -59,10 +59,10 @@
       },
       "tifffile": {
         "is_direct": false,
-        "sha256": "7f335b5d6ca49401fe0f1d87deb206f5dae47297e47b1ed52a676d05d6d26798",
+        "sha256": "f5cce1a915c37bc44ae4a792e3b42c07a30a3fa88406f5c6060a3de076487ed1",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/b0/54/3aef476dc3820ab7b002d832c4b77fa9b7cb81b773917e0e7d6aa3aedcd5/tifffile-2024.7.21-py3-none-any.whl",
-        "version": "2024.7.21"
+        "url": "https://files.pythonhosted.org/packages/05/a9/f7b3fd6c73e0ac29e7f9c9c86c3b7367b182a3dd60495da7b8129e6df681/tifffile-2024.7.24-py3-none-any.whl",
+        "version": "2024.7.24"
       }
     },
     "targets": {
@@ -97,5 +97,5 @@
       }
     }
   },
-  "invalidationHash": "221ea9ef9df8731dd9f15ebe5b673af7857c36bbb53da87179921cccc362188d"
+  "invalidationHash": "3aa8d92f8bd60c2d1b05531f6b3568adb1bcaeede81584c93be0f9e3329621e1"
 }

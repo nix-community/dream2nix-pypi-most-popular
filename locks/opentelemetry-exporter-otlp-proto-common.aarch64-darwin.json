@@ -17,10 +17,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "f1279ab38ecbfae7e456a108c5c0681e4956d5b1090027c1de0f934dfdb4b35c",
+        "sha256": "eecd41bfc0e4b1bd3fa7909ed93dd14dd5567b98c941d6c1ad08fdcab3d6884b",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/f3/bf/26deba06a4c910a85f78245cac7698f67cedd7efe00d04f6b3e1b3506a59/protobuf-4.25.3-cp37-abi3-macosx_10_9_universal2.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/34/ca/bf85ffe3dd16f1f2aaa6c006da8118800209af3da160ae4d4f47500eabd9/protobuf-4.25.4-cp37-abi3-macosx_10_9_universal2.whl",
+        "version": "4.25.4"
       }
     },
     "targets": {
@@ -35,5 +35,5 @@
       }
     }
   },
-  "invalidationHash": "ab959ef6636040242d401c76b01a1d07aa26c575435df6894a0239a1f7f6b560"
+  "invalidationHash": "5395110bbbbbca2c6ddc24c6b3ea18fcd92c3ed3ec1f68ad297e4775d2c17f6f"
 }

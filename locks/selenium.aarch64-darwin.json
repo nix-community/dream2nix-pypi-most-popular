@@ -45,10 +45,10 @@
       },
       "selenium": {
         "is_direct": false,
-        "sha256": "903c8c9d61b3eea6fcc9809dc7d9377e04e2ac87709876542cc8f863e482c4ce",
+        "sha256": "88f36e3fe6d1d3a9e0626f527f4bd00f0300d43e93f51f59771a911078d4f472",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/04/93/fe0473c381dddce4db9527cf442d5949460fab4a92713fb5984386054323/selenium-4.22.0.tar.gz",
-        "version": "4.22.0"
+        "url": "https://files.pythonhosted.org/packages/2f/20/1d74b6bfb216698e5566ef7e3741546c9c1ca31d100e35cbe3342831e76f/selenium-4.23.0.tar.gz",
+        "version": "4.23.0"
       },
       "sniffio": {
         "is_direct": false,
@@ -80,10 +80,10 @@
       },
       "typing-extensions": {
         "is_direct": false,
-        "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+        "sha256": "af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
-        "version": "4.12.2"
+        "url": "https://files.pythonhosted.org/packages/b7/f4/6a90020cd2d93349b442bfcb657d0dc91eee65491600b2cb1d388bc98e6b/typing_extensions-4.9.0-py3-none-any.whl",
+        "version": "4.9.0"
       },
       "urllib3": {
         "is_direct": false,
@@ -91,6 +91,13 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/ca/1c/89ffc63a9605b583d5df2be791a27bc1a42b7c32bab68d3c8f2f73a98cd4/urllib3-2.2.2-py3-none-any.whl",
         "version": "2.2.2"
+      },
+      "websocket-client": {
+        "is_direct": false,
+        "sha256": "17b44cc997f5c498e809b22cdf2d9c7a9e71c02c8cc2b6c56e7c2d1239bfa526",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/5a/84/44687a29792a70e111c5c477230a72c4b957d88d16141199bf9acb7537a3/websocket_client-1.8.0-py3-none-any.whl",
+        "version": "1.8.0"
       },
       "wsproto": {
         "is_direct": false,
@@ -115,7 +122,8 @@
           "trio",
           "trio-websocket",
           "typing-extensions",
-          "urllib3"
+          "urllib3",
+          "websocket-client"
         ],
         "sniffio": [],
         "sortedcontainers": [],
@@ -134,11 +142,12 @@
         "urllib3": [
           "pysocks"
         ],
+        "websocket-client": [],
         "wsproto": [
           "h11"
         ]
       }
     }
   },
-  "invalidationHash": "5c7fcd1131979639842b284329fa5207913a8fffc1deab0bafeb3c113e1a7043"
+  "invalidationHash": "39af0d49fe547ec8c17a5fff4cac154aeea14e0899548734d9ec24cbe3e2cc99"
 }

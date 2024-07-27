@@ -31,10 +31,10 @@
       },
       "huggingface-hub": {
         "is_direct": false,
-        "sha256": "7ad92edefb93d8145c061f6df8d99df2ff85f8379ba5fac8a95aca0642afa5d7",
+        "sha256": "abdf3244d3a274c4b1fbc5c4a1ef700032b3f60ba93cc63e4f036fd082aa2805",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/57/c0/cf4435f3186655e3bafdca08cd6c794e3866f1f89ed99595504e7240b6a2/huggingface_hub-0.24.0-py3-none-any.whl",
-        "version": "0.24.0"
+        "url": "https://files.pythonhosted.org/packages/93/14/6a82b1c2eab5a828f7d3d675811660eb68424e8b039191f418a94e8d9726/huggingface_hub-0.24.2-py3-none-any.whl",
+        "version": "0.24.2"
       },
       "idna": {
         "is_direct": false,
@@ -66,10 +66,10 @@
       },
       "regex": {
         "is_direct": false,
-        "sha256": "68811ab14087b2f6e0fc0c2bae9ad689ea3584cad6917fc57be6a48bbd012c49",
+        "sha256": "7df9ea48641da022c2a3c9c641650cd09f0cd15e8908bf931ad538f5ca7919c9",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/23/d3/65db07106b4584b62b1ec0061277c54f565da92d91f0a211057faccb841b/regex-2024.5.15-cp312-cp312-macosx_11_0_arm64.whl",
-        "version": "2024.5.15"
+        "url": "https://files.pythonhosted.org/packages/9b/f2/c6182095baf0a10169c34e87133a8e73b2e816a80035669b1278e927685e/regex-2024.7.24-cp312-cp312-macosx_11_0_arm64.whl",
+        "version": "2024.7.24"
       },
       "requests": {
         "is_direct": false,
@@ -169,5 +169,5 @@
       }
     }
   },
-  "invalidationHash": "15169da03fcd88366dfd9e86b26f94d85805d7a8385e0ab889a04681469bd6a8"
+  "invalidationHash": "643d5706f7b8f3d39fa028a9aaaf62eda5440da4c72927eead03b78915fca3de"
 }

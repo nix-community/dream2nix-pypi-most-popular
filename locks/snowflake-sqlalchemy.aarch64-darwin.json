@@ -101,10 +101,10 @@
       },
       "snowflake-connector-python": {
         "is_direct": false,
-        "sha256": "e8f5c376b2368082819126f566551e451d51c95cc2febac45377026d44a401b0",
+        "sha256": "dc333fcfc383a8cab8bd7e890a7c76703e26598925a05954c75d2c50bff06071",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/97/eb/1ba196714ce2e369e51d7aa9cac3f20759398b020fc9d52fa71e1fb75fb2/snowflake_connector_python-3.11.0-cp312-cp312-macosx_11_0_arm64.whl",
-        "version": "3.11.0"
+        "url": "https://files.pythonhosted.org/packages/d7/15/5c5fbceee5964b6cff47a270efb08febfa2d7707c27185f55fe37f2e1c19/snowflake_connector_python-3.12.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "version": "3.12.0"
       },
       "snowflake-sqlalchemy": {
         "is_direct": false,
@@ -208,5 +208,5 @@
       }
     }
   },
-  "invalidationHash": "ac9861a252a2d310b60d3c17c0349616f006dea10058c97846ece932e06a1c49"
+  "invalidationHash": "0aea8ad584c75744ec3d62adb98a00e7986788e4775de906b1a2dc290f7832d2"
 }

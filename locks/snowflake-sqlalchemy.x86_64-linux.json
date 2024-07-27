@@ -108,10 +108,10 @@
       },
       "snowflake-connector-python": {
         "is_direct": false,
-        "sha256": "e906f517d2e79cd19c04dddf3bba13a072755503516f6bcd55ae1122b6df7fdb",
+        "sha256": "019b8a61e5af689451d502df2af8793fc6f20b5b0a3548fd8ad03aa8b62e7f2d",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d1/b1/90ec7af6257f86c65a644707904049da8314b77d8d004d689f0dc4b1ca7d/snowflake_connector_python-3.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-        "version": "3.11.0"
+        "url": "https://files.pythonhosted.org/packages/88/83/9636bf90de3a803b683ac38b99000965f3d8b58d4dd06c908809f51eb440/snowflake_connector_python-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.12.0"
       },
       "snowflake-sqlalchemy": {
         "is_direct": false,
@@ -217,5 +217,5 @@
       }
     }
   },
-  "invalidationHash": "ac9861a252a2d310b60d3c17c0349616f006dea10058c97846ece932e06a1c49"
+  "invalidationHash": "0aea8ad584c75744ec3d62adb98a00e7986788e4775de906b1a2dc290f7832d2"
 }

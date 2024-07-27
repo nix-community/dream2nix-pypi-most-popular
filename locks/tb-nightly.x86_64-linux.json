@@ -38,10 +38,10 @@
       },
       "protobuf": {
         "is_direct": false,
-        "sha256": "7c8daa26095f82482307bc717364e7c13f4f1c99659be82890dcfc215194554d",
+        "sha256": "3319e073562e2515c6ddc643eb92ce20809f5d8f10fead3332f71c63be6a7040",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/15/db/7f731524fe0e56c6b2eb57d05b55d3badd80ef7d1f1ed59db191b2fdd8ab/protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl",
-        "version": "4.25.3"
+        "url": "https://files.pythonhosted.org/packages/ca/6c/cc7ab2fb3a4a7f07f211d8a7bbb76bba633eb09b148296dbd4281e217f95/protobuf-4.25.4-cp37-abi3-manylinux2014_x86_64.whl",
+        "version": "4.25.4"
       },
       "setuptools": {
         "is_direct": false,
@@ -107,5 +107,5 @@
       }
     }
   },
-  "invalidationHash": "f49c7a0a9a340ae55c9588d3ffef3916a4e5460f207a99b76b74f7ba282c64a5"
+  "invalidationHash": "a62c994ab4a116af32a54a2fdcea5a7add0e85bcb5f515880b900f7d01623f6c"
 }

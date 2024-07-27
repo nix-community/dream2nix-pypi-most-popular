@@ -59,10 +59,10 @@
       },
       "openai": {
         "is_direct": false,
-        "sha256": "394ba1dfd12ecec1d634c50e512d24ff1858bbc2674ffcce309b822785a058de",
+        "sha256": "dc8197fc40ab9d431777b6620d962cc49f4544ffc3011f03ce0a805e6eb54adb",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/65/d9/dd4b5dfe557944ea598b17d0de36eef07e8a490b4b0f409b48cd90f1e91e/openai-1.35.14.tar.gz",
-        "version": "1.35.14"
+        "url": "https://files.pythonhosted.org/packages/81/2d/5689233e015aed341b3945d4d1dbc01bef3a895e0ec7a26420f28dfd6927/openai-1.37.0.tar.gz",
+        "version": "1.37.0"
       },
       "pydantic": {
         "is_direct": false,
@@ -145,5 +145,5 @@
       }
     }
   },
-  "invalidationHash": "04147f6008b5d18c40069cce231da0e8189aa0dacc87f7b280529e84a5a227d8"
+  "invalidationHash": "ec0bf8b1bc2ca9c3f8c47e780ee88d0f616111362268eb8e4e5bc941fe3e675b"
 }

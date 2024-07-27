@@ -27,7 +27,8 @@ jobs:
       - name: lock all packages with missing or outdated locks
         run: |
           nix run .#lock-all
-      - name: Commit lock file
+      - name: Commit lock files
+        if: success() || failure()
         run: |
           git config --global user.name 'automated lock update'
           git config --global user.email 'lock@users.noreply.github.com'

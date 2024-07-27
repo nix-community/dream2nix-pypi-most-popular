@@ -102,19 +102,18 @@
     packages = packagesToCheck;
 
     checks = eachSystem (system: validated.${system}.packages);
-    lockScripts = eachSystem (system: validated.${system}.packages);
+    lockScripts = eachSystem (system: validated.${system}.lockScripts);
     inherit skippedPackages;
-
     apps = eachSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       lockAll = pkgs.writeShellApplication {
         name = "lock-all";
-        runtimeInputs = [pkgs.nix-eval-jobs pkgs.parallel pkgs.jq];
+        runtimeInputs = [pkgs.nix-eval-jobs pkgs.coreutils pkgs.parallel pkgs.jq];
         text = ''
           nix-eval-jobs --flake .#lockScripts.${system} \
            | parallel --pipe "jq -r .drvPath" \
-           | parallel "nix build --no-link --print-out-paths {}^out" \
-           | parallel "{}/bin/refresh"
+           | parallel --jobs "$(nproc)" "nix build --no-link --print-out-paths {}^out" \
+           | parallel --jobs "$(nproc)" "{}/bin/refresh"
         '';
       };
       report = pkgs.writers.writePython3Bin "report" {

@@ -80,10 +80,10 @@
       },
       "orbax-checkpoint": {
         "is_direct": false,
-        "sha256": "ac2d11f7983f02c66a0be137771f42fee01b66741e70bfc79b3bd60f3c379b86",
+        "sha256": "54d53bc80eb83e4baa629433b06fe6a0736a1b768cdc4efdda635584de10ed24",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/d7/c4/16267a433ce5049639a96bcb69127950045a7ce76625366938014c1a74c0/orbax_checkpoint-0.5.21.tar.gz",
-        "version": "0.5.21"
+        "url": "https://files.pythonhosted.org/packages/f1/43/4b36ff621eef197083a3b700a60848b0c110cdfdea5f8e0eedff9b45c5a7/orbax_checkpoint-0.5.22.tar.gz",
+        "version": "0.5.22"
       },
       "protobuf": {
         "is_direct": false,
@@ -187,5 +187,5 @@
       }
     }
   },
-  "invalidationHash": "480e5090db2cb63a871deec7f21794302dca04c89375342a32518c0760f3e846"
+  "invalidationHash": "f27257ee5da00ed8452cecdd4b7bcdeb33e29210cb8a42bb70993b6295126f76"
 }
